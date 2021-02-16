@@ -26,6 +26,7 @@ let
     fzf-vim
     vim-floaterm
     indentLine
+    vista-vim
     # autoread
   ];
 

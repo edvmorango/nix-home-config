@@ -182,6 +182,21 @@ set ignorecase " Case insensitive.
 set smartcase  " Case insensitive if no uppercase letter in pattern, case sensitive otherwise.
 set nowrapscan " Don't go back to first match after the last match is found.
 
+
+"Vista
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+
+let g:vista_default_executive = 'coc'
+
+let g:vista_fzf_preview = ['right:50%']
+
+let g:vista#renderer#enable_icon = 1
+
+let g:vista#renderer#icons = {
+\   "function": "\uf794",
+\   "variable": "\uf71b",
+\  }
+
 "Custom maps
 
 nnoremap <space>d :noh <CR>
