@@ -79,6 +79,26 @@ nnoremap <M-K> <C-w>K
 nnoremap <M-L> <C-w>L
 nnoremap <M-x> <C-w>x
 
+" Center after jump
+function! CenteredFindNext(forward)
+    " save the current value for later restore
+    let s:so_curr=&scrolloff
+    set scrolloff=999
+    try
+        if a:forward
+            silent normal! n
+        else
+            silent normal! N
+        endif
+    finally
+        " restore no matter what
+        let &scrolloff=s:so_curr
+    endtry
+endfunction
+
+:nnoremap <silent>n :call CenteredFindNext(1)<CR>
+:nnoremap <silent>N :call CenteredFindNext(0)<CR>
+
 "tender
 syntax enable
 colorscheme tender
