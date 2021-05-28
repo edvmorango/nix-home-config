@@ -17,33 +17,41 @@ let
     slack
     xclip
     vscode
-    postman
+    #postman
     tor
     lorri
     fzf
-    skype
+    fd
+    ripgrep
+    #skype
+    highlight
+    glib
   ];
 
   unstablePkgs = with unstable; [
     #audio 
-    pavucontrol
-    paprefs
-    pasystray
-    playerctl
-    pulsemixer
+    #pavucontrol
+    #paprefs
+    #pasystray
+    #playerctl
+    #pulsemixer
     #media
-    vlc
+    #vlc
     #browsers
-    firefox
-    brave
+    #firefox
+    #brave
     #documents
-    manix
-    mupdf
+    #manix
+    #mupdf
     #programs
-    discord
-    zoom
-    steam
-
+    #discord
+    #zoom
+    #steam
+    iterm2
+    kubectl
+    kops
+    awscli2
+    bat
   ];
 
   customPkgs = [ arionPkg ];
@@ -58,23 +66,32 @@ in
     enableNixDirenvIntegration = true;
   };
 
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
+
+  };
+
 
   home = {
     homeDirectory = "/home/edvmorango";
     username = "edvmorango";
     packages = defaultPkgs ++ unstablePkgs ++ customPkgs;
     stateVersion = "21.03";
+
+
   };
 
-  xdg.enable = true;
+  xdg.enable = false;
 
   imports = [
+    ./programs/fish/default.nix
     ./programs/neovim/default.nix
     ./programs/alacritty/default.nix
-    ./programs/rofi/default.nix
+    #./programs/rofi/default.nix
     ./programs/tmux/default.nix
-    ./programs/fish/default.nix
     ./programs/git/default.nix
   ];
+
 
 }

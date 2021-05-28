@@ -10,6 +10,7 @@ in
     aggressiveResize = true;
     baseIndex = 1;
     keyMode = "vi";
+    terminal = "tmux-256color";
     extraConfig = cfg;
     plugins = with plugins; [
       {
@@ -25,7 +26,6 @@ in
       }
     ];
     shortcut = "a";
-    terminal = "screen-256color";
   };
 
 }

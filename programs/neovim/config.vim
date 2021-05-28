@@ -45,26 +45,28 @@ inoremap <ScrollWheelRight> <nop>
 inoremap <S-ScrollWheelRight> <nop>
 inoremap <C-ScrollWheelRight> <nop>
 
+"truecolors
+set termguicolors
 
 "disable arrow keys
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-inoremap <Up> <nop>
-inoremap <Down> <nop>
-inoremap <Left> <nop>
-inoremap <Right> <nop>
-vnoremap <Up> <nop>
-vnoremap <Down> <nop>
-vnoremap <Left> <nop>
-vnoremap <Right> <nop>
-noremap <PageUp> <nop>
-inoremap <PageUp> <nop>
-vnoremap <PageUp> <nop>
-noremap <PageDown> <nop>
-inoremap <PageDown> <nop>
-vnoremap <PageDown> <nop>
+"noremap <Up> <nop>
+"noremap <Down> <nop>
+"noremap <Left> <nop>
+"noremap <Right> <nop>
+"inoremap <Up> <nop>
+"inoremap <Down> <nop>
+"inoremap <Left> <nop>
+"inoremap <Right> <nop>
+"vnoremap <Up> <nop>
+"vnoremap <Down> <nop>
+"vnoremap <Left> <nop>
+"vnoremap <Right> <nop>
+"noremap <PageUp> <nop>
+"inoremap <PageUp> <nop>
+"vnoremap <PageUp> <nop>
+"noremap <PageDown> <nop>
+"inoremap <PageDown> <nop>
+"vnoremap <PageDown> <nop>
 
 "window
 nnoremap <M-h> <C-w>h
@@ -99,14 +101,27 @@ endfunction
 :nnoremap <silent>n :call CenteredFindNext(1)<CR>
 :nnoremap <silent>N :call CenteredFindNext(0)<CR>
 
-"tender
+"thme
 syntax enable
-colorscheme tender
+"colorscheme tender
+colorscheme darcula
 
+"floaterm
+let g:floaterm_keymap_new    = '<F7>'
+let g:floaterm_keymap_prev   = '<C-w>'
+let g:floaterm_keymap_next   = '<C-e>'
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
+nnoremap <silent> <C-k> :FloatermToggle<CR>
+tnoremap <silent> <C-k>   <C-\><C-n>:FloatermToggle<CR>
 "lightline
 
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
+      \ 'colorscheme': 'darculaOriginal',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'currentfunction', 'readonly', 'gitbranch' ,'filename', 'modified'] ]
@@ -118,6 +133,7 @@ let g:lightline = {
       \ },
       \ }
 
+let g:airline_powerline_fonts=1
 
 "rainbow_parentheses
 au VimEnter * RainbowParenthesesToggle
@@ -125,9 +141,9 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-"airline
-let g:airline_powerline_fonts=1
 
+"enable AutoSave on Vim startup
+let g:auto_save = 1  
 "echodoc 
 let g:echodoc#enable_at_startup=1 "shows showSignatureHelp trigerred by ( or [
 let g:echodoc#type = 'virtual'
@@ -136,7 +152,7 @@ let g:echodoc#type = 'virtual'
 highlight link EchoDocPopup Pmenu 
 
 "hardtime
-let g:hardtime_default_on = 0
+"let g:hardtime_default_on = 0
 
 "gitgutter
 set updatetime=100
@@ -146,12 +162,14 @@ nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 set timeoutlen=500
 let g:which_key_vertical=1
 "fzf
-nnoremap <silent> <C-p> :FZF<CR>
+nnoremap <silent> <C-p> :FZF  --keep-right --preview-window=up <CR>
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 1, 'xoffset' : 1.0 } }
 "Nerdtree
+"
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "ᵐ",
     \ "Staged"    : "ˢ",
-    \ "Untracked" : "ᵘ",
+   \ "Untracked" : "ᵘ",
     \ "Renamed"   : "ʳ",
     \ "Unmerged"  : "ᶴ",
     \ "Deleted"   : "ˣ",
@@ -160,14 +178,14 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = ''
 
 let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrows = 0
+let NERDTreeShowHidden=1
 
-
-autocmd BufEnter * lcd %:p:h
+"autocmd BufEnter * lcd %:p:h
 map <C-F> :NERDTreeToggle<CR>
 map <C-S> :NERDTreeFind<CR>
 
@@ -176,18 +194,29 @@ nnoremap Q <Nop>
 nnoremap gQ <Nop>
 
 
+"subversive
+nmap <leader>s <plug>(SubversiveSubvertRange)
+xmap <leader>s <plug>(SubversiveSubvertRange)
+
+nmap <leader>ss <plug>(SubversiveSubvertWordRange)
+let g:subversivePromptWithActualCommand = 0
+" ie = inner entire buffer
+onoremap ie :exec "normal! ggVG"<cr>
+" iv = current viewable text in the buffer
+onoremap iv :exec "normal! HVL"<cr>
+
 "Search
 set incsearch  " Incremental search.
 set ignorecase " Case insensitive.
 set smartcase  " Case insensitive if no uppercase letter in pattern, case sensitive otherwise.
-set nowrapscan " Don't go back to first match after the last match is found.
+"set nowrapscan " Don't go back to first match after the last match is found.
 
 
 "Vista
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_icon_indent = ["=>", "|->"]
 
 let g:vista_default_executive = 'coc'
-
+let g:vista_sidebar_width = 70
 let g:vista_fzf_preview = ['right:50%']
 
 let g:vista#renderer#enable_icon = 1
@@ -196,6 +225,11 @@ let g:vista#renderer#icons = {
 \   "function": "\uf794",
 \   "variable": "\uf71b",
 \  }
+
+nnoremap <silent> <C-l> :Vista!! <CR>
+
+"pgsql-vim
+let g:sql_type_default = 'pgsql'
 
 "Custom maps
 

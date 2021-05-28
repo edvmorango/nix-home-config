@@ -11,22 +11,28 @@ let
 
   allPkgs = plugins // customPkgs;
 
-  generalPlugins = with plugins; [
+  generalPlugins = with allPkgs; [
     lightline-vim
+    vim-devicons
     vim-fugitive
     vim-gitgutter
-    vim-hardtime
+    #vim-hardtime
+    vim-floaterm
     vim-abolish
     echodoc-vim
     rainbow_parentheses-vim
     nerdtree
-    tender-vim
+    #tender-vim
     vim-which-key
     lexima-vim
     fzf-vim
     vim-floaterm
     indentLine
     vista-vim
+    vim-auto-save
+    # vim-visual-multi
+    vim-subversive
+    darcula
     # autoread
   ];
 
@@ -56,10 +62,13 @@ let
     alchemist-vim
   ];
 
+  sqlPlugins = with allPkgs; [
+    pgsql
+  ];
 
   neovim5 = customPkgs.neovim5;
 
-  allPlugins = generalPlugins ++ cocPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ elixirPlugins;
+  allPlugins = generalPlugins ++ cocPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ elixirPlugins ++ sqlPlugins;
 
   vimConfig = builtins.readFile ./config.vim;
   ormoluConfig = builtins.readFile ./plugins/ormolu.vim;
@@ -67,7 +76,6 @@ let
   cocSettings = builtins.toJSON (import ./coc-settings.nix);
 
   allConfig = vimConfig + cocConfig + ormoluConfig;
-
 
 in
 {
@@ -80,7 +88,6 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     withNodeJs = true; # for coc.nvim
-    withPython = true; # for plugins
     withPython3 = true; # for plugins
   };
 

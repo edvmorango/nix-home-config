@@ -3,6 +3,7 @@
 let
   fzfConfig = ''
     set -x FZF_DEFAULT_OPTS "--preview='bat {} --color=always'" \n
+    set -x FZF_DEFAULT_COMMAND "fd --type f"
     set -x SKIM_DEFAULT_COMMAND "rg --files || fd || find ."
   '';
 
@@ -27,6 +28,7 @@ in
     promptInit = ''
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source
+      cd ~/Workspace
     '';
     shellAliases = {};
     shellInit = fishConfig;

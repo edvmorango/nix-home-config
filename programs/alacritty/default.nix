@@ -1,7 +1,9 @@
 { pkgs, ... }:
 
 let
+  frameworks = pkgs.darwin.apple_sdk.frameworks;
   alacritty-ligature = pkgs.callPackage (
+
     { stdenv
     , lib
     , fetchFromGitHub
@@ -12,7 +14,7 @@ let
     , installShellFiles
     , makeWrapper
     , ncurses
-    , pkgconfig
+    , pkg-config
     , python3
 
     , expat
@@ -27,7 +29,9 @@ let
     , libxcb
     , libxkbcommon
     , wayland
-    , xdg_utils
+    , xdg-utils
+
+      # Darwin Frameworks
 
     }:
       let
@@ -49,16 +53,16 @@ let
       in
         rustPlatform.buildRustPackage rec {
           pname = "alacritty";
-          version = "v0.3.3-478-g05307f8";
+          version = "0.7.2";
 
           src = fetchFromGitHub {
             owner = "zenixls2";
-            repo = "alacritty";
-            rev = "05307f8782ae0c94da5ff7b4bab2d1a51a50a70a";
-            sha256 = "1acw7h92k75i9a8svaa8gxyjx57758vx5c237iq5q9i00s0a5ksq";
+            repo = pname;
+            rev = "3ed043046fc74f288d4c8fa7e4463dc201213500";
+            sha256 = "1q5jnhmjxbbx7mq8jzkzkq48kczf52bbg4p2hq82acbkwkha9lfm";
           };
 
-          cargoSha256 = "16c5lqi1jdjx1kxzq9gj1mrxii2vicpqd1bijy8q0rv97628d7qq";
+          cargoSha256 = "1v5rgbnm44r27njsl76g50n1l1a34a6fnnm2ggzy321f6v7prnff";
 
           nativeBuildInputs = [
             cmake
@@ -66,24 +70,28 @@ let
             installShellFiles
             makeWrapper
             ncurses
-            pkgconfig
+            pkg-config
             python3
-
           ];
 
-          buildInputs = rpathLibs;
-          rPath = stdenv.lib.makeLibraryPath rpathLibs + ":${stdenv.cc.cc.lib}/lib64";
+          buildInputs = rpathLibs
+          ++ lib.optionals stdenv.isDarwin [
+            frameworks.AppKit
+            frameworks.CoreGraphics
+            frameworks.CoreServices
+            frameworks.CoreText
+            frameworks.Foundation
+            frameworks.OpenGL
+          ];
+
           outputs = [ "out" "terminfo" ];
 
           postPatch = ''
             substituteInPlace alacritty/src/config/mouse.rs \
-              --replace xdg-open ${xdg_utils}/bin/xdg-open
+              --replace xdg-open ${xdg-utils}/bin/xdg-open
           '';
 
-          installPhase = ''
-            runHook preInstall
-            install -D $releaseDir/alacritty $out/bin/alacritty
-          '' + (
+          postInstall = (
             if stdenv.isDarwin then ''
               mkdir $out/Applications
               cp -r extra/osx/Alacritty.app $out/Applications
@@ -95,7 +103,7 @@ let
               #    strip: not enough room for program headers, try linking with -N
               # As a workaround, strip manually before running patchelf.
               strip -S $out/bin/alacritty
-              patchelf --set-rpath "${rPath}" $out/bin/alacritty
+              patchelf --set-rpath "${lib.makeLibraryPath rpathLibs}" $out/bin/alacritty
             ''
           ) + ''
             installShellCompletion --zsh extra/completions/_alacritty
@@ -108,7 +116,6 @@ let
             tic -xe alacritty,alacritty-direct -o "$terminfo/share/terminfo" extra/alacritty.info
             mkdir -p $out/nix-support
             echo "$terminfo" >> $out/nix-support/propagated-user-env-packages
-            runHook postInstall
           '';
 
           dontPatchELF = true;
@@ -117,10 +124,12 @@ let
             description = "A cross-platform, GPU-accelerated terminal emulator";
             homepage = "https://github.com/alacritty/alacritty";
             license = licenses.asl20;
-            maintainers = with maintainers; [ filalex77 mic92 cole-h ma27 ];
+            maintainers = with maintainers; [ Br1ght0ne mic92 cole-h ma27 ];
             platforms = platforms.unix;
           };
+
         }
+
   ) {};
 
 in

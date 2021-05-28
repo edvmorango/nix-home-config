@@ -1,5 +1,5 @@
 builtins.fetchTarball {
-  name = "nixpkgs-unstable-2020-12-06";
-  url = "https://github.com/NixOS/nixpkgs/archive/cf7475d2061a.tar.gz";
-  sha256 = "17yj9ymnpsggyxalpi2f85l4r4v989izjipqfyik21nxyn4zd7wg";
+  name = "nixpkgs-unstable-2021-05-25";
+  url = "https://github.com/NixOS/nixpkgs/archive/ea7d4aa9b822.tar.gz";
+  sha256 = "11bwgyglag40w2y50nq2gg4697ymdjprkgip75kb3hjrvvwpma53";
 }
