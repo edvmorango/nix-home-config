@@ -33,6 +33,7 @@ let
     # vim-visual-multi
     vim-subversive
     darcula
+    vim-deus
     # autoread
   ];
 

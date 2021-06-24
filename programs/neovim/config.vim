@@ -104,7 +104,10 @@ endfunction
 "thme
 syntax enable
 "colorscheme tender
-colorscheme darcula
+"colorscheme darcula
+colorscheme deus
+set background=dark
+let g:deus_termcolors=256
 
 "floaterm
 let g:floaterm_keymap_new    = '<F7>'

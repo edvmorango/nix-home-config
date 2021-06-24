@@ -6,44 +6,39 @@
     "codeLens.enable" = "true";
   };
 
-  " coc.preferences.formatOnSaveFiletypes " = [
-    " scala "
-    " haskell "
-    " nix "
+  "coc.preferences.formatOnSaveFiletypes" = [
+    "scala"
+    "haskell"
+    "nix"
   ];
 
-  " languageserver " = {
+  "languageserver" = {
 
-    " haskell " = {
-      " command " = " ghcide ";
-      " args " = [ " - -lsp " ];
-      " rootPatterns " = [
-        " * .cabal "
-        " stack.yaml "
-        " cabal.project "
-        " package.yaml "
-        " hie.yaml "
+    "haskell" = {
+      "command" = "ghcide";
+      "args" = ["--lsp"];
+      "rootPatterns" = [
+        "*.cabal"
+        "stack.yaml"
+        "cabal.project"
+        "package.yaml"
+        "hie.yaml"
       ];
-      " filetypes " = [
-        " haskell "
-        " lhaskell "
-        " hs "
-        " lhs "
+      "filetypes" = [
+        "haskell"
+        "lhaskell"
+        "hs"
+        "lhs"
       ];
     };
 
-    " nix " = {
-      " command " = " rnix-lsp ";
-      " filetypes " = [
-        " nix "
+    "nix" = {
+      "command" = "rnix-lsp";
+      "filetypes" = [
+        "nix"
       ];
 
     };
 
-    " elixirLS " = {
-      " command " = " ~/.elixir-ls/release/language_server.sh ";
-      " filetypes " = [ " elixir " ];
-    };
-
-  };
+      };
 }

@@ -26,6 +26,11 @@ let
     #skype
     highlight
     glib
+    exa
+    mcfly
+    tldr
+    procs
+    zoxide
   ];
 
   unstablePkgs = with unstable; [
