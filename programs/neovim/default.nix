@@ -12,29 +12,35 @@ let
   allPkgs = plugins // customPkgs;
 
   generalPlugins = with allPkgs; [
+    ##themes
     lightline-vim
     vim-devicons
-    vim-fugitive
-    vim-gitgutter
-    #vim-hardtime
-    vim-floaterm
-    vim-abolish
-    echodoc-vim
-    rainbow_parentheses-vim
-    nerdtree
-    #tender-vim
-    vim-which-key
-    lexima-vim
-    fzf-vim
-    vim-floaterm
-    indentLine
-    vista-vim
-    vim-auto-save
-    # vim-visual-multi
-    vim-subversive
     darcula
     vim-deus
-    # autoread
+    #tender-vim
+    ##editor
+    nerdtree
+    #nerdtree-git-plugin
+    vim-subversive #replacement \ + s
+    vim-easy-align
+    vista-vim # lsp symbols
+    rainbow_parentheses-vim # parentheses colors
+    indentLine # display vertical lines
+    echodoc-vim # display lsp suggestions (ctrl-space)
+    lexima-vim # autoclose parentheses
+    vim-abolish
+    ##git
+    vim-fugitive
+    vim-gitgutter
+    ##external
+    vim-floaterm
+    vim-custom-rooter
+    fzf-vim
+    ##misc
+    vim-bookmarks
+    vim-which-key
+    vim-auto-save
+    #vim-hardtime
   ];
 
   cocPlugins = with allPkgs; [

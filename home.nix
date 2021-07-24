@@ -8,6 +8,8 @@ let
 
   defaultPkgs = with pkgs; [
     git
+    git-lfs
+    niv
     dbeaver
     rnix-lsp
     any-nix-shell
@@ -26,37 +28,54 @@ let
     #skype
     highlight
     glib
-    exa
     mcfly
     tldr
     procs
     zoxide
+    openvpn
   ];
 
   unstablePkgs = with unstable; [
-    #audio 
-    #pavucontrol
-    #paprefs
-    #pasystray
-    #playerctl
-    #pulsemixer
+    #audio
+    pavucontrol
+    paprefs
+    pasystray
+    playerctl
+    pulsemixer
     #media
-    #vlc
+    vlc
     #browsers
-    #firefox
-    #brave
+    firefox
+    brave
     #documents
-    #manix
-    #mupdf
+    manix
+    mupdf
     #programs
-    #discord
-    #zoom
+    discord
+    zoom-us
+    obs-studio
+    tdesktop
     #steam
-    iterm2
-    kubectl
-    kops
+    # iterm1
+    #kubectl
+    #kops
+    pritunl-ssh
     awscli2
     bat
+    insomnia
+    jetbrains.idea-ultimate
+    steam-run
+  ];
+
+
+  haskellPkgs = with pkgs.haskellPackages; [
+    brittany
+    cabal2nix
+    cabal-install
+    ghc
+    haskell-language-server
+    hoogle
+    nix-tree
   ];
 
   customPkgs = [ arionPkg ];
@@ -81,8 +100,8 @@ in
   home = {
     homeDirectory = "/home/edvmorango";
     username = "edvmorango";
-    packages = defaultPkgs ++ unstablePkgs ++ customPkgs;
-    stateVersion = "21.03";
+    packages = defaultPkgs ++ unstablePkgs ++ customPkgs ++ haskellPkgs;
+    stateVersion = "21.05";
 
 
   };

@@ -28,7 +28,6 @@ in
     promptInit = ''
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source
-      cd ~/Workspace
     '';
     shellAliases = {};
     shellInit = fishConfig;

@@ -36,6 +36,7 @@ let
     }:
       let
         rpathLibs = [
+          stdenv.cc.cc.lib
           expat
           fontconfig
           freetype
@@ -62,7 +63,7 @@ let
             sha256 = "1q5jnhmjxbbx7mq8jzkzkq48kczf52bbg4p2hq82acbkwkha9lfm";
           };
 
-          cargoSha256 = "1v5rgbnm44r27njsl76g50n1l1a34a6fnnm2ggzy321f6v7prnff";
+          cargoSha256 = "16jqiympfz24bqjaqyyfxgvva1jqzx6rrb6f1ms2gaarv1v47kir";
 
           nativeBuildInputs = [
             cmake
@@ -99,7 +100,7 @@ let
             '' else ''
               install -D extra/linux/Alacritty.desktop -t $out/share/applications/
               install -D extra/logo/compat/alacritty-term.svg $out/share/icons/hicolor/scalable/apps/Alacritty.svg
-              # patchelf generates an ELF that binutils' "strip" doesn't like:
+              # patchelf generates an ELF that binutils' " strip " doesn't like:
               #    strip: not enough room for program headers, try linking with -N
               # As a workaround, strip manually before running patchelf.
               strip -S $out/bin/alacritty
@@ -116,6 +117,7 @@ let
             tic -xe alacritty,alacritty-direct -o "$terminfo/share/terminfo" extra/alacritty.info
             mkdir -p $out/nix-support
             echo "$terminfo" >> $out/nix-support/propagated-user-env-packages
+
           '';
 
           dontPatchELF = true;
@@ -153,7 +155,7 @@ in
       font = {
         normal = {
           family = "FiraCode Nerd Font";
-          style = "Regular";
+          style = "Light";
           size = 11;
           ligature = true;
         };

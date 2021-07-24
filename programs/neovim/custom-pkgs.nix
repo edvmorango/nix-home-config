@@ -58,5 +58,38 @@
 
   };
 
+  fzf-preview-vim = pkgs.vimUtils.buildVimPlugin {
+    name = "fzf-preview.vim";
+    src = pkgs.fetchFromGitHub {
+      owner = "yuki-yano";
+      repo = "fzf-preview.vim";
+      rev = "cffcaecec6771b6fd531878b0037c235f94ca800";
+      sha256 = "0azyacfw0dsf82s42gb0ximckg3vq3bjmn5n00fslvd3561fkdvk";
+    };
+
+  };
+
+  vim-bookmarks = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-bookmarks";
+    src = pkgs.fetchFromGitHub {
+      owner = "MattesGroeger";
+      repo = "vim-bookmarks";
+      rev = "3adeae10639edcba29ea80dafa1c58cf545cb80e";
+      sha256 = "1ikgs5cnqs9bhr8fqan8hg14px1j331l0b51yhnx00rmj4lr44bm";
+    };
+
+  };
+
+  vim-custom-rooter = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-rooter";
+    src = pkgs.fetchFromGitHub {
+      owner = "edvmorango";
+      repo = "vim-rooter";
+      rev = "6fc7bb5fc42275f9d62fb16debe599ed51cde692";
+      sha256 = "006fvzr8shhsz0kipv265i5vw499mrixrjr5573sbdwzqcrncpi5";
+    };
+
+  };
+
 
 }

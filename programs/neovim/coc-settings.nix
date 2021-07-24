@@ -1,6 +1,6 @@
 {
   "metals" = {
-    "serverVersion" = "0.10.3+18-7ef52f21-SNAPSHOT";
+    "serverVersion" = "0.10.4+95-8e23e067-SNAPSHOT";
     "superMethodLensesEnabled" = "true";
     "showInferredType" = "true";
     "codeLens.enable" = "true";
@@ -15,14 +15,16 @@
   "languageserver" = {
 
     "haskell" = {
-      "command" = "ghcide";
-      "args" = ["--lsp"];
+      "command" = "haskell-language-server-wrapper";
+      "args" = [ "--lsp" ];
       "rootPatterns" = [
-        "*.cabal"
         "stack.yaml"
+        "hie.yaml"
+        ".hie-bios"
+        "BUILD.bazel"
+        ".cabal"
         "cabal.project"
         "package.yaml"
-        "hie.yaml"
       ];
       "filetypes" = [
         "haskell"
@@ -40,5 +42,5 @@
 
     };
 
-      };
+  };
 }

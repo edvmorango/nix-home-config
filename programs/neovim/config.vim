@@ -22,7 +22,7 @@ set whichwrap+=<,>,h,l,[,]
 set linebreak
 set textwidth=120
 set expandtab "Tab to space
-set tabstop=2 "Number of spaces per tab
+se tabstop=2 "Number of spaces per tab
 set clipboard+=unnamedplus "copy paste 
 set laststatus=2
 set viewoptions=folds,options,cursor,unix,slash "UNIX better support
@@ -58,7 +58,7 @@ set termguicolors
 "inoremap <Left> <nop>
 "inoremap <Right> <nop>
 "vnoremap <Up> <nop>
-"vnoremap <Down> <nop>
+"vnsremap <Down> <nop>
 "vnoremap <Left> <nop>
 "vnoremap <Right> <nop>
 "noremap <PageUp> <nop>
@@ -103,7 +103,7 @@ endfunction
 
 "thme
 syntax enable
-"colorscheme tender
+"olorscheme tender
 "colorscheme darcula
 colorscheme deus
 set background=dark
@@ -124,7 +124,7 @@ function! CocCurrentFunction()
 endfunction
 
 let g:lightline = {
-      \ 'colorscheme': 'darculaOriginal',
+      \ 'colorscheme': 'deus',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'currentfunction', 'readonly', 'gitbranch' ,'filename', 'modified'] ]
@@ -147,12 +147,26 @@ au Syntax * RainbowParenthesesLoadBraces
 
 "enable AutoSave on Vim startup
 let g:auto_save = 1  
-"echodoc 
+" echodoc
 let g:echodoc#enable_at_startup=1 "shows showSignatureHelp trigerred by ( or [
 let g:echodoc#type = 'virtual'
 
+command! ProjectFiles execute 'Files' s:find_git_root()'
+
 " To use a custom highlight for the popup window, change Pmenu to your highlight group
 highlight link EchoDocPopup Pmenu 
+
+"easy align
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" identLine
+let g:indentLine_setColors = 0
+
 
 "hardtime
 "let g:hardtime_default_on = 0
@@ -164,9 +178,29 @@ set updatetime=100
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 set timeoutlen=500
 let g:which_key_vertical=1
+
 "fzf
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! ProjectFiles execute 'Files' s:find_git_root()
 nnoremap <silent> <C-p> :FZF  --keep-right --preview-window=up <CR>
+autocmd! FileType fzf tnoremap <buffer> <C-p> <c-c>
+
+
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 1, 'xoffset' : 1.0 } }
+
+"dev-icons
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
+
+if exists("g:loaded_webdevicons")
+	call webdevicons#refresh()
+endif
 "Nerdtree
 "
 let g:NERDTreeIndicatorMapCustom = {
@@ -181,15 +215,24 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-let g:NERDTreeDirArrowExpandable = '>'
-let g:NERDTreeDirArrowCollapsible = ''
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 0
+let g:NERDTreeDirArrows = 1
 let NERDTreeShowHidden=1
 
 "autocmd BufEnter * lcd %:p:h
-map <C-F> :NERDTreeToggle<CR>
+set autochdir "change directory to file
+let g:NERDTreeChDirMode = 2
+
+
+function ToggleCWD()
+  exec ':NERDTreeToggle' getcwd()
+endfunction
+
+
+map <C-F> :call ToggleCWD()  <CR>
 map <C-S> :NERDTreeFind<CR>
 
 "Disable the annoying and useless ex-mode
@@ -231,8 +274,56 @@ let g:vista#renderer#icons = {
 
 nnoremap <silent> <C-l> :Vista!! <CR>
 
+"vim-rooter
+"let g:rooter_patterns = ['.vimdir', '.vimsubdir']
+let g:rooter_manual_only = 1
+
+function RooterRoot()
+  exec ":call CustomRooter(['.vimdir'])" 
+endfunction
+
+function RooterSub()
+  exec ":call CustomRooter(['.vimsubdir'])"
+endfunction
+
+
+nnoremap <leader>rr  :call RooterRoot() <CR> 
+nnoremap <leader>rs  :call RooterSub() <CR> 
+
+
 "pgsql-vim
 let g:sql_type_default = 'pgsql'
+
+"vim-bookmarks
+let g:bookmarksave_per_working_dir = 1
+let g:bookmark_auto_save = 1
+
+let g:bookmark_no_default_key_mappings = 1
+function! BookmarkMapKeys()
+    nmap mm :BookmarkToggle<CR>
+    nmap mi :BookmarkAnnotate<CR>
+    nmap mn :BookmarkNext<CR>
+    nmap mp :BookmarkPrev<CR>
+    nmap ma :BookmarkShowAll<CR>
+    nmap mc :BookmarkClear<CR>
+    nmap mx :BookmarkClearAll<CR>
+    nmap mkk :BookmarkMoveUp
+    nmap mjj :BookmarkMoveDown
+endfunction
+function! BookmarkUnmapKeys()
+    unmap mm
+    unmap mi
+    unmap mn
+    unmap mp
+    unmap ma
+    unmap mc
+    unmap mx
+    unmap mkk
+    unmap mjj
+endfunction
+autocmd BufEnter * :call BookmarkMapKeys()
+autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
+
 
 "Custom maps
 
