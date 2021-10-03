@@ -15,11 +15,19 @@ let
     ##themes
     lightline-vim
     vim-devicons
-    darcula
     vim-deus
+    onedark-vim
+    vim-one
+    neodark-vim
     #tender-vim
     ##editor
     nerdtree
+    treesitter
+    #lua-vim
+    #   plenary-nvim
+    completion-nvim
+    #coq-nvim
+    #coq-artifacts
     #nerdtree-git-plugin
     vim-subversive #replacement \ + s
     vim-easy-align
@@ -40,6 +48,7 @@ let
     vim-bookmarks
     vim-which-key
     vim-auto-save
+    vim-maximizer
     #vim-hardtime
   ];
 
@@ -60,8 +69,9 @@ let
     vim-ormolu
   ];
 
-  scalaPlugins = with plugins; [
+  scalaPlugins = with allPkgs; [
     vim-scala
+    #nvim-metals
   ];
 
   elixirPlugins = with plugins; [
@@ -73,16 +83,33 @@ let
     pgsql
   ];
 
+  telescopePlugins = with allPkgs; [
+    plenary
+    nvim-web-devicons
+    telescope
+    telescope-neoclip
+    telescope-coc
+    telescope-lsp-handlers
+    telescope-media-files
+    telescope-tele-tabby
+    telescope-hoogle
+  ];
+
+
   neovim5 = customPkgs.neovim5;
 
-  allPlugins = generalPlugins ++ cocPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ elixirPlugins ++ sqlPlugins;
+
+
+  allPlugins = generalPlugins ++ cocPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ elixirPlugins ++ sqlPlugins ++ telescopePlugins;
 
   vimConfig = builtins.readFile ./config.vim;
   ormoluConfig = builtins.readFile ./plugins/ormolu.vim;
+  metalsConfig = builtins.readFile ./plugins/metals.vim;
   cocConfig = builtins.readFile ./plugins/coc.vim;
+  telescopeConfig = builtins.readFile ./plugins/telescope.vim;
   cocSettings = builtins.toJSON (import ./coc-settings.nix);
 
-  allConfig = vimConfig + cocConfig + ormoluConfig;
+  allConfig = vimConfig + cocConfig + ormoluConfig + telescopeConfig; #+ metalsConfig
 
 in
 {

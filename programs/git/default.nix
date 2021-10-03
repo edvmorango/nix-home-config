@@ -15,6 +15,8 @@ in
       "*.direnv"
       ".env"
       ".flyway.conf"
+      ".vimdir"
+      ".vimsubdir"
     ];
     userEmail = "edvmorango@gmail.com";
     userName = " J.Eduardo V.Morango ";

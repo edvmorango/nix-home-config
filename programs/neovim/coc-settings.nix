@@ -1,9 +1,13 @@
 {
   "metals" = {
-    "serverVersion" = "0.10.4+95-8e23e067-SNAPSHOT";
+    "serverVersion" = "0.10.7+74-b68f0c82-SNAPSHOT";
     "superMethodLensesEnabled" = "true";
     "showInferredType" = "true";
+    "showImplicitArguments" = "true";
+    "showImplicitConversionsAndClasses" = "true";
+    "enableIdentOnPaste" = "true";
     "codeLens.enable" = "true";
+    "statusBarEnabled" = "true";
   };
 
   "coc.preferences.formatOnSaveFiletypes" = [
@@ -30,7 +34,7 @@
         "haskell"
         "lhaskell"
         "hs"
-        "lhs"
+        "lh"
       ];
     };
 

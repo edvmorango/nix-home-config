@@ -6,7 +6,12 @@ let
 
   arionPkg = (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) {}).arion;
 
+
+
+
   defaultPkgs = with pkgs; [
+    coursier
+    bloop
     git
     git-lfs
     niv
@@ -33,6 +38,8 @@ let
     procs
     zoxide
     openvpn
+    sqlite
+    whatsapp-for-linux
   ];
 
   unstablePkgs = with unstable; [
@@ -48,6 +55,7 @@ let
     firefox
     brave
     #documents
+    file
     manix
     mupdf
     #programs
@@ -65,6 +73,11 @@ let
     insomnia
     jetbrains.idea-ultimate
     steam-run
+    #libs
+    openssl
+    chrpath
+    patchelf
+    zlib
   ];
 
 
@@ -78,7 +91,10 @@ let
     nix-tree
   ];
 
-  customPkgs = [ arionPkg ];
+  customPkgs = [
+    arionPkg
+
+  ];
 
 in
 {
@@ -87,7 +103,7 @@ in
   programs.direnv = {
     enable = true;
     enableFishIntegration = true;
-    enableNixDirenvIntegration = true;
+    nix-direnv.enable = true;
   };
 
   programs.fzf = {
@@ -115,6 +131,7 @@ in
     #./programs/rofi/default.nix
     ./programs/tmux/default.nix
     ./programs/git/default.nix
+    #./programs/mbt2/default.nix
   ];
 
 

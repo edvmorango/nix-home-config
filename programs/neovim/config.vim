@@ -105,10 +105,20 @@ endfunction
 syntax enable
 "olorscheme tender
 "colorscheme darcula
-colorscheme deus
-set background=dark
-let g:deus_termcolors=256
+"colorscheme deus
+"colorscheme onedark
+"set background=dark
+"colorscheme one
+"
 
+colorscheme neodark
+set background=dark 
+
+let g:one_allow_italics = 1
+let g:deus_termcolors=256
+let g:onedark_termcolors=25
+let g:neodark#use_256color = 1 
+let g:neodark#terminal_transparent = 1
 "floaterm
 let g:floaterm_keymap_new    = '<F7>'
 let g:floaterm_keymap_prev   = '<C-w>'
@@ -124,7 +134,7 @@ function! CocCurrentFunction()
 endfunction
 
 let g:lightline = {
-      \ 'colorscheme': 'deus',
+      \ 'colorscheme': 'neodark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'currentfunction', 'readonly', 'gitbranch' ,'filename', 'modified'] ]
@@ -185,8 +195,10 @@ function! s:find_git_root()
 endfunction
 
 command! ProjectFiles execute 'Files' s:find_git_root()
-nnoremap <silent> <C-p> :FZF  --keep-right --preview-window=up <CR>
-autocmd! FileType fzf tnoremap <buffer> <C-p> <c-c>
+
+"
+"nnoremap <silent> <C-p> :FZF  --keep-right --preview-window=up <CR>
+"autocmd! FileType fzf tnoremap <buffer> <C-p> <c-c>
 
 
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 1, 'xoffset' : 1.0 } }
@@ -206,7 +218,7 @@ endif
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "ᵐ",
     \ "Staged"    : "ˢ",
-   \ "Untracked" : "ᵘ",
+    \ "Untracked" : "ᵘ",
     \ "Renamed"   : "ʳ",
     \ "Unmerged"  : "ᶴ",
     \ "Deleted"   : "ˣ",
@@ -222,6 +234,7 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 let NERDTreeShowHidden=1
 
+let NERDTreeIgnore = ['^.git$[[dir]]', '^.target$[[dir]]']
 "autocmd BufEnter * lcd %:p:h
 set autochdir "change directory to file
 let g:NERDTreeChDirMode = 2
@@ -290,6 +303,8 @@ endfunction
 nnoremap <leader>rr  :call RooterRoot() <CR> 
 nnoremap <leader>rs  :call RooterSub() <CR> 
 
+"vim-maximizer
+let g:maximizer_set_default_mapping = 1
 
 "pgsql-vim
 let g:sql_type_default = 'pgsql'
