@@ -1,5 +1,10 @@
 lua << EOF
 
+require('neoclip').setup()
+
+require("harpoon").setup()
+
+
 
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)
@@ -19,6 +24,8 @@ require'nvim-web-devicons'.setup {
 require('telescope').load_extension('coc')
 require('telescope').load_extension('hoogle')
 require('telescope').load_extension('tele_tabby')
+require("telescope").load_extension('harpoon')
+
 
 require('telescope').setup{
   defaults = {
@@ -44,18 +51,21 @@ require('telescope').setup{
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
-    tele_tabby = {
-      use_highlighter = true,
+    tele_tabby = {      use_highlighter = true,
     }  
   }
 }
+
+
  
 EOF
+
+nnoremap <silent> <c-m> :lua require("harpoon.mark").add_file()<CR>
 
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>g  <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>qq <cmd>Telescope quickfix<cr>
@@ -64,11 +74,19 @@ nnoremap <silent> <space>d  :<C-u>Telescope coc workspace_diagnostics<cr>
 nnoremap <silent> <space>c  :<C-u>Telescope coc commands<cr>
 nnoremap <silent> <space>s  :<C-u>Telescope coc document_symbols<cr>
 nnoremap <silent> <space>a  :<C-u>Telescope coc line_code_actions<cr>
+nnoremap <silent> <space>f  :<C-u>Telescope coc file_code_actions<cr>
+
+nnoremap <silent> <space>h  :<C-u>Telescope hoogle<cr>
+
+
+
 
 nmap <silent> gd <cmd>Telescope coc definitions<cr>
 nmap <silent> gy <cmd>Telescope coc type_definitions<cr>
-nmap <silent> gi <cmd>Telescope coc implementation<cr>
+nmap <silent> gi <cmd>Telescope coc implementations<cr>
 nmap <silent> gr <cmd>Telescope coc references<cr>
 
 nnoremap <silent> <C-p> <cmd>Telescope find_files<cr>
 
+nmap <silent> z <cmd>Telescope neoclip a extra=star,plus,b<cr>
+nmap <silent> q <cmd>Telescope harpoon marks<cr>

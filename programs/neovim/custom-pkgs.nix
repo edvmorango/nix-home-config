@@ -32,8 +32,8 @@
     src = pkgs.fetchFromGitHub {
       owner = "AckslD";
       repo = "nvim-neoclip.lua";
-      rev = "ecf149d4baab347a101d427c3d472730504182e8";
-      sha256 = "05bbqyixchy53v59c0wpn6r5sb3d0cn3y1c6fznrgk4dx1pq7zp8";
+      rev = "d859891e4bff9729ad6e63bd4aebc51946de8786";
+      sha256 = "17dbvr1y7hzrv04c89b4nmgmgg0qccrkz6qsh7vsava0lvjs4zm5";
     };
   };
 
@@ -234,5 +234,27 @@
       sha256 = "1fkwbs6lpxrks3wb3l5laxjraxwwzlmmw7i4r7yawa2kyf05hvvy";
     };
   };
+
+  vim-cabalfmt = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "vim-cabalfmt";
+    src = pkgs.fetchFromGitHub {
+      owner = "sdiehl";
+      repo = "vim-cabalfmt";
+      rev = "90f544ee637ee16f5acad01f4d7952734c7baed0";
+      sha256 = "0hrxiv92qm7kxqbscnz1vk8m3gy2sh925faygzcbc94gjvriba1y";
+    };
+  };
+
+  nvim-harpoon = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "harpoon";
+    src = pkgs.fetchFromGitHub {
+      owner = "ThePrimeagen";
+      repo = "harpoon";
+      rev = "b2bb0d6f2b8a55895afda53f0ad04527998d3411";
+      sha256 = "0izsscglfk6lpisxvarr0qw4m9br8854wi6jhyp2msd8r9gcrzi7";
+    };
+  };
+
+
 
 }

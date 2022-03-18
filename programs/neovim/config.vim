@@ -252,6 +252,9 @@ map <C-S> :NERDTreeFind<CR>
 nnoremap Q <Nop>
 nnoremap gQ <Nop>
 
+"cabal-fmt
+let g:cabalfmt_options=["--indent 2"]
+autocmd BufWritePre *.cabal :call RunCabal()
 
 "subversive
 nmap <leader>s <plug>(SubversiveSubvertRange)

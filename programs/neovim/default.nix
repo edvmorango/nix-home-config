@@ -67,6 +67,7 @@ let
     ghcid
     vim-hoogle
     vim-ormolu
+    vim-cabalfmt
   ];
 
   scalaPlugins = with allPkgs; [
@@ -93,6 +94,7 @@ let
     telescope-media-files
     telescope-tele-tabby
     telescope-hoogle
+    nvim-harpoon
   ];
 
 

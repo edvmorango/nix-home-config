@@ -1,6 +1,6 @@
 {
   "metals" = {
-    "serverVersion" = "0.10.7+74-b68f0c82-SNAPSHOT";
+    "serverVersion" = "0.11.2+74-7a6a65a7-SNAPSHOT";
     "superMethodLensesEnabled" = "true";
     "showInferredType" = "true";
     "showImplicitArguments" = "true";
@@ -19,7 +19,7 @@
   "languageserver" = {
 
     "haskell" = {
-      "command" = "haskell-language-server-wrapper";
+      "command" = "haskell-language-server";
       "args" = [ "--lsp" ];
       "rootPatterns" = [
         "stack.yaml"

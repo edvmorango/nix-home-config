@@ -17,9 +17,15 @@ let
 
   fishPlugins = pkgs.callPackage ./custom.nix {};
 
+  customAliases = ''
+    alias docker-kill="docker kill (docker ps -q)"
+  '';
+
   fishConfig = ''
     set fish_greeting
-  '' + fzfConfig + themeConfig;
+  '' + fzfConfig + themeConfig + customAliases;
+
+
 in
 {
   programs.fish = {

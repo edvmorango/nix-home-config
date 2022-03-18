@@ -4,10 +4,9 @@ let
 
   unstable = import (import ./unstable-packages.nix) {};
 
+  unstable2 = import (import ./unstable-packages2.nix) {};
+
   arionPkg = (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) {}).arion;
-
-
-
 
   defaultPkgs = with pkgs; [
     coursier
@@ -24,6 +23,7 @@ let
     slack
     xclip
     vscode
+    iptables
     #postman
     tor
     lorri
@@ -40,6 +40,14 @@ let
     openvpn
     sqlite
     whatsapp-for-linux
+    google-chrome
+    libreoffice
+    keybase
+    keybase-gui
+    kbfs
+    gnupg
+    pinentry
+    mongodb-compass
   ];
 
   unstablePkgs = with unstable; [
@@ -51,6 +59,7 @@ let
     pulsemixer
     #media
     vlc
+    qbittorrent
     #browsers
     firefox
     brave
@@ -73,21 +82,24 @@ let
     insomnia
     jetbrains.idea-ultimate
     steam-run
+    postman
     #libs
     openssl
     chrpath
     patchelf
     zlib
+    #vpn
+    unstable2.globalprotect-openconnect
   ];
 
 
   haskellPkgs = with pkgs.haskellPackages; [
-    brittany
-    cabal2nix
-    cabal-install
-    ghc
-    haskell-language-server
-    hoogle
+    #brittany
+    #cabal2nix
+    #cabal-install
+    #  ghc
+    #haskell-language-server
+    #hoogle
     nix-tree
   ];
 
@@ -104,6 +116,7 @@ in
     enable = true;
     enableFishIntegration = true;
     nix-direnv.enable = true;
+    nix-direnv.enableFlakes = true;
   };
 
   programs.fzf = {
