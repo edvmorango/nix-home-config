@@ -4,8 +4,6 @@ let
 
   unstable = import (import ./unstable-packages.nix) {};
 
-  unstable2 = import (import ./unstable-packages2.nix) {};
-
   arionPkg = (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) {}).arion;
 
   defaultPkgs = with pkgs; [
@@ -88,24 +86,15 @@ let
     chrpath
     patchelf
     zlib
-    #vpn
-    unstable2.globalprotect-openconnect
   ];
 
 
   haskellPkgs = with pkgs.haskellPackages; [
-    #brittany
-    #cabal2nix
-    #cabal-install
-    #  ghc
-    #haskell-language-server
-    #hoogle
     nix-tree
   ];
 
   customPkgs = [
     arionPkg
-
   ];
 
 in
@@ -144,7 +133,6 @@ in
     #./programs/rofi/default.nix
     ./programs/tmux/default.nix
     ./programs/git/default.nix
-    #./programs/mbt2/default.nix
   ];
 
 
