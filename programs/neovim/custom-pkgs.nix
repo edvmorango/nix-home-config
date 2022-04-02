@@ -2,6 +2,15 @@
 
 {
 
+  vim-scala3 = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "vim-scala3";
+    src = builtins.fetchTarball {
+      name = "vim-scala3";
+      url = "https://github.com/gvolpe/vim-scala/archive/7379894.tar.gz";
+      sha256 = "1y9sjmcyv1ihkb0a3hxz85d0h2k9digczj7ppfrga2mj67lgwj4m";
+    };
+  };
+
   neovim5 = pkgs.neovim-unwrapped.overrideAttrs (
     old: {
       name = "neovim-5.0.0";
@@ -47,6 +56,26 @@
     };
   };
 
+  scaladex-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "scaladex.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "softinio";
+      repo = "scaladex.nvim";
+      rev = "93dddf53450c0563da8efec917b5301c581d8d6f";
+      sha256 = "12vkq1zbvi6v1nyc1v75b2qh7za9h1f7xswmxlvn2j31xrm5yq66";
+    };
+  };
+
+  telescope-command-palette = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "telescope-command-palette.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "LinArcX";
+      repo = "telescope-command-palette.nvim";
+      rev = "1944d6312b29a0b41531ea3cf3912f03e4eb1705";
+      sha256 = "04mvffc813v783jhvq6ng8x4n2wp7mi96g8mmrxi3a7a8h84qh53";
+    };
+  };
+
   telescope-lsp-handlers = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "telescope-lsp-handlers";
     src = pkgs.fetchFromGitHub {
@@ -57,6 +86,15 @@
     };
   };
 
+  telescope-changes = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "telescope-changes.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "LinArcX";
+      repo = "telescope-changes.nvim";
+      rev = "7ed65f3698be4b5f7a9cdeb88a657bfa866dcb3c";
+      sha256 = "17vyg2hz728hsjynwgywgb4k74583b2klw8xnm051yrfrw6zywqx";
+    };
+  };
 
   telescope-media-files = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "telescope-media-files";

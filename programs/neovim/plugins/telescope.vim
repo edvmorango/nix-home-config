@@ -1,9 +1,8 @@
 lua << EOF
 
+
 require('neoclip').setup()
-
 require("harpoon").setup()
-
 
 
 require'nvim-web-devicons'.setup {
@@ -25,6 +24,10 @@ require('telescope').load_extension('coc')
 require('telescope').load_extension('hoogle')
 require('telescope').load_extension('tele_tabby')
 require("telescope").load_extension('harpoon')
+require('telescope').load_extension('changes')
+require('telescope').load_extension('command_palette')
+require('telescope').load_extension('scaladex')
+
 
 
 require('telescope').setup{

@@ -49,6 +49,7 @@ let
     vim-which-key
     vim-auto-save
     vim-maximizer
+    vim-scala3
     #vim-hardtime
   ];
 
@@ -94,7 +95,10 @@ let
     telescope-media-files
     telescope-tele-tabby
     telescope-hoogle
+    telescope-changes
+    telescope-command-palette
     nvim-harpoon
+    scaladex-nvim
   ];
 
 

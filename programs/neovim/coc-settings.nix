@@ -1,6 +1,6 @@
 {
   "metals" = {
-    "serverVersion" = "0.11.2+74-7a6a65a7-SNAPSHOT";
+    "serverVersion" = "0.11.2";
     "superMethodLensesEnabled" = "true";
     "showInferredType" = "true";
     "showImplicitArguments" = "true";
