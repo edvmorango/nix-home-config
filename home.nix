@@ -1,10 +1,14 @@
-{ config, lib, pkgs, ... }:
+{ config
+, lib
+, pkgs
+, ...
+}:
 
 let
 
-  unstable = import (import ./unstable-packages.nix) {};
+  #unstable = import (import ./unstable-packages.nix) {};
 
-  arionPkg = (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) {}).arion;
+  arionPkg = (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) { }).arion;
 
   defaultPkgs = with pkgs; [
     coursier
@@ -18,9 +22,8 @@ let
     docker-compose
     dive
     exa
-    slack
     xclip
-    vscode
+    # vscode
     iptables
     #postman
     tor
@@ -38,21 +41,19 @@ let
     openvpn
     sqlite
     whatsapp-for-linux
-    google-chrome
     libreoffice
     keybase
     keybase-gui
     kbfs
     gnupg
     pinentry
-    mongodb-compass
   ];
 
-  unstablePkgs = with unstable; [
+  impurePkgs = with pkgs; [
     #audio
     pavucontrol
     paprefs
-    pasystray
+    #pasystray
     playerctl
     pulsemixer
     #media
@@ -68,19 +69,20 @@ let
     #programs
     discord
     zoom-us
+    slack
+    google-chrome
+    mongodb-compass
     obs-studio
     tdesktop
-    #steam
-    # iterm1
-    #kubectl
-    #kops
+    insomnia
+    jetbrains.idea-ultimate
+    postman
+    #dev
+    kubectl
+    kops
     pritunl-ssh
     awscli2
     bat
-    insomnia
-    jetbrains.idea-ultimate
-    steam-run
-    postman
     #libs
     openssl
     chrpath
@@ -89,9 +91,10 @@ let
   ];
 
 
-  haskellPkgs = with pkgs.haskellPackages; [
-    nix-tree
-  ];
+  haskellPkgs = with pkgs.haskellPackages;
+    [
+      nix-tree
+    ];
 
   customPkgs = [
     arionPkg
@@ -100,27 +103,23 @@ let
 in
 {
 
-  programs.home-manager.enable = true;
-  programs.direnv = {
-    enable = true;
-    enableFishIntegration = true;
-    nix-direnv.enable = true;
-    nix-direnv.enableFlakes = true;
-  };
-
-  programs.fzf = {
-    enable = true;
-    enableFishIntegration = true;
-
-  };
-
-
   home = {
-    homeDirectory = "/home/edvmorango";
-    username = "edvmorango";
-    packages = defaultPkgs ++ unstablePkgs ++ customPkgs ++ haskellPkgs;
-    stateVersion = "21.05";
+    packages = defaultPkgs ++ customPkgs ++ haskellPkgs ++ impurePkgs; #;
+  };
 
+  programs = {
+    home-manager.enable = true;
+    direnv = {
+      enable = true;
+      #    enableFishIntegration = true;
+      nix-direnv.enable = true;
+    };
+
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+
+    };
 
   };
 
@@ -137,3 +136,4 @@ in
 
 
 }
+

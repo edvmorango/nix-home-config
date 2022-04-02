@@ -31,7 +31,7 @@ in
   programs.fish = {
     enable = true;
     plugins = [ fishPlugins.theme ];
-    promptInit = ''
+    interactiveShellInit = ''
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source
     '';

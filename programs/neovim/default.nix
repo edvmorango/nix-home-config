@@ -81,9 +81,7 @@ let
     alchemist-vim
   ];
 
-  sqlPlugins = with allPkgs; [
-    pgsql
-  ];
+  sqlPlugins = with allPkgs; [];
 
   telescopePlugins = with allPkgs; [
     plenary

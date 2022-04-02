@@ -168,17 +168,6 @@
     };
   };
 
-  pgsql = pkgs.vimUtils.buildVimPlugin {
-    name = "pgsql-vim";
-    src = pkgs.fetchFromGitHub {
-      owner = "lifepillar";
-      repo = "lifepillar";
-      rev = "51521a89018efb58aa6c530b8426936e6e2a85a9";
-      sha256 = "0y2msc5dc8a263n0xba50ddbhi4aaj7pi9f6sda05id5g2pw2kx3";
-    };
-
-  };
-
   fzf-preview-vim = pkgs.vimUtils.buildVimPlugin {
     name = "fzf-preview.vim";
     src = pkgs.fetchFromGitHub {
