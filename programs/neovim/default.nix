@@ -6,7 +6,8 @@ let
   plugins = pkgs.vimPlugins;
 
   # Plugins which need a custom config
-  customPkgs = pkgs.callPackage ./custom-pkgs.nix {};
+  customPkgs = pkgs.callPackage ./custom-pkgs.nix { };
+
 
 
   allPkgs = plugins // customPkgs;
@@ -25,8 +26,14 @@ let
     treesitter
     #lua-vim
     #   plenary-nvim
-    completion-nvim
-    #coq-nvim
+    #completion-nvim
+    nvim-metals-pkg
+    nvim-lspconfig-pkg
+    nvim-cmp-pkg
+    cmp-nvim-lsp
+    luasnip
+    cmp-luasnip
+    nvim-notify
     #coq-artifacts
     #nerdtree-git-plugin
     vim-subversive #replacement \ + s
@@ -54,9 +61,9 @@ let
   ];
 
   cocPlugins = with allPkgs; [
-    coc-nvim
-    coc-metals
-    coc-elixir
+    # coc-nvim
+    # coc-metals
+    #coc-elixir
   ];
 
   nixPlugins = with plugins; [
@@ -81,7 +88,7 @@ let
     alchemist-vim
   ];
 
-  sqlPlugins = with allPkgs; [];
+  sqlPlugins = with allPkgs; [ ];
 
   telescopePlugins = with allPkgs; [
     plenary
@@ -100,33 +107,39 @@ let
   ];
 
 
-  neovim5 = customPkgs.neovim5;
+  neovimPkg = customPkgs.neovim-pkg;
 
 
 
   allPlugins = generalPlugins ++ cocPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ elixirPlugins ++ sqlPlugins ++ telescopePlugins;
 
   vimConfig = builtins.readFile ./config.vim;
+  cmpConfig =   builtins.readFile ./plugins/cmp.vim;
   ormoluConfig = builtins.readFile ./plugins/ormolu.vim;
   metalsConfig = builtins.readFile ./plugins/metals.vim;
-  cocConfig = builtins.readFile ./plugins/coc.vim;
+  #cocConfig = builtins.readFile ./plugins/coc.vim;
   telescopeConfig = builtins.readFile ./plugins/telescope.vim;
+  notifyConfig = builtins.readFile ./plugins/notify.vim;
   cocSettings = builtins.toJSON (import ./coc-settings.nix);
 
-  allConfig = vimConfig + cocConfig + ormoluConfig + telescopeConfig; #+ metalsConfig
+  allConfig = vimConfig + ormoluConfig + telescopeConfig + notifyConfig + cmpConfig + metalsConfig;
+  # + cocConFIG
 
 in
 {
   programs.neovim = {
     enable = true;
     extraConfig = allConfig;
-    package = neovim5;
+    package = neovimPkg;
     plugins = allPlugins;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
     withNodeJs = true; # for coc.nvim
     withPython3 = true; # for plugins
+
+
+    extraPython3Packages = p: with p; [ pyyaml pynvim ];
   };
 
 

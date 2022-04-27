@@ -6,12 +6,11 @@
 
 let
 
-  #unstable = import (import ./unstable-packages.nix) {};
 
   arionPkg = (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) { }).arion;
 
   defaultPkgs = with pkgs; [
-    coursier
+    tree-sitter
     bloop
     git
     git-lfs
@@ -129,7 +128,7 @@ in
     ./programs/fish/default.nix
     ./programs/neovim/default.nix
     ./programs/alacritty/default.nix
-    #./programs/rofi/default.nix
+    ./programs/rofi/default.nix
     ./programs/tmux/default.nix
     ./programs/git/default.nix
   ];

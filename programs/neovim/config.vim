@@ -138,11 +138,11 @@ let g:lightline = {
       \ 'colorscheme': 'neodark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'cocstatus', 'currentfunction', 'readonly', 'gitbranch' ,'filename', 'modified'] ]
+      \             [  'currentfunction', 'readonly', 'gitbranch' ,'filename', 'modified'] ]
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
-      \   'cocstatus': 'coc#status',
+      \   'cocstatus': vim.g['metals_status'],
       \   'currentfunction': 'CocCurrentFunction'
       \ },
       \ }
@@ -150,10 +150,10 @@ let g:lightline = {
 let g:airline_powerline_fonts=1
 
 "rainbow_parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
 
 
 "enable AutoSave on Vim startup
@@ -307,6 +307,8 @@ endfunction
 nnoremap <leader>rr  :call RooterRoot() <CR> 
 nnoremap <leader>rs  :call RooterSub() <CR> 
 
+"notify
+
 "vim-maximizer
 let g:maximizer_set_default_mapping = 1
 
@@ -346,4 +348,3 @@ autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 
 "Custom maps
 
-nnoremap <space>d :noh <CR>

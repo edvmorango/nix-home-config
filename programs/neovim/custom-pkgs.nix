@@ -2,6 +2,33 @@
 
 {
 
+
+  neovim-pkg = pkgs.neovim-unwrapped.overrideAttrs (
+    old: {
+      name = "neovim";
+      version = "v0.7.0";
+      src = pkgs.fetchFromGitHub
+        {
+          owner = "neovim";
+          repo = "neovim";
+          rev = "v0.7.0";
+          sha256 = "sha256-eYYaHpfSaYYrLkcD81Y4rsAMYDP1IJ7fLJJepkACkA8=";
+        };
+      buildInputs = old.buildInputs ++ [ pkgs.tree-sitter ];
+    }
+  );
+
+  nvim-lspconfig-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "lspconfig";
+    src = pkgs.fetchFromGitHub {
+      owner = "neovim";
+      repo =  "nvim-lspconfig";
+      rev =  "ad9903c66bac88f344890acb6532f63f1cd4dac3";
+      sha256 = "10fg52g53yk0d10rm96kw907wdkgqw762ib6530zrnw7p8fbm2ms";
+    };
+  };
+
+
   vim-scala3 = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "vim-scala3";
     src = builtins.fetchTarball {
@@ -11,28 +38,60 @@
     };
   };
 
-  neovim5 = pkgs.neovim-unwrapped.overrideAttrs (
-    old: {
-      name = "neovim-5.0.0";
-      version = "v0.5.0";
-      src = pkgs.fetchFromGitHub {
-        owner = "neovim";
-        repo = "neovim";
-        rev = "a5ac2f45ff84a688a09479f357a9909d5b914294";
-        sha256 = "0lgbf90sbachdag1zm9pmnlbn35964l3khs27qy4462qzpqyi9fi";
-      };
+  #  neovim5 = pkgs.neovim-unwrapped.overrideAttrs (
+  #    old: {
+  #      name = "neovim-5.0.0";
+  #      version = "v0.5.0";
+  #      src = pkgs.fetchFromGitHub {
+  #        owner = "neovim";
+  #        repo = "neovim";
+  #        rev = "a5ac2f45ff84a688a09479f357a9909d5b914294";
+  #        sha256 = "0lgbf90sbachdag1zm9pmnlbn35964l3khs27qy4462qzpqyi9fi";
+  #};
 
-      buildInputs = old.buildInputs ++ [ pkgs.tree-sitter ];
-    }
-  );
+  # buildInputs = old.buildInputs ++ [ pkgs.tree-sitter ];
+  #}
+  #);
+
+  nvim-cmp-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "nvim-cmp";
+    src = pkgs.fetchFromGitHub {
+       owner = "hrsh7th";
+       repo = "nvim-cmp";
+       rev = "433af3dffce64cbd3f99bdac9734768a6cc41951";
+      sha256 = "0r3va6syk6vfhs909p4r5p4h3ifyy5f4rk0m9jnvwblg9cjy17sw";
+    };
+  };
+
+  luasnip = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "LuaSnip";
+    src = pkgs.fetchFromGitHub {
+      owner = "L3MON4D3";
+      repo = "LuaSnip";
+      rev = "6b67cb12747225a6412d8263bb97d6d2b8d9366a";
+      sha256 = "08a1kk8z3mcq65dh0hi44188dxkqjfg3yilr8viamyni1kwy7gf3";
+    };
+  };
+
+  cmp-luasnip = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "cmp_luasnip";
+    src = pkgs.fetchFromGitHub {
+      owner = "saadparwaiz1";
+      repo = "cmp_luasnip";
+      rev = "b10829736542e7cc9291e60bab134df1273165c9";
+      sha256 = "1qygdas99m7py98rqxyza88lmk2as8yi9khjac603x6anxmq766l";
+    };
+  };
+
+
 
   telescope = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "telescope.nvim";
     src = pkgs.fetchFromGitHub {
       owner = "nvim-telescope";
       repo = "telescope.nvim";
-      rev = "440c598de419858a056e7d9d42a0a6829cd5bb05";
-      sha256 = "08rv6jd7r07n1pj7wjnwlq2wh25vp1hv5kkfywjavrvmb1ka6ik6";
+      rev = "8b02088743c07c2f82aec2772fbd2b3774195448";
+      sha256 = "1ir6w7czd6xqk80nmppnpmykal78n8bjl1vjccp80zllrx3cidc7";
     };
   };
 
@@ -128,13 +187,13 @@
 
 
 
-  nvim-metals = pkgs.vimUtils.buildVimPluginFrom2Nix {
+  nvim-metals-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "nvim-metals";
     src = pkgs.fetchFromGitHub {
       owner = "scalameta";
       repo = "nvim-metals";
-      rev = "ffc3df0595c1502e0f000fbe6f7ed2de108d5f1d";
-      sha256 = "1mbc7avcls29b5h3m6hfn6g6x541f04j3w8j1icmkk2sc5p45gnq";
+      rev = "bc6f2ba6d6b2c5ffd65b41f3df74761a90e538da";
+      sha256 = "0fk41l2jmlhrylc9xbh4h9a35j106r0lr7rd0i2lp0acqai629qg";
     };
   };
 
@@ -237,8 +296,8 @@
     src = pkgs.fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "fc1c31a393a713f7a6fe34a829ac3d5e521de0be";
-      sha256 = "1if882555gydwbvgjz2zc50yszz3fsha3wi9rbvhjy76h4yd5a22";
+      rev = "b1e8b61a94955d747ba8ad02cd3c0dddb1bf883f";
+      sha256 = "047vzgqky7f5aas8ca9m5pif4cccjvxasf2zqiksz8j6nzj4sgf7";
     };
   };
 
@@ -285,3 +344,4 @@
 
 
 }
+

@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  gitConfig = {};
+  gitConfig = { };
 in
 {
   programs.git = {
@@ -17,6 +17,7 @@ in
       ".flyway.conf"
       ".vimdir"
       ".vimsubdir"
+      ".vimrootdir"
     ];
     userEmail = "edvmorango@gmail.com";
     userName = " J.Eduardo V.Morango ";
