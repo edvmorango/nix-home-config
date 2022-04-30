@@ -134,16 +134,17 @@ function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
 endfunction
 
+call lightline#lsp#register()
+
 let g:lightline = {
       \ 'colorscheme': 'neodark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [  'currentfunction', 'readonly', 'gitbranch' ,'filename', 'modified'] ]
+      \             [ 'lspstatus', 'currentfunction', 'readonly', 'gitbranch' ,'filename', 'modified'] ]
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
-      \   'cocstatus': vim.g['metals_status'],
-      \   'currentfunction': 'CocCurrentFunction'
+      \   'lspstatus': 'lightline#lsp#status'
       \ },
       \ }
 
@@ -278,7 +279,7 @@ set smartcase  " Case insensitive if no uppercase letter in pattern, case sensit
 "Vista
 let g:vista_icon_indent = ["=>", "|->"]
 
-let g:vista_default_executive = 'coc'
+let g:vista_default_executive = 'nvim-lspconfig'
 let g:vista_sidebar_width = 70
 let g:vista_fzf_preview = ['right:50%']
 
@@ -347,4 +348,9 @@ autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 
 
 "Custom maps
+"
+
+
+let g:coq_settings  = { 'xdg' : v:true, 'auto_start' : v:true}
+
 

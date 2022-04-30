@@ -29,11 +29,14 @@ let
     #completion-nvim
     nvim-metals-pkg
     nvim-lspconfig-pkg
+    lightline-lsp-pkg
     nvim-cmp-pkg
     cmp-nvim-lsp
     luasnip
     cmp-luasnip
     nvim-notify
+    lsp-status-pkg
+    #  nvim-cursorline
     #coq-artifacts
     #nerdtree-git-plugin
     vim-subversive #replacement \ + s
@@ -58,6 +61,7 @@ let
     vim-maximizer
     vim-scala3
     #vim-hardtime
+    coq_nvim
   ];
 
   cocPlugins = with allPkgs; [
@@ -114,15 +118,18 @@ let
   allPlugins = generalPlugins ++ cocPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ elixirPlugins ++ sqlPlugins ++ telescopePlugins;
 
   vimConfig = builtins.readFile ./config.vim;
-  cmpConfig =   builtins.readFile ./plugins/cmp.vim;
+  cmpConfig = builtins.readFile ./plugins/cmp.vim;
   ormoluConfig = builtins.readFile ./plugins/ormolu.vim;
   metalsConfig = builtins.readFile ./plugins/metals.vim;
   #cocConfig = builtins.readFile ./plugins/coc.vim;
   telescopeConfig = builtins.readFile ./plugins/telescope.vim;
   notifyConfig = builtins.readFile ./plugins/notify.vim;
+  rnixConfig = builtins.readFile ./plugins/rnix.vim;
+
+
   cocSettings = builtins.toJSON (import ./coc-settings.nix);
 
-  allConfig = vimConfig + ormoluConfig + telescopeConfig + notifyConfig + cmpConfig + metalsConfig;
+  allConfig = vimConfig + ormoluConfig + telescopeConfig + notifyConfig + metalsConfig + rnixConfig;
   # + cocConFIG
 
 in
@@ -139,7 +146,12 @@ in
     withPython3 = true; # for plugins
 
 
-    extraPython3Packages = p: with p; [ pyyaml pynvim ];
+    # extraPython3Packages = p: with p; 
+    # with callPackage ./custom/coq-nvim/python.nix p p p; [ 
+    #   pyyaml 
+    #   pynvim-pp 
+    #   std2 
+    # ];
   };
 
 

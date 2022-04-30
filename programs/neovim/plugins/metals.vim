@@ -6,7 +6,7 @@ set completeopt=menuone,noinsert,noselect
 lua << EOF
 
 local metals_config = require('metals').bare_config()
-
+local coc = require('coq')
 -- Example of settings
 metals_config.settings = {
   showImplicitArguments = true,
@@ -20,11 +20,12 @@ metals_config.settings = {
 -- docs about this
 -- metals_config.init_options.statusBarProvider = "on"
 
- metals_config.init_options.statusBarProvider = "on"
-
+metals_config.init_options.statusBarProvider = "on"
+metals_config.settings.serverVersion = "0.11.3"
 -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-metals_config.capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+metals_config.capabilities = coq.lsp_ensure_capabilities(capabilities)
+-- require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 -- Debug settings if you're using nvim-dap
 

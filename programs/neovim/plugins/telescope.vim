@@ -137,4 +137,3 @@ nnoremap <silent> <C-p> <cmd>Telescope find_files<cr>
 nmap <silent> z <cmd>Telescope neoclip a extra=star,plus,b<cr>
 nmap <silent> q <cmd>Telescope harpoon marks<cr>
       
-

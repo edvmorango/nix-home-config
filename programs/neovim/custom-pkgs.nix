@@ -22,12 +22,43 @@
     name = "lspconfig";
     src = pkgs.fetchFromGitHub {
       owner = "neovim";
-      repo =  "nvim-lspconfig";
-      rev =  "ad9903c66bac88f344890acb6532f63f1cd4dac3";
+      repo = "nvim-lspconfig";
+      rev = "ad9903c66bac88f344890acb6532f63f1cd4dac3";
       sha256 = "10fg52g53yk0d10rm96kw907wdkgqw762ib6530zrnw7p8fbm2ms";
     };
   };
 
+  virtual-types-nvim-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "virtual-types.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "jubnzv";
+      repo = "virtual-types.nvim";
+      rev = "31da847fa54b801f309a08123935626adda4aaad";
+      sha256 = "0kqg29xld064fz1xly1kc7wcyck62q5hjkb5fc5vrj0zdnrdzz22";
+    };
+  };
+
+  lsp-status-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "lsp-staus.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "nvim-lua";
+      repo = "lsp-status.nvim";
+      rev = "4073f766f1303fb602802075e558fe43e382cc92";
+      sha256 = "1aicy5n57ihpy1fkrv3bpxdcmwbdldl6pnxisndfk2h0l2vc1bp4";
+    };
+  };
+
+
+
+  lightline-lsp-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "lightline-lsp";
+    src = pkgs.fetchFromGitHub {
+      owner = "josa42";
+      repo = "nvim-lightline-lsp";
+      rev = "d9e61801f54c8824b59e93068865e3bc4f1ca0b8";
+      sha256 = "0sd38c4cp7i6prgr86b5nq9fhpi2h1yrn3ggs3d7my65ayz759m6";
+    };
+  };
 
   vim-scala3 = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "vim-scala3";
@@ -56,9 +87,9 @@
   nvim-cmp-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "nvim-cmp";
     src = pkgs.fetchFromGitHub {
-       owner = "hrsh7th";
-       repo = "nvim-cmp";
-       rev = "433af3dffce64cbd3f99bdac9734768a6cc41951";
+      owner = "hrsh7th";
+      repo = "nvim-cmp";
+      rev = "433af3dffce64cbd3f99bdac9734768a6cc41951";
       sha256 = "0r3va6syk6vfhs909p4r5p4h3ifyy5f4rk0m9jnvwblg9cjy17sw";
     };
   };
