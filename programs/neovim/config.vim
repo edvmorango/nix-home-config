@@ -143,7 +143,7 @@ let g:lightline = {
       \             [ 'lspstatus', 'currentfunction', 'readonly', 'gitbranch' ,'filename', 'modified'] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
+      \   'gitbranch': 'FugitiveHead',
       \   'lspstatus': 'lightline#lsp#status'
       \ },
       \ }

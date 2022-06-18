@@ -46,6 +46,10 @@ let
     kbfs
     gnupg
     pinentry
+    glxinfo
+    mesa.drivers
+    kitty
+    jq
   ];
 
   impurePkgs = with pkgs; [
@@ -120,6 +124,11 @@ in
 
     };
 
+    kitty = {
+      enable = true;
+      extraConfig = builtins.readFile programs/kitty/kitty.conf;
+    };
+
   };
 
   xdg.enable = false;
@@ -135,4 +144,5 @@ in
 
 
 }
+
 

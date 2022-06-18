@@ -62,6 +62,7 @@ let
     vim-scala3
     #vim-hardtime
     coq_nvim
+    nvim-jqx
   ];
 
   cocPlugins = with allPkgs; [
@@ -122,6 +123,7 @@ let
   ormoluConfig = builtins.readFile ./plugins/ormolu.vim;
   metalsConfig = builtins.readFile ./plugins/metals.vim;
   #cocConfig = builtins.readFile ./plugins/coc.vim;
+  jqxConfig = builtins.readFile ./plugins/jqx.vim;
   telescopeConfig = builtins.readFile ./plugins/telescope.vim;
   notifyConfig = builtins.readFile ./plugins/notify.vim;
   rnixConfig = builtins.readFile ./plugins/rnix.vim;
@@ -129,7 +131,7 @@ let
 
   cocSettings = builtins.toJSON (import ./coc-settings.nix);
 
-  allConfig = vimConfig + ormoluConfig + telescopeConfig + notifyConfig + metalsConfig + rnixConfig;
+  allConfig = vimConfig + ormoluConfig + telescopeConfig + notifyConfig + metalsConfig + jqxConfig + rnixConfig;
   # + cocConFIG
 
 in
