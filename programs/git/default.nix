@@ -20,6 +20,6 @@ in
       ".vimrootdir"
     ];
     userEmail = "edvmorango@gmail.com";
-    userName = " J.Eduardo V.Morango ";
+    userName = "J. Eduardo V. Morango";
   };
 }
