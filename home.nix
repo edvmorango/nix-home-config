@@ -50,6 +50,7 @@ let
     mesa.drivers
     kitty
     jq
+    sumneko-lua-language-server
   ];
 
   impurePkgs = with pkgs; [

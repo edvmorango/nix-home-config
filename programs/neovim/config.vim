@@ -350,7 +350,5 @@ autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 "Custom maps
 "
 
-
 let g:coq_settings  = { 'xdg' : v:true, 'auto_start' : v:true}
-
 

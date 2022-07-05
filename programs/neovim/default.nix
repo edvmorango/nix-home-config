@@ -127,11 +127,11 @@ let
   telescopeConfig = builtins.readFile ./plugins/telescope.vim;
   notifyConfig = builtins.readFile ./plugins/notify.vim;
   rnixConfig = builtins.readFile ./plugins/rnix.vim;
-
+  luaConfig = builtins.readFile ./plugins/lua.vim;
 
   cocSettings = builtins.toJSON (import ./coc-settings.nix);
 
-  allConfig = vimConfig + ormoluConfig + telescopeConfig + notifyConfig + metalsConfig + jqxConfig + rnixConfig;
+  allConfig = vimConfig + ormoluConfig + telescopeConfig + notifyConfig + metalsConfig + jqxConfig + rnixConfig + luaConfig;
   # + cocConFIG
 
 in
