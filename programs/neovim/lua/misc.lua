@@ -2,6 +2,8 @@ require('keys')
 
 local g = vim.g
 local fn = vim.fn
+local cmd = vim.cmd -- commands
+
 
 --autosave
 g.auto_save = true
@@ -57,3 +59,21 @@ g.floaterm_height      = 0.9
 
 Map('n', '<C-k>', '<cmd>FloatermToggle<CR>')
 Map('t', '<C-k>', '<C-\\><C-n><cmd>FloatermToggle<CR>')
+
+
+
+-- apparently normal! have dependencies, so isn't a good idea call the function directly from lua
+-- so I'm quoting
+function CenterCursorOnNext(forward)
+  if forward
+  then
+    cmd 'silent normal! n'
+    cmd 'silent normal! zz'
+  else
+    cmd 'silent normal! N'
+    cmd 'silent normal! zz'
+  end
+end
+
+Map('n', 'n', '<cmd>lua CenterCursorOnNext(true)<CR>', { silent = true })
+Map('n', 'N', '<cmd>lua CenterCursorOnNext(false)<CR>', { silent = true })

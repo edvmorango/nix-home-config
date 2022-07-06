@@ -1,30 +1,5 @@
-" Center after jump
-function! CenteredFindNext(forward)
-    " save the current value for later restore
-    let s:so_curr=&scrolloff
-    set scrolloff=999
-    try
-        if a:forward
-            silent normal! n
-        else
-            silent normal! N
-        endif
-    finally
-        " restore no matter what
-        let &scrolloff=s:so_curr
-    endtry
-endfunction
-
-:nnoremap <silent>n :call CenteredFindNext(1)<CR>
-:nnoremap <silent>N :call CenteredFindNext(0)<CR>
-
 
 "lightline
-
-function! CocCurrentFunction()
-    return get(b:, 'coc_current_function', '')
-endfunction
-
 call lightline#lsp#register()
 
 let g:lightline = {
@@ -40,8 +15,6 @@ let g:lightline = {
       \ }
 
 let g:airline_powerline_fonts=1
-
-
 
 
 command! ProjectFiles execute 'Files' s:find_git_root()'
@@ -171,37 +144,6 @@ let g:maximizer_set_default_mapping = 1
 
 "pgsql-vim
 let g:sql_type_default = 'pgsql'
-
-"vim-bookmarks
-let g:bookmarksave_per_working_dir = 1
-let g:bookmark_auto_save = 1
-
-let g:bookmark_no_default_key_mappings = 1
-function! BookmarkMapKeys()
-    nmap mm :BookmarkToggle<CR>
-    nmap mi :BookmarkAnnotate<CR>
-    nmap mn :BookmarkNext<CR>
-    nmap mp :BookmarkPrev<CR>
-    nmap ma :BookmarkShowAll<CR>
-    nmap mc :BookmarkClear<CR>
-    nmap mx :BookmarkClearAll<CR>
-    nmap mkk :BookmarkMoveUp
-    nmap mjj :BookmarkMoveDown
-endfunction
-function! BookmarkUnmapKeys()
-    unmap mm
-    unmap mi
-    unmap mn
-    unmap mp
-    unmap ma
-    unmap mc
-    unmap mx
-    unmap mkk
-    unmap mjj
-endfunction
-autocmd BufEnter * :call BookmarkMapKeys()
-autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
-
 
 "Custom maps
 "
