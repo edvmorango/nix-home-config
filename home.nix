@@ -6,52 +6,59 @@
 
 let
 
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+    }))
+  ];
+
 
   arionPkg = (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) { }).arion;
 
-  defaultPkgs = with pkgs; [
-    tree-sitter
-    bloop
-    git
-    git-lfs
-    niv
-    dbeaver
-    rnix-lsp
-    any-nix-shell
-    docker-compose
-    dive
-    exa
-    xclip
-    # vscode
-    iptables
-    #postman
-    tor
-    lorri
-    fzf
-    fd
-    ripgrep
-    #skype
-    highlight
-    glib
-    mcfly
-    tldr
-    procs
-    zoxide
-    openvpn
-    sqlite
-    whatsapp-for-linux
-    libreoffice
-    keybase
-    keybase-gui
-    kbfs
-    gnupg
-    pinentry
-    glxinfo
-    mesa.drivers
-    kitty
-    jq
-    sumneko-lua-language-server
-  ];
+  defaultPkgs = with pkgs;
+    [
+      tree-sitter
+      bloop
+      git
+      git-lfs
+      niv
+      dbeaver
+      rnix-lsp
+      any-nix-shell
+      docker-compose
+      dive
+      exa
+      xclip
+      # vscode
+      iptables
+      #postman
+      tor
+      lorri
+      fzf
+      fd
+      ripgrep
+      #skype
+      highlight
+      glib
+      mcfly
+      tldr
+      procs
+      zoxide
+      openvpn
+      sqlite
+      whatsapp-for-linux
+      libreoffice
+      keybase
+      keybase-gui
+      kbfs
+      gnupg
+      pinentry
+      glxinfo
+      mesa.drivers
+      kitty
+      jq
+      sumneko-lua-language-server
+    ];
 
   impurePkgs = with pkgs; [
     #audio
@@ -132,7 +139,7 @@ in
 
   };
 
-  xdg.enable = false;
+  xdg.enable = true;
 
   imports = [
     ./programs/fish/default.nix

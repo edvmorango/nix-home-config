@@ -1,8 +1,12 @@
 local g = vim.g -- a table to access global variables
 local opt = vim.opt -- to set options
 
+g.filetype = true
 g.on = true
 g.syntax_on = true
+
+
+--true colors
 g.termguicolors = true
 
 opt.number = true
@@ -17,9 +21,9 @@ opt.softtabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.incsearch = true
-opt.mouse = "a"
+opt.mouse = 'a'
 opt.history = 1000
-opt.whichwrap = opt.whichwrap ^ { '<', '>', 'h', 'l', '[', ']' }
+--opt.whichwrap = opt.whichwrap ^ { '<', '>', 'h', 'l', '[', ']' }
 opt.linebreak = true
 opt.textwidth = 120
 opt.tabstop = 2

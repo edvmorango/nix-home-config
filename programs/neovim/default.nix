@@ -114,8 +114,6 @@ let
 
   neovimPkg = customPkgs.neovim-pkg;
 
-
-
   allPlugins = generalPlugins ++ cocPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ elixirPlugins ++ sqlPlugins ++ telescopePlugins;
 
   vimConfig = builtins.readFile ./config.vim;
@@ -129,36 +127,40 @@ let
   rnixConfig = builtins.readFile ./plugins/rnix.vim;
   luaConfig = builtins.readFile ./plugins/lua.vim;
 
+  luaInit = builtins.readFile ./init.lua;
+
   cocSettings = builtins.toJSON (import ./coc-settings.nix);
 
   allConfig = vimConfig + ormoluConfig + telescopeConfig + notifyConfig + metalsConfig + jqxConfig + rnixConfig + luaConfig;
   # + cocConFIG
 
+  username = "edvmorango";
+
 in
 {
-  programs.neovim = {
-    enable = true;
-    extraConfig = allConfig;
-    package = neovimPkg;
-    plugins = allPlugins;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-    withNodeJs = true; # for coc.nvim
-    withPython3 = true; # for plugins
+  programs.neovim =
+    {
+      enable = true;
+      plugins = allPlugins;
+      package = neovimPkg;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
+      withNodeJs = true; # for coc.nvim
+      withPython3 = true; # for plugins
+      # The snippet below is hardcoded because for some reason even copying the file nix doesn't manage to find
+      # `config.lua` in the store
+      extraConfig = ''
+        luafile /home/edvmorango/.config/nvim/lua/config.lua
+      '';
+    };
 
-
-    # extraPython3Packages = p: with p; 
-    # with callPackage ./custom/coq-nvim/python.nix p p p; [ 
-    #   pyyaml 
-    #   pynvim-pp 
-    #   std2 
-    # ];
-  };
-
-
-  xdg.configFile = {
-    "nvim/coc-settings.json".text = cocSettings;
+  xdg.configFile.nvim = {
+    source = ./.;
+    recursive = true;
   };
 
 }
+
+
+
