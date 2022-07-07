@@ -18,6 +18,18 @@
     }
   );
 
+
+  nvim-tree-lua-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "nvim-tree.lua";
+    src = pkgs.fetchFromGitHub {
+      owner = "kyazdani42";
+      repo = "nvim-tree.lua";
+      rev = "4bd919a75f37c7127ccfc746fc59a71068db3ceb";
+      sha256 = "0arzwzmrigsiqpdq9avlb0xmfcrxfvwg3ah0abg5cbv10zagzz8b";
+    };
+  };
+
+
   nvim-lspconfig-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "lspconfig";
     src = pkgs.fetchFromGitHub {

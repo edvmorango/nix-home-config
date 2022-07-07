@@ -60,40 +60,6 @@ let g:webdevicons_enable_airline_statusline = 1
 if exists("g:loaded_webdevicons")
 	call webdevicons#refresh()
 endif
-"Nerdtree
-"
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "ᵐ",
-    \ "Staged"    : "ˢ",
-    \ "Untracked" : "ᵘ",
-    \ "Renamed"   : "ʳ",
-    \ "Unmerged"  : "ᶴ",
-    \ "Deleted"   : "ˣ",
-    \ "Dirty"     : "˜",
-    \ "Clean"     : "ᵅ",
-    \ "Unknown"   : "?"
-    \ }
-
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
-
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
-let NERDTreeShowHidden=1
-
-let NERDTreeIgnore = ['^.git$[[dir]]', '^.target$[[dir]]']
-"autocmd BufEnter * lcd %:p:h
-set autochdir "change directory to file
-let g:NERDTreeChDirMode = 2
-
-
-function ToggleCWD()
-  exec ':NERDTreeToggle' getcwd()
-endfunction
-
-
-map <C-F> :call ToggleCWD()  <CR>
-map <C-S> :NERDTreeFind<CR>
 
 "Disable the annoying and useless ex-mode
 nnoremap Q <Nop>

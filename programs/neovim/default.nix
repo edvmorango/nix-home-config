@@ -22,7 +22,6 @@ let
     neodark-vim
     #tender-vim
     ##editor
-    nerdtree
     treesitter
     #lua-vim
     #   plenary-nvim
@@ -36,6 +35,7 @@ let
     cmp-luasnip
     nvim-notify
     lsp-status-pkg
+    nvim-tree-lua-pkg
     #  nvim-cursorline
     #coq-artifacts
     #nerdtree-git-plugin

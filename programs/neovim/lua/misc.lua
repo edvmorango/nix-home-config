@@ -2,7 +2,7 @@ require('keys')
 
 local g = vim.g
 local fn = vim.fn
-local cmd = vim.cmd -- commands
+local cmd = vim.cmd
 
 
 --autosave
