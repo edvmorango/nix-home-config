@@ -14,7 +14,6 @@ let
 
   generalPlugins = with allPkgs; [
     ##themes
-    lightline-vim
     vim-devicons
     vim-deus
     onedark-vim
@@ -36,6 +35,9 @@ let
     nvim-notify
     lsp-status-pkg
     nvim-tree-lua-pkg
+    nvim-whichkey-setup-lua-pkg
+    nvim-web-devicons-pkg
+    lualine-nvim-pkg
     #  nvim-cursorline
     #coq-artifacts
     #nerdtree-git-plugin

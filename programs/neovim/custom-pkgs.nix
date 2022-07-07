@@ -2,7 +2,6 @@
 
 {
 
-
   neovim-pkg = pkgs.neovim-unwrapped.overrideAttrs (
     old: {
       name = "neovim";
@@ -18,7 +17,6 @@
     }
   );
 
-
   nvim-tree-lua-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "nvim-tree.lua";
     src = pkgs.fetchFromGitHub {
@@ -26,6 +24,36 @@
       repo = "nvim-tree.lua";
       rev = "4bd919a75f37c7127ccfc746fc59a71068db3ceb";
       sha256 = "0arzwzmrigsiqpdq9avlb0xmfcrxfvwg3ah0abg5cbv10zagzz8b";
+    };
+  };
+
+  lualine-nvim-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "lualine.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "nvim-lualine";
+      repo = "lualine.nvim";
+      rev = "c15e3b4c9eb7015dd58688b3d9bb1d659a49d3d1";
+      sha256 = "0s3734i7j28z5l17x8r6lj15rzpkmrpfywq96nhq3vrmnxiaaww1";
+    };
+  };
+
+  nvim-web-devicons-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "nvim-web-devicons";
+    src = pkgs.fetchFromGitHub {
+      owner = "kyazdani42";
+      repo = "nvim-web-devicons";
+      rev = "2d02a56189e2bde11edd4712fea16f08a6656944";
+      sha256 = "0f7r7xza28aaf60nbzaw9fcsjjff5c67jmgbci0jz21v2ib89pps";
+    };
+  };
+
+  nvim-whichkey-setup-lua-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "nvim-whichkey-setup.lua";
+    src = pkgs.fetchFromGitHub {
+      owner = "AckslD";
+      repo = "nvim-whichkey-setup.lua";
+      rev = "b2df0761b8ba3fca31b7ae1b0afcad2f8a4e89f4";
+      sha256 = "02bidgicrrx6jwm6hpcq0waqdzif2rws2q1i47zvi5x9i3zyl5cx";
     };
   };
 
@@ -387,4 +415,8 @@
 
 
 }
+
+
+
+
 

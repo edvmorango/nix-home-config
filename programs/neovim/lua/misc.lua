@@ -3,7 +3,7 @@ require('keys')
 local g = vim.g
 local fn = vim.fn
 local cmd = vim.cmd
-
+local exec = vim.api.nvim_exec
 
 --autosave
 g.auto_save = true
@@ -13,6 +13,9 @@ g.rooter_manual_only = true
 
 -- echodoc
 g.echodoc = { enable_at_startup = true, type = 'virtual' }
+
+-- highlight link EchoDocPopup Pmenu
+
 
 
 -- identline (make a function to enable/disable)
@@ -35,6 +38,12 @@ Map('i', '<C-ScrollWheelLeft>', '<nop>')
 Map('i', '<ScrollWheelRight>', '<nop>')
 Map('i', '<S-ScrollWheelRight>', '<nop>')
 Map('i', '<C-ScrollWheelRight>', '<nop>')
+
+-- ex-mode
+Map('n', 'Q', '<nop>')
+Map('n', 'gQ', '<nop>')
+
+
 
 -- window
 Map('n', '<M-h>', '<C-w>h')
@@ -77,3 +86,32 @@ end
 
 Map('n', 'n', '<cmd>lua CenterCursorOnNext(true)<CR>', { silent = true })
 Map('n', 'N', '<cmd>lua CenterCursorOnNext(false)<CR>', { silent = true })
+
+
+--vim-which-key
+require("whichkey_setup").config {
+  hide_statusline = false,
+  default_keymap_settings = {
+    silent = true,
+    noremap = true,
+  },
+  default_mode = 'n',
+}
+
+g.timeoutlen = 500
+g.which_key_vertical = 1
+
+
+--vim-subversive
+
+Map('n', '<leader>s', '<plug>(SubversiveSubvertRange)')
+Map('x', '<leader>s', '<plug>(SubversiveSubvertRange)')
+
+Map('n', '<leader>ss', '<plug>(SubversiveSubvertWordRange)')
+
+g.subversivePromptWithActualCommand = 0
+
+--vim-rooter
+g.rooter_manual_only = 1
+
+Mapf('n', '<leader>rr', function() exec(':call CustomRooter([".vimdir"])', '<CR>') end)

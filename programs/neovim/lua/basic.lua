@@ -1,14 +1,19 @@
 local g = vim.g -- a table to access global variables
 local opt = vim.opt -- to set options
-
+local o = vim.o
 g.filetype = true
 g.on = true
 g.syntax_on = true
 
 
+
+o.autochdir = true
+
 --true colors
 g.termguicolors = true
 
+opt.ignorecase = true
+opt.smartcase = true
 opt.number = true
 opt.wrap = false
 opt.showmode = true

@@ -1,15 +1,6 @@
 require('keys')
 
-local g = vim.g
-local o = vim.o
-local exec = vim.api.nvim_exec
-local loop = vim.loop
-local fn = vim.fn
--- Change directory on file opening
-o.autochdir = true
-
-
-require('nvim-tree').setup { -- BEGIN_DEFAULT_OPTS
+require('nvim-tree').setup {
   open_on_setup = true,
   open_on_setup_file = false,
   sync_root_with_cwd = true,
@@ -71,7 +62,3 @@ require('nvim-tree').setup { -- BEGIN_DEFAULT_OPTS
 
 
 Mapf('n', '<C-F>', "<cmd>NvimTreeToggle<CR>")
-
-
--- map <C-F> :call ToggleCWD()  <CR>
---map <C-S> :NERDTreeFind<CR>

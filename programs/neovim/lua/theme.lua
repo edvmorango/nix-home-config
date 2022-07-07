@@ -1,8 +1,9 @@
 local g = vim.g --  global variables
 local o = vim.o -- general settings
-local cmd = vim.cmd -- commands
+local cmd = vim.cmd
 
--- cmd 'colorscheme neodark'
+
+cmd 'colorscheme neodark'
 
 o.background = 'dark'
 
