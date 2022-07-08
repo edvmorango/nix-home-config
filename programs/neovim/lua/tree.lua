@@ -23,10 +23,12 @@ require('nvim-tree').setup {
     adaptive_size = false,
     height = 30,
     width = 30,
-    side = 'left',
+    --side = 'left',
     signcolumn = 'yes',
     mappings = {
-      list = { { key = 'u', action = 'dir_up' } }
+      list = {
+        { key = 'u', action = 'dir_up' }
+      }
     }
   },
   renderer = {
@@ -35,8 +37,10 @@ require('nvim-tree').setup {
     indent_markers = { enable = true },
     icons = {
       webdev_colors = true,
-      git_placement = 'before' },
-    show = { folder_arrow = true, git = true }, special_files = { "README.md", "readme.md", '.envrc', 'flake.nix' }
+      git_placement = 'before',
+      show = { folder_arrow = true, git = true },
+    },
+    special_files = { "README.md", "readme.md", '.envrc', 'flake.nix' },
   },
   filters = {
     dotfiles = false,
@@ -51,7 +55,7 @@ require('nvim-tree').setup {
       exclude = { ".git", "target", ".bsp" }
     },
     open_file = {
-      quit_on_open = false
+      quit_on_open = true
     },
     remove_file = {
       close_window = true

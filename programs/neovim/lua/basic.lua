@@ -1,6 +1,7 @@
+require('keys')
 local g = vim.g -- a table to access global variables
-local opt = vim.opt -- to set options
 local o = vim.o
+
 g.filetype = true
 g.on = true
 g.syntax_on = true
@@ -10,31 +11,36 @@ g.syntax_on = true
 o.autochdir = true
 
 --true colors
-g.termguicolors = true
+o.termguicolors = true
 
-opt.ignorecase = true
-opt.smartcase = true
-opt.number = true
-opt.wrap = false
-opt.showmode = true
-opt.tw = 80
-opt.smartcase = true
-opt.smarttab = true
-opt.smartindent = true
-opt.autoindent = true
-opt.softtabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.incsearch = true
-opt.mouse = 'a'
-opt.history = 1000
---opt.whichwrap = opt.whichwrap ^ { '<', '>', 'h', 'l', '[', ']' }
-opt.linebreak = true
-opt.textwidth = 120
-opt.tabstop = 2
-opt.clipboard = opt.clipboard ^ { 'unnamedplus' } --copy paste
-opt.laststatus = 2
-opt.viewoptions = { 'folds', 'options', 'cursor', 'unix', 'slash' } --UNIX better support
-opt.encoding = 'utf-8'
-opt.cmdheight = 2 -- "for echodoc
-opt.mouse = 'nicr' -- "disable mouse
+o.shortmess = o.shortmess:gsub('F', '') .. 'c'
+o.completeopt = 'menuone,noinsert,noselect'
+
+o.ignorecase = true
+o.smartcase = true
+
+vim.wo.number = true
+
+
+o.wrap = false
+o.showmode = true
+o.smartindent = true
+o.autoindent = true
+o.softtabstop = 2
+o.shiftwidth = 2
+o.expandtab = true
+o.incsearch = true
+o.mouse = 'a'
+o.history = 1000
+--o.whichwrap = o.whichwrap ^ { '<', '>', 'h', 'l', '[', ']' }
+vim.wo.linebreak = true
+o.textwidth = 120
+o.tabstop = 2
+o.clipboard = o.clipboard .. 'unnamedplus' --copy paste
+o.laststatus = 2
+o.viewoptions = 'folds,options,cursor,unix,slash' --UNIX better support
+o.encoding = 'utf-8'
+o.cmdheight = 2 -- "for echodoc
+
+Map('i', '<C-d>', '<Esc>')
+Map('n', '<C-d>', '<nop>')

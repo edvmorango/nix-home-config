@@ -22,7 +22,7 @@ g.echodoc = { enable_at_startup = true, type = 'virtual' }
 g.indentLine_setColors = false
 
 -- gitgutter
-g.updatetime = 100
+vim.o.updatetime = 100
 
 --mouse
 
