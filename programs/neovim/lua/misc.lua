@@ -1,7 +1,6 @@
 require('keys')
 
 local g = vim.g
-local fn = vim.fn
 local cmd = vim.cmd
 local exec = vim.api.nvim_exec
 
@@ -76,11 +75,11 @@ Map('t', '<C-k>', '<C-\\><C-n><cmd>FloatermToggle<CR>')
 function CenterCursorOnNext(forward)
   if forward
   then
-    cmd 'silent normal! n'
-    cmd 'silent normal! zz'
+    cmd 'silent! normal! n'
+    cmd 'silent! normal! zz'
   else
-    cmd 'silent normal! N'
-    cmd 'silent normal! zz'
+    cmd 'silent! normal! N'
+    cmd 'silent! normal! zz'
   end
 end
 

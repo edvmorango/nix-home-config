@@ -1,23 +1,23 @@
 require('keys')
 
 local metals_config = require('metals').bare_config()
-local coq = require('coq')
-
-
-
 
 metals_config.settings = {
   showImplicitArguments = true,
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
 }
 
-
 metals_config.init_options.statusBarProvider = "on"
 metals_config.settings.serverVersion = "0.11.7"
 
 -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-metals_config.capabilities = coq.lsp_ensure_capabilities(capabilities)
+
+-- local capabilities = require('coq').lsp_ensure_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+
+
+metals_config.capabilities = capabilities
 
 
 metals_config.on_attach = function(_, _)

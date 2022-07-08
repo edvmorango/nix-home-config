@@ -32,7 +32,7 @@ o.expandtab = true
 o.incsearch = true
 o.mouse = 'a'
 o.history = 1000
---o.whichwrap = o.whichwrap ^ { '<', '>', 'h', 'l', '[', ']' }
+o.whichwrap = o.whichwrap .. '<,>,h,l,[,]'
 vim.wo.linebreak = true
 o.textwidth = 120
 o.tabstop = 2
@@ -43,4 +43,13 @@ o.encoding = 'utf-8'
 o.cmdheight = 2 -- "for echodoc
 
 Map('i', '<C-d>', '<Esc>')
-Map('n', '<C-d>', '<nop>')
+Map('n', '<C-d>', '<Esc>')
+Map('v', '<C-d>', '<Esc>')
+Map('s', '<C-d>', '<Esc>')
+Map('x', '<C-d>', '<Esc>')
+Map('o', '<C-d>', '<Esc>')
+Map('!', '<C-d>', '<Esc>')
+Map('l', '<C-d>', '<Esc>')
+Map('c', '<C-d>', '<Esc>')
+Map('t', '<C-d>', '<Esc>')
+Map('', '<C-d>', '<Esc>')

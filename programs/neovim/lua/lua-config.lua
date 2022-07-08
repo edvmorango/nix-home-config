@@ -1,9 +1,7 @@
 local lspconfig = require('lspconfig')
-local coq = require('coq')
 
 -- local capabilities = coq.lsp_ensure_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local on_attach = function(_, _) end
 
 local sumneko_binary_path = vim.fn.exepath('lua-language-server')
 local sumneko_root_path = vim.fn.fnamemodify(sumneko_binary_path, ':h:h:h')
@@ -44,8 +42,13 @@ local settings = {
   },
 }
 
+--coq.lsp_ensure_capabilities({ on_attach = function(_,_) end  }),
+
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+
 lspconfig.sumneko_lua.setup {
   cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" };
   settings = settings,
-  coq.lsp_ensure_capabilities({ on_attach = on_attach }),
+  capabilities = capabilities
 }

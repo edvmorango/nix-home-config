@@ -45,7 +45,7 @@ require('nvim-tree').setup {
   filters = {
     dotfiles = false,
     custom = { '^\\.git' },
-    exclude = {}
+    exclude = { '.envrc' }
   },
   actions = {
     change_dir = {
@@ -63,6 +63,5 @@ require('nvim-tree').setup {
     use_system_clipboard = true
   }
 }
-
 
 Mapf('n', '<C-F>', "<cmd>NvimTreeToggle<CR>")
