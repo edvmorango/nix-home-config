@@ -1,3 +1,0 @@
-let l:bm_file_version = 1
-let l:bm_sessions = {'default': {'/home/edvmorango/.config/nixpkgs/programs/neovim/plugins/ormolu.vim': [{'sign_idx': 9503, 'line_nr': 2, 'content': 'let g:ormolu_options=["-o -XTypeApplications"]'},],}}
-let l:bm_current_session = 'default'
