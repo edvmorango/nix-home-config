@@ -51,6 +51,8 @@ let
     twilight-nvim
     tidy-nvim-pkg
     onenord-nvim-pkg
+    lsp_signature-nvim
+    hlargs-nvim-pkg
   ];
 
   nixPlugins = with plugins; [

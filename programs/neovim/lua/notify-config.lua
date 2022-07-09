@@ -1,4 +1,10 @@
-vim.notify = require("notify")
+local notify = require('notify')
+
+notify.setup()
+
+
+vim.notify = notify
+
 
 -- Utility functions shared between progress reports for LSP and DAP
 

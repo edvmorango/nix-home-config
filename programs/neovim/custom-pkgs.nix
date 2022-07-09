@@ -17,6 +17,15 @@
     }
   );
 
+  hlargs-nvim-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "hlargs.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "m-demare";
+      repo = "hlargs.nvim";
+      rev = "fe513dabb5c6bae5831dd1d4941e480415521503";
+      sha256 = "0j6i6x7wr7yv4p3kmrlchhf31b4c3pb3r5x87l32rki5i8ry9x7b";
+    };
+  };
 
   tidy-nvim-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "tidy.nvim";

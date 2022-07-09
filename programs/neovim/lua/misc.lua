@@ -126,3 +126,14 @@ g.subversivePromptWithActualCommand = 0
 g.rooter_manual_only = 1
 
 Mapf('n', '<leader>rr', function() exec(':call CustomRooter([".vimdir"])', '<CR>') end)
+
+
+-- signature
+require('lsp_signature').setup {}
+
+-- status
+local lspstatus = require('lsp-status')
+
+lspstatus.config { status_symbol = 'LSP' }
+
+lspstatus.register_progress()

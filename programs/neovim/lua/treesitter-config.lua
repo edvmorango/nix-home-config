@@ -27,13 +27,22 @@ require 'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  incremental_selection = {
+    enable = false
+  },
+  indent = {
+    enable = false
+  }
+
 }
 
 
-vim.api.nvim_create_autocmd({ 'BufEnter', 'BufAdd', 'BufNew', 'BufNewFile', 'BufWinEnter' }, {
-  group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
-  callback = function()
-    vim.opt.foldmethod = 'expr'
-    vim.opt.foldexpr   = 'nvim_treesitter#foldexpr()'
-  end
-})
+require('hlargs').setup()
+
+--vim.api.nvim_create_autocmd({ 'BufEnter', 'BufAdd', 'BufNew', 'BufNewFile', 'BufWinEnter' }, {
+--  group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
+-- callback = function()
+--    vim.opt.foldmethod = 'expr'
+--   vim.opt.foldexpr   = 'nvim_treesitter#foldexpr()'
+-- end
+--})
