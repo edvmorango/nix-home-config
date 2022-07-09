@@ -1,6 +1,7 @@
 require('keys')
 
 require('nvim-tree').setup {
+  theme = 'onenord',
   open_on_setup = true,
   open_on_setup_file = false,
   sync_root_with_cwd = true,

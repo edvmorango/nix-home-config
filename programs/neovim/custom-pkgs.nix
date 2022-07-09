@@ -17,6 +17,27 @@
     }
   );
 
+
+  tidy-nvim-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "tidy.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "mcauley-penney";
+      repo = "tidy.nvim";
+      rev = "3d6f0c7d9f260734f2166e7e4f719227b08b060d";
+      sha256 = "0nl9znxa4892racfzsh2rp1740780d2027yngcmpr5mk0inmmfkm";
+    };
+  };
+
+  onenord-nvim-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "onenord.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "rmehri01";
+      repo = "onenord.nvim";
+      rev = "eaa5baec341a0b9dcf3621d886d77f4539f8a3c1";
+      sha256 = "0qdjhms7lmrz36c6qrhani4hijhc3mwv31pym79yx0zc6cqgql99";
+    };
+  };
+
   nvim-tree-lua-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "nvim-tree.lua";
     src = pkgs.fetchFromGitHub {
@@ -415,8 +436,3 @@
 
 
 }
-
-
-
-
-

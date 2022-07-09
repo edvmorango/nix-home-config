@@ -8,22 +8,14 @@ let
   # Plugins which need a custom config
   customPkgs = pkgs.callPackage ./custom-pkgs.nix { };
 
-
-
   allPkgs = plugins // customPkgs;
 
   generalPlugins = with allPkgs; [
     ##themes
-    vim-devicons
-    vim-deus
-    onedark-vim
-    vim-one
+    #vim-devicons
     neodark-vim
-    #tender-vim
     ##editor
     treesitter
-    #lua-vim
-    #   plenary-nvim
     #completion-nvim
     nvim-metals-pkg
     nvim-lspconfig-pkg
@@ -38,17 +30,6 @@ let
     nvim-whichkey-setup-lua-pkg
     nvim-web-devicons-pkg
     lualine-nvim-pkg
-    #  nvim-cursorline
-    #coq-artifacts
-    #nerdtree-git-plugin
-    vim-subversive #replacement \ + s
-    vim-easy-align
-    vista-vim # lsp symbols
-    rainbow_parentheses-vim # parentheses colors
-    indentLine # display vertical lines
-    echodoc-vim # display lsp suggestions (ctrl-space)
-    lexima-vim # autoclose parentheses
-    vim-abolish
     ##git
     vim-fugitive
     vim-gitgutter
@@ -57,20 +38,19 @@ let
     vim-custom-rooter
     fzf-vim
     ##misc
-    vim-bookmarks
-    vim-which-key
+    vim-subversive #replacement \ + s
+    rainbow_parentheses-vim # parentheses colors
+    indentLine # display vertical lines
+    echodoc-vim # display lsp suggestions (ctrl-space)
+    lexima-vim # autoclose parentheses
+    vim-abolish
     vim-auto-save
-    vim-maximizer
     vim-scala3
-    #vim-hardtime
     coq_nvim
     nvim-jqx
-  ];
-
-  cocPlugins = with allPkgs; [
-    # coc-nvim
-    # coc-metals
-    #coc-elixir
+    twilight-nvim
+    tidy-nvim-pkg
+    onenord-nvim-pkg
   ];
 
   nixPlugins = with plugins; [
@@ -88,11 +68,6 @@ let
   scalaPlugins = with allPkgs; [
     vim-scala
     #nvim-metals
-  ];
-
-  elixirPlugins = with plugins; [
-    vim-elixir
-    alchemist-vim
   ];
 
   sqlPlugins = with allPkgs; [ ];
@@ -113,30 +88,11 @@ let
     scaladex-nvim
   ];
 
-
   neovimPkg = customPkgs.neovim-pkg;
 
-  allPlugins = generalPlugins ++ cocPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ elixirPlugins ++ sqlPlugins ++ telescopePlugins;
-
-  vimConfig = builtins.readFile ./config.vim;
-  cmpConfig = builtins.readFile ./plugins/cmp.vim;
-  ormoluConfig = builtins.readFile ./plugins/ormolu.vim;
-  metalsConfig = builtins.readFile ./plugins/metals.vim;
-  #cocConfig = builtins.readFile ./plugins/coc.vim;
-  jqxConfig = builtins.readFile ./plugins/jqx.vim;
-  telescopeConfig = builtins.readFile ./plugins/telescope.vim;
-  notifyConfig = builtins.readFile ./plugins/notify.vim;
-  rnixConfig = builtins.readFile ./plugins/rnix.vim;
-  luaConfig = builtins.readFile ./plugins/lua.vim;
+  allPlugins = generalPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ sqlPlugins ++ telescopePlugins;
 
   luaInit = builtins.readFile ./init.lua;
-
-  cocSettings = builtins.toJSON (import ./coc-settings.nix);
-
-  allConfig = vimConfig + ormoluConfig + telescopeConfig + notifyConfig + metalsConfig + jqxConfig + rnixConfig + luaConfig;
-  # + cocConFIG
-
-  username = "edvmorango";
 
 in
 {
@@ -163,6 +119,3 @@ in
   };
 
 }
-
-
-

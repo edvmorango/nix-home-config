@@ -101,6 +101,18 @@ g.timeoutlen = 500
 g.which_key_vertical = 1
 
 
+
+
+-- tidy (remove trailing spaces)
+require("tidy").setup({
+  filetype_exclude = {},
+})
+
+-- twilight (dims inactive portions of code)
+require("twilight").setup {}
+
+Map('n', 't', '<cmd>Twilight<CR>')
+
 --vim-subversive
 
 Map('n', '<leader>s', '<plug>(SubversiveSubvertRange)')
