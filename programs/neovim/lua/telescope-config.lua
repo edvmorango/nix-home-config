@@ -20,7 +20,6 @@ require('nvim-web-devicons').setup {
 }
 
 
--- require('telescope').load_extension('coc')
 require('telescope').load_extension('hoogle')
 require('telescope').load_extension('tele_tabby')
 require("telescope").load_extension('harpoon')
@@ -31,13 +30,24 @@ require('telescope').load_extension('notify')
 require('telescope').load_extension('lsp_handlers')
 
 
+
+
+
+
+local resolve = require("telescope.config.resolve")
+
 require('telescope').setup {
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
     -- ..
+    layout_strategy = "vertical",
     layout_config = {
-      horizontal = { width = 0.9 }
+      horizontal = { width = 0.9 },
+      width = resolve.resolve_width(0.9),
+      height = resolve.resolve_height(0.99),
+      preview_height = resolve.resolve_height(0.75),
+      prompt_position = "bottom"
     }
   },
   pickers = {
@@ -84,13 +94,13 @@ Map('n', '<leader>qq', '<cmd>Telescope quickfix<CR>', { silent = true })
 -- Metals
 
 
-Map('n', '<space>c', '<cmd>lua require("telescope").extensions.metals.commands()<CR>', { silent = true })
+Map('n', '<space>c', '<cmd>lua require("telescope").extensions.metals.commands('')<CR>', { silent = true })
 
 -- nnoremap <silent> <space>c  :<C-u>lua require("telescope").extensions.metals.commands()<cr>
 
 
 Map('n', '<space>d', '<cmd>Telescope diagnostics<CR>', { silent = true })
-Map('n', '<space>s', '<cmd>Telescope lsp_document_symbol<CR>', { silent = true })
+Map('n', '<space>s', '<cmd>MetalsSuperMethodHierarchy<CR>', { silent = true })
 Map('n', '<space>a', '<cmd>Telescope lsp_code_actions<CR>', { silent = true })
 
 

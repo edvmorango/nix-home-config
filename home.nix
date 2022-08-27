@@ -18,7 +18,6 @@ let
   defaultPkgs = with pkgs;
     [
       tree-sitter
-      bloop
       git
       git-lfs
       niv
