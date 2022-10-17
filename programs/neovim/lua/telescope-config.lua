@@ -36,20 +36,23 @@ require('telescope').load_extension('lsp_handlers')
 
 local resolve = require("telescope.config.resolve")
 
+
+TelescopeLayoutConfig = {
+  horizontal = { width = 0.9 },
+  width = resolve.resolve_width(0.9),
+  height = resolve.resolve_height(0.99),
+  preview_height = resolve.resolve_height(0.75),
+  prompt_position = "bottom"
+}
+
+
 require('telescope').setup {
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
     -- ..
     layout_strategy = "vertical",
-    layout_config = {
-      horizontal = { width = 0.9 },
-      width = resolve.resolve_width(0.9),
-      height = resolve.resolve_height(0.99),
-      preview_height = resolve.resolve_height(0.75),
-      prompt_position = "bottom"
-    }
-  },
+    layout_config = TelescopeLayoutConfig },
   pickers = {
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
@@ -94,7 +97,7 @@ Map('n', '<leader>qq', '<cmd>Telescope quickfix<CR>', { silent = true })
 -- Metals
 
 
-Map('n', '<space>c', '<cmd>lua require("telescope").extensions.metals.commands()<CR>', { silent = true })
+Map('n', '<space>c', '<cmd>lua require("telescope").extensions.metals.commands(TelescopeLayoutConfig)<CR>', { silent = true })
 
 -- nnoremap <silent> <space>c  :<C-u>lua require("telescope").extensions.metals.commands()<cr>
 
