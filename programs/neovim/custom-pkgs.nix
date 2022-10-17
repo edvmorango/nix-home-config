@@ -17,6 +17,27 @@
     }
   );
 
+  lualine-lsp-progress-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "lualine-lsp-progress";
+    src = pkgs.fetchFromGitHub {
+      owner = "arkav";
+      repo = "lualine-lsp-progress";
+      rev = "56842d097245a08d77912edf5f2a69ba29f275d7";
+      sha256 = "1gz5nxpfky0xr53l0z67viknzbxdr3k7pp5bp1n3rka3s74jswzh";
+    };
+  };
+
+
+
+  fixcursorhold-nvim-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "FixCursorHold.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "antoinemadec";
+      repo = "FixCursorHold.nvim";
+      rev = "70a9516a64668cbfe59f31b66d0a21678c5e9b12";
+      sha256 = "1np58km2jq26d23rq1szi7v3xnfw63r6hwk263fnf38sr2q6v9cg";
+    };
+  };
 
   scrollbar-nvim-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "scrollbar.nvim";

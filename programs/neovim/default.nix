@@ -30,6 +30,7 @@ let
     nvim-whichkey-setup-lua-pkg
     nvim-web-devicons-pkg
     lualine-nvim-pkg
+    lualine-lsp-progress-pkg
     ##git
     vim-fugitive
     vim-gitgutter
@@ -54,9 +55,9 @@ let
     lsp_signature-nvim
     hlargs-nvim-pkg
     scrollbar-nvim-pkg
+    fixcursorhold-nvim-pkg
     neotest-pkg
     neotest-scala-pkg
-    fidget-nvim-pkg
   ];
 
   nixPlugins = with plugins; [
