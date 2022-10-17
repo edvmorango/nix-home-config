@@ -85,7 +85,7 @@ let
     obs-studio
     tdesktop
     insomnia
-    jetbrains.idea-ultimate
+    jetbrains.idea-community
     postman
     #dev
     kubectl
