@@ -17,6 +17,47 @@
     }
   );
 
+
+  scrollbar-nvim-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "scrollbar.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "Xuyuanp";
+      repo = "scrollbar.nvim";
+      rev = "bc97c132e8367efecb2ecb937d385e7dc04eb5a1";
+      sha256 = "14g2q9nzdh9ffp2b8z3sdicrn4xq3ksq8mjxdi7cm44rlfyzfs04";
+    };
+  };
+
+  neotest-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "neotest";
+    src = pkgs.fetchFromGitHub {
+      owner = "nvim-neotest";
+      repo = "neotest";
+      rev = "7690967f599b15cd6bc93030693ed9a274e87aae";
+      sha256 = "1dym0423ns8wz393lb96cni72g6grlidqbi219gj9kpaf7ricnh5";
+    };
+  };
+
+  neotest-scala-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "neotest-scala";
+    src = pkgs.fetchFromGitHub {
+      owner = "stevanmilic";
+      repo = "neotest-scala";
+      rev = "685f0fac6196862b47025c6b91513af6a406501a";
+      sha256 = "0ii8brm5maffqrhji6d4g2kd45mhydj3gby22sv81g9jz6ah0y3s";
+    };
+  };
+
+  fidget-nvim-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "fidge.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "j-hui";
+      repo = "fidget.nvim";
+      rev = "1097a86db8ba38e390850dc4035a03ed234a4673";
+      sha256 = "15pspfihd2rjzyw6pzd3yycjrn98nx79njasrn4j4sl4ivlay5g6";
+    };
+  };
+
   hlargs-nvim-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "hlargs.nvim";
     src = pkgs.fetchFromGitHub {

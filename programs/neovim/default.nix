@@ -53,6 +53,10 @@ let
     onenord-nvim-pkg
     lsp_signature-nvim
     hlargs-nvim-pkg
+    scrollbar-nvim-pkg
+    neotest-pkg
+    neotest-scala-pkg
+    fidget-nvim-pkg
   ];
 
   nixPlugins = with plugins; [

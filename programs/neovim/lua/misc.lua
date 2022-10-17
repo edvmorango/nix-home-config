@@ -137,3 +137,27 @@ local lspstatus = require('lsp-status')
 lspstatus.config { status_symbol = 'LSP' }
 
 lspstatus.register_progress()
+
+-- scrollbar
+local scrollbarInit = vim.api.nvim_create_augroup("ScrollbarInit", {})
+
+vim.api.nvim_create_autocmd({ 'WinScrolled', 'VimResized', 'QuitPre' },
+  {
+    group = scrollbarInit,
+    command = "silent! lua require('scrollbar').show()"
+  }
+)
+
+vim.api.nvim_create_autocmd({ 'WinEnter', 'FocusGained' },
+  {
+    group = scrollbarInit,
+    command = "silent! lua require('scrollbar').show()"
+  }
+)
+
+vim.api.nvim_create_autocmd({ 'WinLeave', 'BufLeave', 'BufWinLeave', 'FocusLost' },
+  {
+    group = scrollbarInit,
+    command = "silent! lua require('scrollbar').clear()"
+  }
+)
