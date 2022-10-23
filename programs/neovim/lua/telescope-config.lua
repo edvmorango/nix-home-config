@@ -1,5 +1,8 @@
 require('keys')
 
+local exec = vim.api.nvim_exec
+
+
 require('neoclip').setup()
 require('harpoon').setup()
 require('notify').setup()
@@ -143,3 +146,23 @@ Map('n', 'q', '<cmd>Telescope harpoon marks<CR>', { silent = true })
 -- nnoremap <silent> <C-p> <cmd>Telescope find_files<cr>
 -- nmap <silent> z <cmd>Telescope neoclip a extra=star,plus,b<cr>
 -- nmap <silent> q <cmd>Telescope harpoon marks<cr>
+--
+
+function RootFiles()
+  -- Mapf('n', '<leader>rr', function() exec(':call CustomRooter([".vimdir"])', '<CR>') end)
+
+  exec(':call CustomRooter([".vimdir"])', '<CR>')
+  exec(':Telescope find_files', '<CR>')
+
+end
+
+function RootGrep()
+  -- Mapf('n', '<leader>rr', function() exec(':call CustomRooter([".vimdir"])', '<CR>') end)
+
+  exec(':call CustomRooter([".vimdir"])', '<CR>')
+  exec(':Telescope live_grep', '<CR>')
+
+end
+
+Map('n', '<A-p>', '<cmd>lua RootFiles()<CR>', { silent = true })
+Map('n', '<A-g>', '<cmd>lua RootGrep()<CR>', { silent = true })
