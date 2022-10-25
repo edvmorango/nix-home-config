@@ -91,7 +91,6 @@ let
     telescope-hoogle
     telescope-changes
     telescope-command-palette
-    nvim-harpoon
     scaladex-nvim
   ];
 

@@ -4,7 +4,6 @@ local exec = vim.api.nvim_exec
 
 
 require('neoclip').setup()
-require('harpoon').setup()
 require('notify').setup()
 
 require('nvim-web-devicons').setup {
@@ -25,7 +24,6 @@ require('nvim-web-devicons').setup {
 
 require('telescope').load_extension('hoogle')
 require('telescope').load_extension('tele_tabby')
-require("telescope").load_extension('harpoon')
 require('telescope').load_extension('changes')
 require('telescope').load_extension('command_palette')
 require('telescope').load_extension('scaladex')
@@ -83,12 +81,6 @@ require('telescope').setup {
 
 
 
---Harpoon
-
-Map('n', '<c-m>', '<cmd>lua require("harpoon.mark").add_file()<CR>', { silent = true })
-
--- nnoremap <silent> <c-m> :lua require("harpoon.mark").add_file()<CR>
-
 
 --Find files using Telescope command-line sugar.
 Map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { silent = true })
@@ -139,13 +131,11 @@ Map('n', 'gws', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', { silent = true }
 
 Map('n', '<C-p>', '<cmd>Telescope find_files<CR>', { silent = true })
 Map('n', 'z', '<cmd>Telescope neoclip a extra=star,plus,b<CR>', { silent = true })
-Map('n', 'q', '<cmd>Telescope harpoon marks<CR>', { silent = true })
 
 
 
 -- nnoremap <silent> <C-p> <cmd>Telescope find_files<cr>
 -- nmap <silent> z <cmd>Telescope neoclip a extra=star,plus,b<cr>
--- nmap <silent> q <cmd>Telescope harpoon marks<cr>
 --
 
 function RootFiles()

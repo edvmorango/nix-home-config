@@ -494,16 +494,5 @@
     };
   };
 
-  nvim-harpoon = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    name = "harpoon";
-    src = pkgs.fetchFromGitHub {
-      owner = "ThePrimeagen";
-      repo = "harpoon";
-      rev = "b2bb0d6f2b8a55895afda53f0ad04527998d3411";
-      sha256 = "0izsscglfk6lpisxvarr0qw4m9br8854wi6jhyp2msd8r9gcrzi7";
-    };
-  };
-
-
 
 }
