@@ -83,7 +83,6 @@ require('telescope').setup {
 
 
 --Find files using Telescope command-line sugar.
-Map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { silent = true })
 Map('n', '<leader>g', '<cmd>Telescope live_grep<CR>', { silent = true })
 Map('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { silent = true })
 Map('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { silent = true })

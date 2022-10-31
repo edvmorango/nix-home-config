@@ -77,3 +77,5 @@ function NvimTreeToggleRoot()
 end
 
 Mapf('n', '<C-F>', "<cmd>lua NvimTreeToggleRoot()<CR>")
+
+Map('n', '<leader>ff', '<cmd>NvimTreeToggle<CR>', { silent = true })
