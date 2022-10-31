@@ -64,4 +64,16 @@ require('nvim-tree').setup {
   }
 }
 
-Mapf('n', '<C-F>', "<cmd>NvimTreeToggle<CR>")
+
+local exec = vim.api.nvim_exec
+
+
+function NvimTreeToggleRoot()
+  -- Mapf('n', '<leader>rr', function() exec(':call CustomRooter([".vimdir"])', '<CR>') end)
+
+  exec(':call CustomRooter([".vimdir"])', '<CR>')
+  exec(':NvimTreeToggle', '<CR>')
+
+end
+
+Mapf('n', '<C-F>', "<cmd>lua NvimTreeToggleRoot()<CR>")
