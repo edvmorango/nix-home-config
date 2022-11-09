@@ -7,7 +7,8 @@ require('nvim-tree').setup {
   respect_buf_cwd = true,
   diagnostics = {
     enable = true,
-    show_on_dirs = true, },
+    show_on_dirs = true,
+  },
   git = {
     enable = true,
     ignore = true,
@@ -16,12 +17,12 @@ require('nvim-tree').setup {
   },
   filesystem_watchers = {
     enable = true,
-    interval = 100,
+    --interval = 100,
     debounce_delay = 50
   },
   view = {
     adaptive_size = false,
-    height = 30,
+    --height = 30,
     width = 30,
     --side = 'left',
     signcolumn = 'yes',
