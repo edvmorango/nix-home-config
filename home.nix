@@ -57,6 +57,7 @@ let
       kitty
       jq
       sumneko-lua-language-server
+      wezterm
     ];
 
   impurePkgs = with pkgs; [
@@ -131,6 +132,12 @@ in
 
     };
 
+    #wezterm = {
+    #  enable = true;
+    #enableFishIntegration = true;
+    #extraConfig = builtins.readFile programs/wezterm/wezterm.lua;
+    #};
+
     kitty = {
       enable = true;
       extraConfig = builtins.readFile programs/kitty/kitty.conf;
@@ -139,6 +146,8 @@ in
   };
 
   xdg.enable = true;
+
+  xdg.configFile."wezterm/wezterm.lua".text = builtins.readFile programs/wezterm/wezterm.lua;
 
   imports = [
     ./programs/fish/default.nix
