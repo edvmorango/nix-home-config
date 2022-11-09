@@ -10,8 +10,9 @@ let
       sha256 = "118hj100c4bb8hyhr22mrsjhg97pyd24cwb1l39bhryd0k9yc5lc";
     };
   };
+
 in
 {
   theme = bobthefish;
-  prompt = builtins.readFile "${bobthefish.src}/fish_prompt.fish";
+  prompt = builtins.readFile "${bobthefish.src.out}/functions/fish_prompt.fish";
 }
