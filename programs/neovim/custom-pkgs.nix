@@ -114,8 +114,8 @@
     src = pkgs.fetchFromGitHub {
       owner = "kyazdani42";
       repo = "nvim-tree.lua";
-      rev = "4bd919a75f37c7127ccfc746fc59a71068db3ceb";
-      sha256 = "0arzwzmrigsiqpdq9avlb0xmfcrxfvwg3ah0abg5cbv10zagzz8b";
+      rev = "7e892767bdd9660b7880cf3627d454cfbc701e9b";
+      sha256 = "0jl9vlwa9swlgmlr928d0y9h8vaj3nz3jha9nz94wwavjnb0iwcz";
     };
   };
 
@@ -225,6 +225,18 @@
       sha256 = "0r3va6syk6vfhs909p4r5p4h3ifyy5f4rk0m9jnvwblg9cjy17sw";
     };
   };
+
+  cmp-nvim-lsp-pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "nvim-cmp-lsp";
+    src = pkgs.fetchFromGitHub {
+      owner = "hrsh7th";
+      repo = "cmp-nvim-lsp";
+      rev = "78924d1d677b29b3d1fe429864185341724ee5a2";
+      sha256 = "1gzn4v70wa61yyw9vfxb8m8kkabz0p35nja1l26cfhl71pnkqrka";
+    };
+  };
+
+
 
   luasnip = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "LuaSnip";
@@ -459,9 +471,11 @@
     src = pkgs.fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "b1e8b61a94955d747ba8ad02cd3c0dddb1bf883f";
-      sha256 = "047vzgqky7f5aas8ca9m5pif4cccjvxasf2zqiksz8j6nzj4sgf7";
-    };
+
+      rev  ="1942f3554184e9d9dfb90dcc6542047b8f6511f2";
+      sha256 = "1mn2lm47y7crrqd8a3gc96a4hmc7d9kh5klbq3mlw8gfli999lkh";
+
+          };
   };
 
   plenary = pkgs.vimUtils.buildVimPluginFrom2Nix {

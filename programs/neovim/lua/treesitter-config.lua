@@ -2,6 +2,9 @@ require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "scala", "lua", "json", "markdown", "yaml" },
 
+  -- aprsers
+  parser_install_dir = "$HOME/.treesitter/parsers",
+
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
 

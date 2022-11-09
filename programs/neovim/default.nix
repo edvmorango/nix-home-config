@@ -21,7 +21,7 @@ let
     nvim-lspconfig-pkg
     lightline-lsp-pkg
     nvim-cmp-pkg
-    cmp-nvim-lsp
+    cmp-nvim-lsp-pkg
     luasnip
     cmp-luasnip
     nvim-notify
