@@ -8,25 +8,28 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { home-manager, ... }:
+  outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       username = "edvmorango";
+      pkgs = nixpkgs.legacyPackages.${system};
     in
-      {
-        homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-          # Specify the path to your home configuration here
-          configuration = import ./home.nix;
+    {
+      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
 
-          inherit system username;
-          homeDirectory = "/home/${username}";
-          # Update the state version as needed.
-          # See the changelog here:
-          # https://nix-community.github.io/home-manager/release-notes.html#sec-release-21.05
-          stateVersion = "22.05";
+        # Specify the path to your home configuration here
+        #configuration = import./home.nix;
 
-          # Optionally use extraSpecialArgs
-          # to pass through arguments to home.nix
-        };
+        modules = [ ./home.nix ];
+        #homeDirectory = "/home/${ username}";
+        # Update the state version as needed.
+        # See the changelog here:
+        # https://nix-community.github.io/home-manager/release-notes.html#sec-release-21.05
+        #stateVersion = "22.05";
+
+        # Optionally use extraSpecialArgs
+        # to pass through arguments to home.nix
       };
+    };
 }

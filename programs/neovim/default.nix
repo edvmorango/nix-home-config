@@ -94,7 +94,7 @@ let
     scaladex-nvim
   ];
 
-  neovimPkg = customPkgs.neovim-pkg;
+  neovimPkg = pkgs.neovim-unwrapped; #customPkgs.neovim-pkg;
 
   allPlugins = generalPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ sqlPlugins ++ telescopePlugins;
 

@@ -6,12 +6,12 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "oh-my-fish";
       repo = "theme-bobthefish";
-      rev = "f3ec01dd10f7311821302b4747d82fceb7c15587";
-      sha256 = "0kpivdnynmkb9h824lh1z4djsjniaqdwfv0mjjia2rbpzvn8pca1";
+      rev = "2dcfcab653ae69ae95ab57217fe64c97ae05d8de";
+      sha256 = "118hj100c4bb8hyhr22mrsjhg97pyd24cwb1l39bhryd0k9yc5lc";
     };
   };
 in
 {
   theme = bobthefish;
-  prompt = builtins.readFile "${bobthefish.src.out}/fish_prompt.fish";
+  prompt = builtins.readFile "${bobthefish.src}/fish_prompt.fish";
 }

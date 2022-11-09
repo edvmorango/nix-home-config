@@ -6,12 +6,6 @@
 
 let
 
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-    }))
-  ];
-
 
   arionPkg = (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) { }).arion;
 
@@ -116,6 +110,9 @@ in
 
   home = {
     packages = defaultPkgs ++ customPkgs ++ haskellPkgs ++ impurePkgs; #;
+    username = "edvmorango";
+    homeDirectory = "/home/edvmorango";
+    stateVersion = "22.05";
   };
 
   programs = {

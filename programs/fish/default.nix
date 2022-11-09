@@ -15,7 +15,7 @@ let
     set -g theme_newline_cursor yes
   '';
 
-  fishPlugins = pkgs.callPackage ./custom.nix {};
+  fishPlugins = pkgs.callPackage ./custom.nix { };
 
   customAliases = ''
     alias docker-kill="docker kill (docker ps -q)"
@@ -35,7 +35,7 @@ in
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source
     '';
-    shellAliases = {};
+    shellAliases = { };
     shellInit = fishConfig;
   };
 
