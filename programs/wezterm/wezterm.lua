@@ -11,7 +11,7 @@ return {
   keys = {
     -- This will create a new split and run the `top` program inside it
     {
-      key = ']',
+      key = 'RightArrow',
       mods = 'CTRL|SHIFT',
       action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
     }
