@@ -34,6 +34,7 @@ in
     interactiveShellInit = ''
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source
+      zoxide init fish --cmd cd | source
     '';
     shellAliases = { };
     shellInit = fishConfig;

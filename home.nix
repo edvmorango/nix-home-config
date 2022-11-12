@@ -53,6 +53,7 @@ let
       sumneko-lua-language-server
       wezterm
       gcc
+      zoxide
     ];
 
   impurePkgs = with pkgs; [
