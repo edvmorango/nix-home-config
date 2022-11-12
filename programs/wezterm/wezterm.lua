@@ -16,4 +16,5 @@ return {
       action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
     }
   },
+  warn_about_missing_glyphs = false
 }

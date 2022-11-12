@@ -52,6 +52,7 @@ let
       jq
       sumneko-lua-language-server
       wezterm
+      gcc
     ];
 
   impurePkgs = with pkgs; [
@@ -126,14 +127,7 @@ in
     fzf = {
       enable = true;
       enableFishIntegration = true;
-
     };
-
-    #wezterm = {
-    #  enable = true;
-    #enableFishIntegration = true;
-    #extraConfig = builtins.readFile programs/wezterm/wezterm.lua;
-    #};
 
     kitty = {
       enable = true;
