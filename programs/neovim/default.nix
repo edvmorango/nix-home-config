@@ -3,6 +3,7 @@
 
 let
 
+  nivPkgs = import ./nix/sources.nix;
   plugins = pkgs.vimPlugins;
 
   # Plugins which need a custom config
@@ -10,55 +11,101 @@ let
 
   allPkgs = plugins // customPkgs;
 
-  generalPlugins = with allPkgs; [
-    ##themes
-    #vim-devicons
-    neodark-vim
-    ##editor
-    treesitter
-    #completion-nvim
-    nvim-metals-pkg
-    nvim-lspconfig-pkg
-    lightline-lsp-pkg
-    nvim-cmp-pkg
-    cmp-nvim-lsp-pkg
-    luasnip
-    cmp-luasnip
-    nvim-notify
-    lsp-status-pkg
-    nvim-tree-lua-pkg
-    nvim-whichkey-setup-lua-pkg
-    nvim-web-devicons-pkg
-    lualine-nvim-pkg
-    lualine-lsp-progress-pkg
-    ##git
-    vim-fugitive
-    vim-gitgutter
-    ##external
-    vim-floaterm
-    vim-custom-rooter
-    fzf-vim
-    ##misc
-    vim-subversive #replacement \ + s
-    rainbow_parentheses-vim # parentheses colors
-    indentLine # display vertical lines
-    echodoc-vim # display lsp suggestions (ctrl-space)
-    lexima-vim # autoclose parentheses
-    vim-abolish
-    vim-auto-save
-    vim-scala3
-    coq_nvim
-    nvim-jqx
-    twilight-nvim
-    tidy-nvim-pkg
-    onenord-nvim-pkg
-    lsp_signature-nvim
-    hlargs-nvim-pkg
-    scrollbar-nvim-pkg
-    fixcursorhold-nvim-pkg
-    neotest-pkg
-    neotest-scala-pkg
-  ];
+  mkVimPlugin = nivPkg:
+    let
+      pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+        name = nivPkg.repo;
+        src = pkgs.fetchFromGitHub
+          {
+            owner = nivPkg.owner;
+            repo = nivPkg.repo;
+            rev = nivPkg.rev;
+            sha256 = nivPkg.sha256;
+          };
+      };
+    in
+    pkg;
+
+  pluginsNames = map (strName: nivPkgs."${strName}")
+    [
+      "nvim-treesitter"
+      "noice.nvim"
+      "nvim-metals"
+      "nvim-lspconfig"
+      "nvim-cmp"
+      "cmp-nvim-lsp"
+      "lsp-status.nvim"
+      "nvim-tree.lua"
+      "nvim-web-devicons"
+      "lualine.nvim"
+      "lualine-lsp-progress"
+      #edutir
+      "hlargs.nvim"
+      "scrollbar.nvim"
+      "tidy.nvim"
+      #testing
+      "neotest"
+      "neotest-scala"
+      #theme
+      "onenord.nvim"
+    ];
+
+  vimPlugins =
+    map mkVimPlugin pluginsNames;
+
+
+  # quotes are necessary for plugins with dots
+  generalPlugins = with allPkgs;
+    [
+      #hlargs-nvim-pkg
+      #scrollbar-nvim-pkg
+      #fixcursorhold-nvim-pkg deprecated
+      #neotest-pkg
+      #neotest-scala-pkg
+      #tidy-nvim-pkg
+      #onenord-nvim-pkg
+      ##themes
+      #vim-devicons
+      neodark-vim
+      ##editor
+      #      treesitter
+      #completion-nvim
+      #nvim-metals-pkg
+      #nvim-lspconfig-pkg
+      #lightline-lsp-pkg
+      #nvim-cmp-pkg
+      #cmp-nvim-lsp-pkg
+      luasnip
+      cmp-luasnip
+      nvim-notify
+      #lsp-status-pkg
+      #nvim-tree-lua-pkg
+      nvim-whichkey-setup-lua-pkg
+      #nvim-web-devicons-pkg
+      #  lualine-nvim-pkg
+      #lualine-lsp-progress-pkg
+      ##git
+      vim-fugitive
+      vim-gitgutter
+      ##external
+      vim-floaterm
+      vim-custom-rooter
+      fzf-vim
+      ##misc
+      vim-subversive #replacement \ + s
+      rainbow_parentheses-vim # parentheses colors
+      indentLine # display vertical lines
+      echodoc-vim # display lsp suggestions (ctrl-space)
+      lexima-vim # autoclose parentheses
+      vim-abolish
+      vim-auto-save
+      vim-scala3
+      coq_nvim
+      nvim-jqx
+      twilight-nvim
+      lsp_signature-nvim
+
+    ];
 
   nixPlugins = with plugins; [
     vim-nix
@@ -96,9 +143,8 @@ let
 
   neovimPkg = pkgs.neovim-unwrapped; #customPkgs.neovim-pkg;
 
-  allPlugins = generalPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ sqlPlugins ++ telescopePlugins;
-
-  luaInit = builtins.readFile ./init.lua;
+  allPlugins = generalPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ sqlPlugins ++ telescopePlugins ++
+    vimPlugins;
 
 in
 {

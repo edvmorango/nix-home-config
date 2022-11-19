@@ -16,7 +16,7 @@ let
       git-lfs
       niv
       dbeaver
-      rnix-lsp
+      nil
       any-nix-shell
       docker-compose
       dive
