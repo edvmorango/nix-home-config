@@ -1,18 +1,22 @@
+local parsers_path = "/home/edvmorango/.treesitter/parsers"
+
+vim.opt.runtimepath:append(parsers_path)
+
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "scala", "json", "markdown", "yaml", "lua" },
+  ensure_installed = { "scala", "json", "regex", "vim", "bash", "lua", "nix" },
 
   -- aprsers
-  parser_install_dir = "$HOME/.treesitter/parsers",
+  parser_install_dir = parsers_path,
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
 
   -- Automatically install missing parsers when entering buffer
-  auto_install = true,
+  auto_install = false,
 
   -- List of parsers to ignore installing (for "all")
-  ignore_install = { "javascript", "cc" },
+  ignore_install = { "javascript", "cc", "markdown" },
 
   highlight = {
     -- `false` will disable the whole extension
@@ -39,8 +43,10 @@ require 'nvim-treesitter.configs'.setup {
 
 }
 
-
 require('hlargs').setup()
+
+
+
 
 --vim.api.nvim_create_autocmd({ 'BufEnter', 'BufAdd', 'BufNew', 'BufNewFile', 'BufWinEnter' }, {
 --  group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),

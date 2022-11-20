@@ -17,5 +17,5 @@ require('lspconfig').nil_ls.setup {
   autostart = true,
   cmd = { "nil" },
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
 }

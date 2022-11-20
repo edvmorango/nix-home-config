@@ -27,7 +27,7 @@ let
     pkg;
 
   pluginsNames = map (strName: nivPkgs."${strName}")
-    [
+  [
       "nvim-treesitter"
       "noice.nvim"
       "nvim-metals"
@@ -39,7 +39,7 @@ let
       "nvim-web-devicons"
       "lualine.nvim"
       "lualine-lsp-progress"
-      #edutir
+      #editor
       "hlargs.nvim"
       "scrollbar.nvim"
       "tidy.nvim"
@@ -48,6 +48,8 @@ let
       "neotest-scala"
       #theme
       "onenord.nvim"
+      #extra
+      "nvim-whichkey-setup.lua"
     ];
 
   vimPlugins =
@@ -57,34 +59,11 @@ let
   # quotes are necessary for plugins with dots
   generalPlugins = with allPkgs;
     [
-      #hlargs-nvim-pkg
-      #scrollbar-nvim-pkg
-      #fixcursorhold-nvim-pkg deprecated
-      #neotest-pkg
-      #neotest-scala-pkg
-      #tidy-nvim-pkg
-      #onenord-nvim-pkg
-      ##themes
-      #vim-devicons
       neodark-vim
-      ##editor
-      #      treesitter
-      #completion-nvim
-      #nvim-metals-pkg
-      #nvim-lspconfig-pkg
-      #lightline-lsp-pkg
-      #nvim-cmp-pkg
-      #cmp-nvim-lsp-pkg
       luasnip
       cmp-luasnip
       nvim-notify
-      #lsp-status-pkg
-      #nvim-tree-lua-pkg
-      nvim-whichkey-setup-lua-pkg
-      #nvim-web-devicons-pkg
-      #  lualine-nvim-pkg
-      #lualine-lsp-progress-pkg
-      ##git
+         ##git
       vim-fugitive
       vim-gitgutter
       ##external
@@ -104,7 +83,6 @@ let
       nvim-jqx
       twilight-nvim
       lsp_signature-nvim
-
     ];
 
   nixPlugins = with plugins; [

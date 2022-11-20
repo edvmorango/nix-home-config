@@ -191,6 +191,18 @@
         "url": "https://github.com/nvim-tree/nvim-web-devicons/archive/3b1b794bc17b7ac3df3ae471f1c18f18d1a0f958.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "nvim-whichkey-setup.lua": {
+        "branch": "main",
+        "description": "Nvim-plugin what wraps vim-which-key to simplify setup in lua",
+        "homepage": null,
+        "owner": "AckslD",
+        "repo": "nvim-whichkey-setup.lua",
+        "rev": "b2df0761b8ba3fca31b7ae1b0afcad2f8a4e89f4",
+        "sha256": "02bidgicrrx6jwm6hpcq0waqdzif2rws2q1i47zvi5x9i3zyl5cx",
+        "type": "tarball",
+        "url": "https://github.com/AckslD/nvim-whichkey-setup.lua/archive/b2df0761b8ba3fca31b7ae1b0afcad2f8a4e89f4.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "onenord.nvim": {
         "branch": "main",
         "description": "🏔️ A Neovim theme that combines the Nord and Atom One Dark color palettes for a more vibrant programming experience.",

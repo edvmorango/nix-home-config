@@ -54,6 +54,7 @@ let
       wezterm
       gcc
       zoxide
+      nixpkgs-fmt
     ];
 
   impurePkgs = with pkgs; [
