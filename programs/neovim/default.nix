@@ -50,6 +50,8 @@ let
       "onenord.nvim"
       #extra
       "nvim-whichkey-setup.lua"
+      #topbar
+      "nvim-navic"
     ];
 
   vimPlugins =

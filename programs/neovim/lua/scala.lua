@@ -24,6 +24,7 @@ metals_config.on_attach = function(_, _)
   require('metals')
   require('lsp_signature').on_attach()
   require('lsp-status').on_attach()
+  require('nvim-navic').on_attach()
 end
 
 

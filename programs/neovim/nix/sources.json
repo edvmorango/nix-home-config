@@ -155,6 +155,18 @@
         "url": "https://github.com/scalameta/nvim-metals/archive/1071ddc47e9d9629ba754ffbf3cc11fa8be4218b.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "nvim-navic": {
+        "branch": "master",
+        "description": "Simple winbar/statusline plugin that shows your current code context",
+        "homepage": "",
+        "owner": "SmiteshP",
+        "repo": "nvim-navic",
+        "rev": "40c0ab2640a0e17c4fad7e17f260414d18852ce6",
+        "sha256": "194r8p8nljvh5jb8i860qp8kr4i16s5q84nc6phqjygwacsq69s8",
+        "type": "tarball",
+        "url": "https://github.com/SmiteshP/nvim-navic/archive/40c0ab2640a0e17c4fad7e17f260414d18852ce6.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "nvim-tree.lua": {
         "branch": "master",
         "description": "A file explorer tree for neovim written in lua",
