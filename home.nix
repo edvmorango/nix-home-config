@@ -55,6 +55,7 @@ let
       gcc
       zoxide
       nixpkgs-fmt
+      vscode
     ];
 
   impurePkgs = with pkgs; [
