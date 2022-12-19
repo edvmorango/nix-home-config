@@ -52,6 +52,7 @@ let
       "nvim-whichkey-setup.lua"
       #topbar
       "nvim-navic"
+
     ];
 
   vimPlugins =

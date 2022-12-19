@@ -59,6 +59,18 @@
         "url": "https://github.com/nvim-lualine/lualine.nvim/archive/3325d5d43a7a2bc9baeef2b7e58e1d915278beaf.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "murmur.lua": {
+        "branch": "main",
+        "description": "super-fast cursor word highlighting with callbacks(I call them murmurs) included.",
+        "homepage": "",
+        "owner": "nyngwang",
+        "repo": "murmur.lua",
+        "rev": "22d8206eee8ea3030ae127e49aee7b6a25346636",
+        "sha256": "18dncp3xcry3g7lkagzrv2msazsxadic0p00aipcgrqr3wnnyv9q",
+        "type": "tarball",
+        "url": "https://github.com/nyngwang/murmur.lua/archive/22d8206eee8ea3030ae127e49aee7b6a25346636.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "neotest": {
         "branch": "master",
         "description": "An extensible framework for interacting with tests within NeoVim.",

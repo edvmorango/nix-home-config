@@ -56,6 +56,7 @@ let
       zoxide
       nixpkgs-fmt
       vscode
+      difftastic
     ];
 
   impurePkgs = with pkgs; [

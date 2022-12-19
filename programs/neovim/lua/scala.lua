@@ -20,11 +20,11 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 metals_config.capabilities = capabilities
 
 
-metals_config.on_attach = function(_, _)
+metals_config.on_attach = function(client, bufnr)
   require('metals')
-  require('lsp_signature').on_attach()
-  require('lsp-status').on_attach()
-  require('nvim-navic').on_attach()
+  require('lsp_signature').on_attach(client, bufnr)
+  require('lsp-status').on_attach(client, bufnr)
+  require('nvim-navic').on_attach(client, bufnr)
 end
 
 

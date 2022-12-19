@@ -6,6 +6,7 @@ in
 {
   programs.git = {
     enable = true;
+    difftastic.enable = true;
     extraConfig = gitConfig;
     ignores = [
       "*.bloop"
