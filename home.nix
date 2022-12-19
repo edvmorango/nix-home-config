@@ -57,6 +57,7 @@ let
       nixpkgs-fmt
       vscode
       difftastic
+      k9s
     ];
 
   impurePkgs = with pkgs; [
