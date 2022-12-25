@@ -39,6 +39,7 @@ let
       "nvim-web-devicons"
       "lualine.nvim"
       "lualine-lsp-progress"
+      "inc-rename.nvim"
       #editor
       "hlargs.nvim"
       "scrollbar.nvim"

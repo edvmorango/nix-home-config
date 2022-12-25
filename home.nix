@@ -10,7 +10,8 @@ let
   arionPkg = (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) { }).arion;
 
   defaultPkgs = with pkgs;
-    [
+  [
+    conduktor
       tree-sitter
       git
       git-lfs

@@ -101,6 +101,8 @@ g.timeoutlen = 500
 g.which_key_vertical = 1
 
 
+-- lsp
+Map("n", "<leader>r", ':IncRename')
 
 
 -- tidy (remove trailing spaces)
@@ -125,7 +127,7 @@ g.subversivePromptWithActualCommand = 0
 --vim-rooter
 g.rooter_manual_only = 1
 
-Mapf('n', '<leader>rr', function() exec(':call CustomRooter([".vimdir"])', '<CR>') end)
+Mapf('n', '<leader>ee', function() exec(':call CustomRooter([".vimdir"])', '<CR>') end)
 
 
 -- signature

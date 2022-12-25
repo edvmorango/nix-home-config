@@ -23,6 +23,18 @@
         "url": "https://github.com/m-demare/hlargs.nvim/archive/e75b0501f47564099a6c3b4502232e650fdd8e82.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "inc-rename.nvim": {
+        "branch": "main",
+        "description": "Incremental LSP renaming based on Neovim's command-preview feature.",
+        "homepage": "",
+        "owner": "smjonas",
+        "repo": "inc-rename.nvim",
+        "rev": "48c4aa2be19f79e79b465a9bb37ee9fbe6c606f5",
+        "sha256": "0qj9zjm13d73r6wcm19rchwaf7lgcsy66x90bsa26y2g22a8xgxq",
+        "type": "tarball",
+        "url": "https://github.com/smjonas/inc-rename.nvim/archive/48c4aa2be19f79e79b465a9bb37ee9fbe6c606f5.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "lsp-status.nvim": {
         "branch": "master",
         "description": "Utility functions for getting diagnostic status and progress messages from LSP servers, for use in the Neovim statusline",
