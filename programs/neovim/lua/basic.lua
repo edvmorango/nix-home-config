@@ -13,7 +13,7 @@ o.autochdir = true
 --true colors
 o.termguicolors = true
 
-o.shortmess = o.shortmess:gsub('F', '') .. 'c'
+o.shortmess = 'F' -- o.shortmess:gsub('F', '') .. 'c'
 o.completeopt = 'menuone,noinsert,noselect'
 
 o.ignorecase = true

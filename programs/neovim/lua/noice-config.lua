@@ -15,4 +15,22 @@ require("noice").setup({
     inc_rename = true, -- enables an input dialog for inc-rename.nvim
     lsp_doc_border = false, -- add a border to hover docs and signature help
   },
+  routes = {
+    {
+      filter = {
+        event = "msg_show",
+        kind = "",
+        find = "written",
+      },
+      opts = { skip = true },
+    },
+    {
+      filter = {
+        event = "msg_show",
+        kind = "",
+        find = "(Autosave)",
+      },
+      opts = { skip = true },
+    },
+  },
 })
