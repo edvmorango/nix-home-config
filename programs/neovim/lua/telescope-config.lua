@@ -22,10 +22,7 @@ require('nvim-web-devicons').setup {
 }
 
 
-require('telescope').load_extension('hoogle')
-require('telescope').load_extension('tele_tabby')
-require('telescope').load_extension('changes')
-require('telescope').load_extension('command_palette')
+--require('telescope').load_extension('hoogle')
 require('telescope').load_extension('scaladex')
 require('telescope').load_extension('notify')
 require('telescope').load_extension('lsp_handlers')
@@ -53,7 +50,8 @@ require('telescope').setup {
     -- config_key = value,
     -- ..
     layout_strategy = "vertical",
-    layout_config = TelescopeLayoutConfig },
+    layout_config = TelescopeLayoutConfig
+  },
   pickers = {
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
@@ -91,7 +89,8 @@ Map('n', '<leader>qq', '<cmd>Telescope quickfix<CR>', { silent = true })
 -- Metals
 
 
-Map('n', '<space>c', '<cmd>lua require("telescope").extensions.metals.commands(TelescopeLayoutConfig)<CR>', { silent = true })
+Map('n', '<space>c', '<cmd>lua require("telescope").extensions.metals.commands(TelescopeLayoutConfig)<CR>',
+  { silent = true })
 
 -- nnoremap <silent> <space>c  :<C-u>lua require("telescope").extensions.metals.commands()<cr>
 

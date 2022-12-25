@@ -11,6 +11,18 @@
         "url": "https://github.com/hrsh7th/cmp-nvim-lsp/archive/59224771f91b86d1de12570b4070fe4ad7cd1eeb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "cmp_luasnip": {
+        "branch": "master",
+        "description": "luasnip completion source for nvim-cmp",
+        "homepage": "",
+        "owner": "saadparwaiz1",
+        "repo": "cmp_luasnip",
+        "rev": "18095520391186d634a0045dacaa346291096566",
+        "sha256": "0b91ap1l3nph46r7b5hcn7413yj3zhrz1jmn4xqp387ng35qz537",
+        "type": "tarball",
+        "url": "https://github.com/saadparwaiz1/cmp_luasnip/archive/18095520391186d634a0045dacaa346291096566.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "hlargs.nvim": {
         "branch": "main",
         "description": "Highlight arguments' definitions and usages, using Treesitter",
@@ -203,6 +215,18 @@
         "url": "https://github.com/SmiteshP/nvim-navic/archive/40c0ab2640a0e17c4fad7e17f260414d18852ce6.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "nvim-neoclip.lua": {
+        "branch": "main",
+        "description": "Clipboard manager neovim plugin with telescope integration",
+        "homepage": null,
+        "owner": "AckslD",
+        "repo": "nvim-neoclip.lua",
+        "rev": "3e0b9a134838c7356d743f84a272c92410c47d8d",
+        "sha256": "19xwirhaw8y9blll37xwk13cn74cw6cl1j76773nkxgx5m5cynpg",
+        "type": "tarball",
+        "url": "https://github.com/AckslD/nvim-neoclip.lua/archive/3e0b9a134838c7356d743f84a272c92410c47d8d.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "nvim-tree.lua": {
         "branch": "master",
         "description": "A file explorer tree for neovim written in lua",
@@ -263,6 +287,30 @@
         "url": "https://github.com/rmehri01/onenord.nvim/archive/0cd9f681bee019715bfbe928891579a3af3331e8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "plenary.nvim": {
+        "branch": "master",
+        "description": "plenary: full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice.",
+        "homepage": "",
+        "owner": "nvim-lua",
+        "repo": "plenary.nvim",
+        "rev": "4b7e52044bbb84242158d977a50c4cbcd85070c7",
+        "sha256": "11815h0h2mf5ym282ghk7xav90635r88qbgaflpgbyk2banl31wl",
+        "type": "tarball",
+        "url": "https://github.com/nvim-lua/plenary.nvim/archive/4b7e52044bbb84242158d977a50c4cbcd85070c7.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "scaladex.nvim": {
+        "branch": "main",
+        "description": "Neovim and Telescope plugin to search the scaladex index",
+        "homepage": "",
+        "owner": "softinio",
+        "repo": "scaladex.nvim",
+        "rev": "93dddf53450c0563da8efec917b5301c581d8d6f",
+        "sha256": "12vkq1zbvi6v1nyc1v75b2qh7za9h1f7xswmxlvn2j31xrm5yq66",
+        "type": "tarball",
+        "url": "https://github.com/softinio/scaladex.nvim/archive/93dddf53450c0563da8efec917b5301c581d8d6f.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "scrollbar.nvim": {
         "branch": "master",
         "description": "scrollbar for neovim",
@@ -275,6 +323,54 @@
         "url": "https://github.com/Xuyuanp/scrollbar.nvim/archive/bc97c132e8367efecb2ecb937d385e7dc04eb5a1.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "telescope-hoogle.nvim": {
+        "branch": "master",
+        "description": "Hoogle search via telescope",
+        "homepage": null,
+        "owner": "psiska",
+        "repo": "telescope-hoogle.nvim",
+        "rev": "e138b719bbf29935108eb602f179daa18f0d938b",
+        "sha256": "028y1hxc8p9402k5m5k1cr603b1cgdb3nglnkkhs4gn62b16rygd",
+        "type": "tarball",
+        "url": "https://github.com/psiska/telescope-hoogle.nvim/archive/e138b719bbf29935108eb602f179daa18f0d938b.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "telescope-lsp-handlers.nvim": {
+        "branch": "trunk",
+        "description": null,
+        "homepage": null,
+        "owner": "gbrlsnchs",
+        "repo": "telescope-lsp-handlers.nvim",
+        "rev": "d6d5983b0131ee2c386ca9e349f6621e12d971cb",
+        "sha256": "1x51mlj1c3cwmcjqssh89049q91423jxm3rv8s25pcw493zb2x6b",
+        "type": "tarball",
+        "url": "https://github.com/gbrlsnchs/telescope-lsp-handlers.nvim/archive/d6d5983b0131ee2c386ca9e349f6621e12d971cb.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "telescope-media-files.nvim": {
+        "branch": "master",
+        "description": "Telescope extension to preview media files using Ueberzug.",
+        "homepage": null,
+        "owner": "nvim-telescope",
+        "repo": "telescope-media-files.nvim",
+        "rev": "513e4ee385edd72bf0b35a217b7e39f84b6fe93c",
+        "sha256": "1ap3ijh64ynyxzbc62ijfkbwasv506i17pc65bh3w4dfpzn6rlpy",
+        "type": "tarball",
+        "url": "https://github.com/nvim-telescope/telescope-media-files.nvim/archive/513e4ee385edd72bf0b35a217b7e39f84b6fe93c.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "telescope.nvim": {
+        "branch": "master",
+        "description": "Find, Filter, Preview, Pick. All lua, all the time.",
+        "homepage": "",
+        "owner": "nvim-telescope",
+        "repo": "telescope.nvim",
+        "rev": "e960efa60e97df58e089b00270f09d60f27202c8",
+        "sha256": "023g8dblp5bp4wa5955drfipwzjaarbxl5xa9pky1ax4pni3i1rw",
+        "type": "tarball",
+        "url": "https://github.com/nvim-telescope/telescope.nvim/archive/e960efa60e97df58e089b00270f09d60f27202c8.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "tidy.nvim": {
         "branch": "main",
         "description": "A small Neovim plugin to remove trailing whitespace and empty lines at end of file on every save",
@@ -285,6 +381,30 @@
         "sha256": "16ib31pvh7ijbc3xzd7pwy94qyzh1j8xwncjfj5giy9d5a45ix9g",
         "type": "tarball",
         "url": "https://github.com/mcauley-penney/tidy.nvim/archive/9b15a0eb12d6d4f0bb5c197c1f5b72bcc57f09ff.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "vim-rooter": {
+        "branch": "master",
+        "description": "Changes Vim working directory to project root.",
+        "homepage": "",
+        "owner": "edvmorango",
+        "repo": "vim-rooter",
+        "rev": "9a5ce8edc67cca36cc530ee27a805112ce7a7e9b",
+        "sha256": "0zx1mzaiqwqyg7imahwy0mzp52b2dzp4qdnrsgcnkvkxf8v67bak",
+        "type": "tarball",
+        "url": "https://github.com/edvmorango/vim-rooter/archive/9a5ce8edc67cca36cc530ee27a805112ce7a7e9b.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "vim-scala": {
+        "branch": "master",
+        "description": "Basic Scala 3 syntax support built on top of Derek Wyatt's work on vim-scala",
+        "homepage": "",
+        "owner": "gvolpe",
+        "repo": "vim-scala",
+        "rev": "7379894b48df6b677788a75b8f04632e717102a8",
+        "sha256": "1y9sjmcyv1ihkb0a3hxz85d0h2k9digczj7ppfrga2mj67lgwj4m",
+        "type": "tarball",
+        "url": "https://github.com/gvolpe/vim-scala/archive/7379894b48df6b677788a75b8f04632e717102a8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

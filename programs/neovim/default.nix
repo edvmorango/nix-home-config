@@ -9,7 +9,6 @@ let
   # Plugins which need a custom config
   customPkgs = pkgs.callPackage ./custom-pkgs.nix { };
 
-  allPkgs = plugins // customPkgs;
 
   mkVimPlugin = nivPkg:
     let
@@ -40,7 +39,10 @@ let
       "nvim-web-devicons"
       "lualine.nvim"
       "lualine-lsp-progress"
+      "cmp_luasnip"
       "inc-rename.nvim"
+      #"vim-rooter"
+      "vim-scala"
       #editor
       "hlargs.nvim"
       "scrollbar.nvim"
@@ -61,20 +63,22 @@ let
     map mkVimPlugin pluginsNames;
 
 
+  allPkgs = plugins;
+
   # quotes are necessary for plugins with dots
   generalPlugins = with allPkgs;
     [
       neodark-vim
       luasnip
-      cmp-luasnip
+      #cmp-luasnip
       nvim-notify
          ##git
       vim-fugitive
       vim-gitgutter
       ##external
       vim-floaterm
-      vim-custom-rooter
-      fzf-vim
+      #vim-custom-rooter
+      #fzf-vim
       ##misc
       vim-subversive #replacement \ + s
       rainbow_parentheses-vim # parentheses colors
@@ -83,7 +87,7 @@ let
       lexima-vim # autoclose parentheses
       vim-abolish
       vim-auto-save
-      vim-scala3
+      #vim-scala3
       coq_nvim
       nvim-jqx
       twilight-nvim
@@ -98,7 +102,7 @@ let
     ghcid
     vim-hoogle
     vim-ormolu
-    vim-cabalfmt
+   # vim-cabalfmt
   ];
 
   scalaPlugins = with allPkgs; [
@@ -108,7 +112,20 @@ let
 
   sqlPlugins = with allPkgs; [ ];
 
-  telescopePlugins = with allPkgs; [
+
+  telescopePlugins = map mkVimPlugin (map (strName: nivPkgs."${strName}")
+  [
+    "plenary.nvim"
+    "telescope.nvim"
+    "nvim-neoclip.lua"
+    "telescope-lsp-handlers.nvim"
+    "telescope-media-files.nvim"
+    "telescope-hoogle.nvim"
+    "scaladex.nvim"
+
+  ]);
+
+  telescopePlugins1 = with allPkgs; [
     plenary
     nvim-web-devicons
     telescope
@@ -126,7 +143,7 @@ let
   neovimPkg = pkgs.neovim-unwrapped; #customPkgs.neovim-pkg;
 
   allPlugins = generalPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ sqlPlugins ++ telescopePlugins ++
-    vimPlugins;
+    vimPlugins ++ [customPkgs.vim-custom-rooter];
 
 in
 {
