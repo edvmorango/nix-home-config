@@ -8,9 +8,8 @@ local capabilities = vim.tbl_extend(
 )
 
 
-local on_attach = function(client, bufnr)
-  require('lsp_signature').on_attach(client, bufnr)
-  require('lsp-status').on_attach(client, bufnr)
+local on_attach = function(client, _)
+  require('lsp-status').on_attach(client)
 end
 
 require('lspconfig').nil_ls.setup {

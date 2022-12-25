@@ -28,6 +28,7 @@ let
 
   pluginsNames = map (strName: nivPkgs."${strName}")
   [
+      "nui.nvim"
       "nvim-treesitter"
       "noice.nvim"
       "nvim-metals"
@@ -86,7 +87,6 @@ let
       coq_nvim
       nvim-jqx
       twilight-nvim
-      lsp_signature-nvim
     ];
 
   nixPlugins = with plugins; [

@@ -22,8 +22,7 @@ metals_config.capabilities = capabilities
 
 metals_config.on_attach = function(client, bufnr)
   require('metals')
-  require('lsp_signature').on_attach(client, bufnr)
-  require('lsp-status').on_attach(client, bufnr)
+  require('lsp-status').on_attach(client)
   require('nvim-navic').on_attach(client, bufnr)
 end
 

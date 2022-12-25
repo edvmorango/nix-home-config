@@ -131,6 +131,18 @@
         "url": "https://github.com/folke/noice.nvim/archive/b10bbbb91215d0324d7d7f4cd0d8de3d1332648f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "nui.nvim": {
+        "branch": "main",
+        "description": "UI Component Library for Neovim.",
+        "homepage": "",
+        "owner": "MunifTanjim",
+        "repo": "nui.nvim",
+        "rev": "5d1ca66829d8fac9965cd18fcc2cd9aa49ba1ea5",
+        "sha256": "17qddgg15abmigj45lilfircf0rq78hl48va56ay53sjy1j52jhz",
+        "type": "tarball",
+        "url": "https://github.com/MunifTanjim/nui.nvim/archive/5d1ca66829d8fac9965cd18fcc2cd9aa49ba1ea5.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "nvim-cmp": {
         "branch": "main",
         "description": "A completion plugin for neovim coded in Lua.",

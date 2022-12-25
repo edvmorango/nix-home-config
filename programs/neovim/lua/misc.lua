@@ -102,7 +102,9 @@ g.which_key_vertical = 1
 
 
 -- lsp
-Map("n", "<leader>r", ':IncRename')
+require("inc_rename").setup()
+
+Map("n", "<leader>r", ':IncRename ') -- the space is relevant
 
 
 -- tidy (remove trailing spaces)
@@ -129,9 +131,6 @@ g.rooter_manual_only = 1
 
 Mapf('n', '<leader>ee', function() exec(':call CustomRooter([".vimdir"])', '<CR>') end)
 
-
--- signature
-require('lsp_signature').setup {}
 
 -- status
 local lspstatus = require('lsp-status')
