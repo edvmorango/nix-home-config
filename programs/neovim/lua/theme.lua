@@ -1,5 +1,3 @@
-local g = vim.g --  global variables
-local o = vim.o -- general settings
 local cmd = vim.cmd
 
 

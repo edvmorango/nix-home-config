@@ -23,6 +23,18 @@
         "url": "https://github.com/saadparwaiz1/cmp_luasnip/archive/18095520391186d634a0045dacaa346291096566.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "diaglist.nvim": {
+        "branch": "master",
+        "description": "Live render workspace diagnostics in quickfix with current buf errors on top, buffer diagnostics in loclist",
+        "homepage": "",
+        "owner": "onsails",
+        "repo": "diaglist.nvim",
+        "rev": "afc124a0976d56db43cc840e62757193ccab7856",
+        "sha256": "04virm388yi2lrq8bi6331m7q7lj46wrlh8pd8js6q7ylkvz6qfq",
+        "type": "tarball",
+        "url": "https://github.com/onsails/diaglist.nvim/archive/afc124a0976d56db43cc840e62757193ccab7856.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "hlargs.nvim": {
         "branch": "main",
         "description": "Highlight arguments' definitions and usages, using Treesitter",
@@ -57,6 +69,18 @@
         "sha256": "1cncfsn5vgq8ni2irw1pvq1cpgwryz9xmgciwmgwcbzjf1bdwql2",
         "type": "tarball",
         "url": "https://github.com/nvim-lua/lsp-status.nvim/archive/54f48eb5017632d81d0fd40112065f1d062d0629.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "lsp_lines.nvim": {
+        "branch": "main",
+        "description": "Mirror of https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        "homepage": "",
+        "owner": "Maan2003",
+        "repo": "lsp_lines.nvim",
+        "rev": "dbfd8e96ec2696e1ceedcd23fd70e842256e3dea",
+        "sha256": "1cch7sc3728z07rhfnc9fjpnq39dj3laxkvsv4iqfr5vl9c2pqvk",
+        "type": "tarball",
+        "url": "https://github.com/Maan2003/lsp_lines.nvim/archive/dbfd8e96ec2696e1ceedcd23fd70e842256e3dea.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "lualine-lsp-progress": {

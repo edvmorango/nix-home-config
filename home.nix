@@ -11,7 +11,6 @@ let
 
   defaultPkgs = with pkgs;
   [
-    conduktor
       tree-sitter
       git
       git-lfs
@@ -52,6 +51,7 @@ let
       kitty
       jq
       sumneko-lua-language-server
+      nodePackages.yaml-language-server
       wezterm
       gcc
       zoxide

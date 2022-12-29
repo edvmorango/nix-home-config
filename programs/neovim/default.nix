@@ -47,6 +47,7 @@ let
       "hlargs.nvim"
       "scrollbar.nvim"
       "tidy.nvim"
+      "lsp_lines.nvim"
       #testing
       "neotest"
       "neotest-scala"
@@ -110,7 +111,7 @@ let
     #nvim-metals
   ];
 
-  sqlPlugins = with allPkgs; [ ];
+  sqlPlugins = [ ];
 
 
   telescopePlugins = map mkVimPlugin (map (strName: nivPkgs."${strName}")
@@ -123,23 +124,7 @@ let
     "telescope-hoogle.nvim"
     "telescope-ui-select.nvim"
     "scaladex.nvim"
-
   ]);
-
-  telescopePlugins1 = with allPkgs; [
-    plenary
-    nvim-web-devicons
-    telescope
-    telescope-neoclip
-    telescope-coc
-    telescope-lsp-handlers
-    telescope-media-files
-    telescope-tele-tabby
-    telescope-hoogle
-    telescope-changes
-    telescope-command-palette
-    scaladex-nvim
-  ];
 
   neovimPkg = pkgs.neovim-unwrapped; #customPkgs.neovim-pkg;
 
