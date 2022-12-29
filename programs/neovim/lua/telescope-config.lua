@@ -23,6 +23,7 @@ require('nvim-web-devicons').setup {
 
 
 --require('telescope').load_extension('hoogle')
+require('telescope').load_extension('ui-select')
 require('telescope').load_extension('scaladex')
 require('telescope').load_extension('notify')
 require('telescope').load_extension('lsp_handlers')
@@ -97,7 +98,7 @@ Map('n', '<space>c', '<cmd>lua require("telescope").extensions.metals.commands(T
 
 Map('n', '<space>d', '<cmd>Telescope diagnostics<CR>', { silent = true })
 Map('n', '<space>s', '<cmd>MetalsSuperMethodHierarchy<CR>', { silent = true })
-Map('n', '<space>a', '<cmd>Telescope lsp_code_actions<CR>', { silent = true })
+Map('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', { silent = true })
 
 
 -- nnoremap <silent> <space>d  :<C-u>Telescope diagnostics<cr>
@@ -114,6 +115,8 @@ Map('n', 'gd', '<cmd>Telescope lsp_definitions<CR>', { silent = true })
 Map('n', 'gy', '<cmd>Telescope lsp_type_definitions<CR>', { silent = true })
 Map('n', 'gi', '<cmd>Telescope lsp_implementations<CR>', { silent = true })
 Map('n', 'gr', '<cmd>Telescope lsp_references<CR>', { silent = true })
+Map('n', '<C-l>', '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>', { silent = true })
+
 
 
 -- nnoremap <silent> K           <cmd>lua vim.lsp.buf.hover()<CR>

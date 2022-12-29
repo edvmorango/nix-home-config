@@ -121,6 +121,7 @@ let
     "telescope-lsp-handlers.nvim"
     "telescope-media-files.nvim"
     "telescope-hoogle.nvim"
+    "telescope-ui-select.nvim"
     "scaladex.nvim"
 
   ]);
