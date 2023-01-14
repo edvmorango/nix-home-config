@@ -11,8 +11,10 @@ let
     };
   };
 
+  bobCfg = (builtins.readFile "${bobthefish.src.out}/functions/fish_prompt.fish");
 in
 {
   theme = bobthefish;
-  prompt = builtins.readFile "${bobthefish.src.out}/functions/fish_prompt.fish";
+
+  prompt = pkgs.lib.strings.concatStrings [   bobCfg  ];
 }

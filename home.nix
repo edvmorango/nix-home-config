@@ -7,10 +7,12 @@
 let
 
 
-  arionPkg = (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) { }).arion;
+  arionPkg = (import (builtins.fetchTarball "https://github.com/hercules-ci/arion/tarball/master") { }).arion;
 
   defaultPkgs = with pkgs;
-  [
+    [
+      _1password
+      _1password-gui
       tree-sitter
       git
       git-lfs
@@ -50,6 +52,7 @@ let
       mesa.drivers
       kitty
       jq
+      yq
       sumneko-lua-language-server
       nodePackages.yaml-language-server
       wezterm

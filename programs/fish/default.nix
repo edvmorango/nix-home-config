@@ -35,6 +35,7 @@ in
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source
       zoxide init fish --cmd cd | source
+      op completion fish | source
     '';
     shellAliases = {
       cat = "bat";

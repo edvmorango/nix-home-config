@@ -14,4 +14,11 @@ require('lspconfig').yamlls.setup {
   cmd = { "yaml-language-server", "--stdio" },
   capabilities = capabilities,
   on_attach = on_attach,
+  settings = {
+    yaml = {
+      format = {
+        enable = true
+      }
+    }
+  }
 }
