@@ -41,6 +41,7 @@ let
       "lualine-lsp-progress"
       "cmp_luasnip"
       "inc-rename.nvim"
+      "autoclose.nvim"
       #"vim-rooter"
       "vim-scala"
       #editor
@@ -85,7 +86,6 @@ let
       rainbow_parentheses-vim # parentheses colors
       indentLine # display vertical lines
       echodoc-vim # display lsp suggestions (ctrl-space)
-      lexima-vim # autoclose parentheses
       vim-abolish
       vim-auto-save
       #vim-scala3
@@ -124,6 +124,7 @@ let
     "telescope-hoogle.nvim"
     "telescope-ui-select.nvim"
     "scaladex.nvim"
+    "telescope-undo.nvim"
   ]);
 
   neovimPkg = pkgs.neovim-unwrapped; #customPkgs.neovim-pkg;

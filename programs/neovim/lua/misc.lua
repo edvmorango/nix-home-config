@@ -142,6 +142,9 @@ lspstatus.register_progress()
 -- scrollbar
 local scrollbarInit = vim.api.nvim_create_augroup("ScrollbarInit", {})
 
+require("autoclose").setup({})
+
+
 vim.api.nvim_create_autocmd({ 'WinScrolled', 'VimResized', 'QuitPre' },
   {
     group = scrollbarInit,

@@ -27,6 +27,7 @@ require('telescope').load_extension('ui-select')
 require('telescope').load_extension('scaladex')
 require('telescope').load_extension('notify')
 require('telescope').load_extension('lsp_handlers')
+require("telescope").load_extension("undo")
 
 
 
@@ -99,6 +100,8 @@ Map('n', '<space>c', '<cmd>lua require("telescope").extensions.metals.commands(T
 Map('n', '<space>d', '<cmd>Telescope diagnostics<CR>', { silent = true })
 Map('n', '<space>s', '<cmd>MetalsSuperMethodHierarchy<CR>', { silent = true })
 Map('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', { silent = true })
+Map('n', '<space>z', '<cmd>Telescope undo<CR>', { silent = true })
+
 
 
 -- nnoremap <silent> <space>d  :<C-u>Telescope diagnostics<cr>
