@@ -36,6 +36,7 @@ in
       any-nix-shell fish --info-right | source
       zoxide init fish --cmd cd | source
       op completion fish | source
+      atuin init fish | source
     '';
     shellAliases = {
       cat = "bat";
