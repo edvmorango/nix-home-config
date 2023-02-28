@@ -1,7 +1,13 @@
 { config, pkgs, ... }:
 
 let
-  gitConfig = { };
+  gitConfig = {
+
+    core = {
+      editor = "nvim";
+    };
+
+  };
 in
 {
   programs.git = {
