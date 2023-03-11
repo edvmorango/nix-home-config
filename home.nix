@@ -11,6 +11,7 @@ let
 
   defaultPkgs = with pkgs;
   [
+    nailgun
     atuin
     _1password
     _1password-gui
