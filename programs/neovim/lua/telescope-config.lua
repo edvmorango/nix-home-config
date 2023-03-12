@@ -46,13 +46,27 @@ TelescopeLayoutConfig = {
 }
 
 
+
+
 require('telescope').setup {
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
     -- ..
     layout_strategy = "vertical",
-    layout_config = TelescopeLayoutConfig
+    layout_config = TelescopeLayoutConfig,
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--fixed-strings"
+    },
+    path_display = { "smart" },
+
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:
