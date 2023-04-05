@@ -11,6 +11,7 @@ let
 
   defaultPkgs = with pkgs;
   [
+    ngrok
     nailgun
     atuin
     _1password

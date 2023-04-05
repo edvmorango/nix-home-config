@@ -124,6 +124,11 @@ Map('x', '<leader>s', '<plug>(SubversiveSubvertRange)')
 
 Map('n', '<leader>ss', '<plug>(SubversiveSubvertWordRange)')
 
+
+Map('n', '<space>z', '<cmd>UndotreeToggle<CR>', { silent = true })
+
+
+
 g.subversivePromptWithActualCommand = 0
 
 --vim-rooter

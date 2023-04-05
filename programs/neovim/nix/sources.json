@@ -143,6 +143,18 @@
         "url": "https://github.com/nvim-neotest/neotest/archive/6676edc3078b8936df989df639900dc9a70dfc8a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "neotest-plenary": {
+        "branch": "master",
+        "description": null,
+        "homepage": null,
+        "owner": "nvim-neotest",
+        "repo": "neotest-plenary",
+        "rev": "d49bfd9470f791e7c29149e75d56b6f925bb391b",
+        "sha256": "055k0q1zgi42hf8lcgi2fmfbs3yc4fhbfjy34p3p2k90i1izxy5q",
+        "type": "tarball",
+        "url": "https://github.com/nvim-neotest/neotest-plenary/archive/d49bfd9470f791e7c29149e75d56b6f925bb391b.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "neotest-scala": {
         "branch": "main",
         "description": null,
@@ -441,6 +453,18 @@
         "sha256": "16ib31pvh7ijbc3xzd7pwy94qyzh1j8xwncjfj5giy9d5a45ix9g",
         "type": "tarball",
         "url": "https://github.com/mcauley-penney/tidy.nvim/archive/9b15a0eb12d6d4f0bb5c197c1f5b72bcc57f09ff.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "undotree": {
+        "branch": "master",
+        "description": "The undo history visualizer for VIM",
+        "homepage": "http://www.vim.org/scripts/script.php?script_id=4177",
+        "owner": "mbbill",
+        "repo": "undotree",
+        "rev": "485f01efde4e22cb1ce547b9e8c9238f36566f21",
+        "sha256": "13bpnacif1r40ncln14m013gnh6n9dnbvawnnna44splr6x39dan",
+        "type": "tarball",
+        "url": "https://github.com/mbbill/undotree/archive/485f01efde4e22cb1ce547b9e8c9238f36566f21.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-rooter": {

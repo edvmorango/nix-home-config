@@ -51,6 +51,7 @@ let
       "lsp_lines.nvim"
       #testing
       "neotest"
+      "neotest-plenary"
       "neotest-scala"
       #theme
       "onenord.nvim"
@@ -58,6 +59,8 @@ let
       "nvim-whichkey-setup.lua"
       #topbar
       "nvim-navic"
+      #util
+      "undotree"
 
     ];
 
