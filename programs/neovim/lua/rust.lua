@@ -1,11 +1,9 @@
 local lspconfig = require('lspconfig')
 
-local on_attach = function(client)
-  require 'completion'.on_attach(client)
-end
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 lspconfig.rust_analyzer.setup({
-  on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     ["rust-analyzer"] = {
       imports = {

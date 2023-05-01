@@ -111,8 +111,17 @@ Map('n', '<leader>qq', '<cmd>Telescope quickfix<CR>', { silent = true })
 -- Metals
 
 
-Map('n', '<space>c', '<cmd>lua require("telescope").extensions.metals.commands(TelescopeLayoutConfigVertical)<CR>',
+Map('n', '<space>c', '<cmd>lua Call_server_ui()<CR>',
   { silent = true })
+
+function Call_server_ui()
+  local current_file = vim.bo.filetype
+
+  if (current_file == "scala" or current_file == "sbt") then
+    require("telescope").extensions.metals.commands(TelescopeLayoutConfigVertical)
+  end
+
+end
 
 -- nnoremap <silent> <space>c  :<C-u>lua require("telescope").extensions.metals.commands()<cr>
 
