@@ -11,6 +11,7 @@ let
 
   defaultPkgs = with pkgs;
   [
+    rust-analyzer
     ngrok
     nailgun
     atuin

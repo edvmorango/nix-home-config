@@ -275,6 +275,18 @@
         "url": "https://github.com/AckslD/nvim-neoclip.lua/archive/5b9286a40ea2020352280caeb713515badb03d99.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "nvim-spider": {
+        "branch": "main",
+        "description": "Use the w, e, b motions like a spider. Move by subwords and skip insignificant punctuation.",
+        "homepage": "",
+        "owner": "chrisgrieser",
+        "repo": "nvim-spider",
+        "rev": "23fa1260be2090f2d675ee90e0b83fd993f6c3dc",
+        "sha256": "1ij9kv1dm6lrdvrw83wc833yw32k4wdgqg1gd5d4qdddnqhix6zw",
+        "type": "tarball",
+        "url": "https://github.com/chrisgrieser/nvim-spider/archive/23fa1260be2090f2d675ee90e0b83fd993f6c3dc.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "nvim-tree.lua": {
         "branch": "master",
         "description": "A file explorer tree for neovim written in lua",

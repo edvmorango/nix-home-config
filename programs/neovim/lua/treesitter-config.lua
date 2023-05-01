@@ -4,7 +4,7 @@ vim.opt.runtimepath:append(parsers_path)
 
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "scala", "json", "regex", "vim", "bash", "lua", "nix", "yaml", "hcl" },
+  ensure_installed = { "rust", "scala", "json", "regex", "vim", "bash", "lua", "nix", "yaml", "hcl" },
 
   -- aprsers
   parser_install_dir = parsers_path,

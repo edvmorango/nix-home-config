@@ -26,7 +26,9 @@ let
     pkg;
 
   pluginsNames = map (strName: nivPkgs."${strName}")
-  [
+  [   #Motion
+      "nvim-spider"
+      #
       "nui.nvim"
       "nvim-treesitter"
       "noice.nvim"
