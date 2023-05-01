@@ -111,7 +111,7 @@ Map('n', '<leader>qq', '<cmd>Telescope quickfix<CR>', { silent = true })
 -- Metals
 
 
-Map('n', '<space>c', '<cmd>lua require("telescope").extensions.metals.commands(TelescopeLayoutConfig)<CR>',
+Map('n', '<space>c', '<cmd>lua require("telescope").extensions.metals.commands(TelescopeLayoutConfigVertical)<CR>',
   { silent = true })
 
 -- nnoremap <silent> <space>c  :<C-u>lua require("telescope").extensions.metals.commands()<cr>
