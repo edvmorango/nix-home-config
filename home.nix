@@ -11,6 +11,8 @@ let
 
   defaultPkgs = with pkgs;
   [
+    mesa
+    bookworm
     rust-analyzer
     ngrok
     nailgun

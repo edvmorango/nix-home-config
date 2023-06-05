@@ -10,7 +10,7 @@ metals_config.settings = {
 }
 
 metals_config.init_options.statusBarProvider = "on"
-metals_config.settings.serverVersion = "0.11.11"
+metals_config.settings.serverVersion = "0.11.12+97-f10f3269-SNAPSHOT"
 
 -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
 

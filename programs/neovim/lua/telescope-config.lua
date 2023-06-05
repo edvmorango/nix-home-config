@@ -104,12 +104,12 @@ require('telescope').setup {
 
 --Find files using Telescope command-line sugar.
 Map('n', '<leader>g', '<cmd>Telescope live_grep<CR>', { silent = true })
+Map('n', '<leader>p', '<cmd>Telescope find_files<CR>', { silent = true })
 Map('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { silent = true })
 Map('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { silent = true })
 Map('n', '<leader>qq', '<cmd>Telescope quickfix<CR>', { silent = true })
 
 -- Metals
-
 
 Map('n', '<space>c', '<cmd>lua Call_server_ui()<CR>',
   { silent = true })
@@ -162,7 +162,6 @@ Map('n', 'gws', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', { silent = true }
 
 -- nnoremap <silent> <space>h  :<C-u>Telescope hoogle<cr>
 
-Map('n', '<C-p>', '<cmd>Telescope find_files<CR>', { silent = true })
 Map('n', 'z', '<cmd>Telescope neoclip a extra=star,plus,b<CR>', { silent = true })
 
 
@@ -187,5 +186,5 @@ function RootGrep()
 
 end
 
-Map('n', '<A-p>', '<cmd>lua RootFiles()<CR>', { silent = true })
-Map('n', '<A-g>', '<cmd>lua RootGrep()<CR>', { silent = true })
+Map('n', '<C-p>', '<cmd>lua RootFiles()<CR>', { silent = true })
+Map('n', '<C-g>', '<cmd>lua RootGrep()<CR>', { silent = true })

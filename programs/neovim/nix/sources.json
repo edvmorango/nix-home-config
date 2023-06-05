@@ -359,6 +359,18 @@
         "url": "https://github.com/nvim-lua/plenary.nvim/archive/1c7e3e6b0f4dd5a174fcea9fda8a4d7de593b826.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "rust-tools.nvim": {
+        "branch": "master",
+        "description": "Tools for better development in rust using neovim's builtin lsp",
+        "homepage": "",
+        "owner": "simrat39",
+        "repo": "rust-tools.nvim",
+        "rev": "71d2cf67b5ed120a0e31b2c8adb210dd2834242f",
+        "sha256": "14vma4r8v20r2ddkhwxs5zhp5lcqa51sxayxdri1z21gvaykzs8a",
+        "type": "tarball",
+        "url": "https://github.com/simrat39/rust-tools.nvim/archive/71d2cf67b5ed120a0e31b2c8adb210dd2834242f.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "scaladex.nvim": {
         "branch": "main",
         "description": "Neovim and Telescope plugin to search the scaladex index",

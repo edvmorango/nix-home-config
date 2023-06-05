@@ -63,6 +63,8 @@ let
       "nvim-navic"
       #util
       "undotree"
+      #rust
+      "rust-tools.nvim"
 
     ];
 
