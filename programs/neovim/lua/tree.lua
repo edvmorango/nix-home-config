@@ -26,6 +26,11 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
+
+local function on_attach(bufnr)
+end
+
+
 require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
   disable_netrw = false,
@@ -50,7 +55,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     width = 30,
     hide_root_folder = false,
     side = "left",
-    preserve_window_proportions = false,
+    preserve_window_proportions = true,
     number = false,
     relativenumber = false,
     signcolumn = "yes",
@@ -69,9 +74,9 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   },
   renderer = {
     add_trailing = false,
-    group_empty = false,
+    group_empty = true,
     highlight_git = false,
-    full_name = false,
+    full_name = true,
     highlight_opened_files = "none",
     highlight_modified = "none",
     root_folder_label = ":~:s?$?/..?",
@@ -163,8 +168,8 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     dotfiles = false,
     git_clean = false,
     no_buffer = false,
-    custom = {},
-    exclude = {},
+    custom = { "^.git$" },
+    exclude = { ".envrc" },
   },
   filesystem_watchers = {
     enable = true,
@@ -204,7 +209,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
       },
     },
     open_file = {
-      quit_on_open = false,
+      quit_on_open = true,
       eject = true,
       resize_window = true,
       window_picker = {
