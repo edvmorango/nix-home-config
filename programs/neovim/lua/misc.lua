@@ -143,10 +143,14 @@ Map('n', '<space>z', '<cmd>UndotreeToggle<CR>', { silent = true })
 
 g.subversivePromptWithActualCommand = 0
 
---vim-rooter
-g.rooter_manual_only = 1
+--rooter
 
-Mapf('n', '<leader>ee', function() exec(':call CustomRooter([".vimdir"])', '<CR>') end)
+require('nvim-rooter').setup({
+  rooter_patterns = { '.git', '.vimdir' },
+  trigger_patterns = { '*' },
+  manual = true,
+  fallback_to_parent = false,
+})
 
 
 -- status

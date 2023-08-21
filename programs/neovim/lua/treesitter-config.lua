@@ -4,7 +4,7 @@ vim.opt.runtimepath:append(parsers_path)
 
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "rust", "scala", "json", "regex", "vim", "bash", "lua", "nix", "yaml", "hcl" },
+  ensure_installed = { "rust", "scala", "json", "regex", "vim", "bash", "nix", "yaml", "hcl" },
 
   -- aprsers
   parser_install_dir = parsers_path,
@@ -26,7 +26,11 @@ require 'nvim-treesitter.configs'.setup {
     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
     -- the name of the parser)
     -- list of language that will be disabled
-    disable = {},
+    --
+
+    -- Lua parse is coming from nix neovim-9.1 and isn't updated, which causes the annoying error related to syntax, for
+    -- now disable is the best alternative
+    disable = { "lua", "c" },
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).

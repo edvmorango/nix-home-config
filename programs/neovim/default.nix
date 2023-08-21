@@ -28,6 +28,8 @@ let
   pluginsNames = map (strName: nivPkgs."${strName}")
   [   #Motion
       "nvim-spider"
+      #rooter
+      "nvim-rooter.lua"
       #
       "nui.nvim"
       "nvim-treesitter"
@@ -137,7 +139,7 @@ let
   neovimPkg = pkgs.neovim-unwrapped; #customPkgs.neovim-pkg;
 
   allPlugins = generalPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ sqlPlugins ++ telescopePlugins ++
-    vimPlugins ++ [customPkgs.vim-custom-rooter];
+    vimPlugins;
 
 in
 {

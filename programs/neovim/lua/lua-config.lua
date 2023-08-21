@@ -47,8 +47,8 @@ local settings = {
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 
-lspconfig.sumneko_lua.setup {
-  cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" };
+lspconfig.lua_ls.setup {
+  cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
   settings = settings,
   capabilities = capabilities
 }

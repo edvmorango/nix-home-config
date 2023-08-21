@@ -6,6 +6,12 @@ notify.setup()
 vim.notify = notify
 
 
+function DismissNotification()
+  notify.dismiss({})
+end
+
+Map("n", "<leader>d", '<cmd>lua DismissNotification()<CR>')
+
 -- Utility functions shared between progress reports for LSP and DAP
 
 local client_notifs = {}

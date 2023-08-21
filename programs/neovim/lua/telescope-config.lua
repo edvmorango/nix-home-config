@@ -15,10 +15,10 @@ require('nvim-web-devicons').setup {
       color = "#428850",
       name = "Zsh"
     }
-  };
+  },
   -- globally enable default icons (default to false)
   -- will get overriden by `get_icons` option
-  default = true;
+  default = true,
 }
 
 
@@ -120,7 +120,6 @@ function Call_server_ui()
   if (current_file == "scala" or current_file == "sbt") then
     require("telescope").extensions.metals.commands(TelescopeLayoutConfigVertical)
   end
-
 end
 
 -- nnoremap <silent> <space>c  :<C-u>lua require("telescope").extensions.metals.commands()<cr>
@@ -171,19 +170,13 @@ Map('n', 'z', '<cmd>Telescope neoclip a extra=star,plus,b<CR>', { silent = true 
 --
 
 function RootFiles()
-  -- Mapf('n', '<leader>rr', function() exec(':call CustomRooter([".vimdir"])', '<CR>') end)
-
-  exec(':call CustomRooter([".vimdir"])', '<CR>')
+  exec(':Rooter', '<CR>')
   exec(':Telescope find_files', '<CR>')
-
 end
 
 function RootGrep()
-  -- Mapf('n', '<leader>rr', function() exec(':call CustomRooter([".vimdir"])', '<CR>') end)
-
-  exec(':call CustomRooter([".vimdir"])', '<CR>')
+  exec(':Rooter', '<CR>')
   exec(':Telescope live_grep', '<CR>')
-
 end
 
 Map('n', '<C-p>', '<cmd>lua RootFiles()<CR>', { silent = true })
