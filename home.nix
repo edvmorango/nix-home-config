@@ -1,16 +1,8 @@
-{ config
-, lib
-, pkgs
-, ...
-}:
+{pkgs, ...}: let
+  arionPkg = (import (builtins.fetchTarball "https://github.com/hercules-ci/arion/tarball/master") {}).arion;
 
-let
-
-
-  arionPkg = (import (builtins.fetchTarball "https://github.com/hercules-ci/arion/tarball/master") { }).arion;
-
-  defaultPkgs = with pkgs;
-  [
+  defaultPkgs = with pkgs; [
+    alejandra
     mesa
     bookworm
     rust-analyzer
@@ -111,19 +103,14 @@ let
     zlib
   ];
 
-
-  haskellPkgs = with pkgs.haskellPackages;
-    [
-      nix-tree
-    ];
+  haskellPkgs = with pkgs.haskellPackages; [
+    nix-tree
+  ];
 
   customPkgs = [
     arionPkg
   ];
-
-in
-{
-
+in {
   home = {
     packages = defaultPkgs ++ customPkgs ++ haskellPkgs ++ impurePkgs; #;
     username = "edvmorango";
@@ -148,7 +135,6 @@ in
       enable = true;
       extraConfig = builtins.readFile programs/kitty/kitty.conf;
     };
-
   };
 
   xdg.enable = true;
@@ -161,6 +147,4 @@ in
     ./programs/tmux/default.nix
     ./programs/git/default.nix
   ];
-
-
 }

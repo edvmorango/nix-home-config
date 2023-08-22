@@ -17,4 +17,12 @@ require('lspconfig').nil_ls.setup {
   cmd = { "nil" },
   capabilities = capabilities,
   on_attach = on_attach,
+  settings = {
+    ['nil'] = {
+      testSetting = 42,
+      formatting = {
+        command = { "alejandra" },
+      },
+    },
+  },
 }
