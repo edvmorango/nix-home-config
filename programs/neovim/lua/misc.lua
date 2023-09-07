@@ -18,7 +18,16 @@ g.echodoc = { enable_at_startup = true, type = 'virtual' }
 
 
 -- identline (make a function to enable/disable)
-g.indentLine_setColors = false
+require("indent_blankline").setup {
+  -- for example, context is off by default, use this to turn it on
+  show_current_context = true,
+  show_current_context_start = true,
+  show_end_of_line = true,
+  space_char_blankline = " ",
+
+}
+
+
 
 -- gitgutter
 vim.o.updatetime = 100

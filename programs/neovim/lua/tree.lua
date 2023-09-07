@@ -25,10 +25,10 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
+vim.opt.list = true
+vim.opt.listchars:append "space:⋅"
 
 
-local function on_attach(bufnr)
-end
 
 
 require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS

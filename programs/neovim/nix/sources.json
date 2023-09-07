@@ -59,6 +59,18 @@
         "url": "https://github.com/m-demare/hlargs.nvim/archive/cfc9beab4e176a13311efe03e38e6b6fed5df4f6.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "hlchunk.nvim": {
+        "branch": "main",
+        "description": "This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed",
+        "homepage": "",
+        "owner": "shellRaining",
+        "repo": "hlchunk.nvim",
+        "rev": "c2db15d840027dd3fd06ca7b85433e654015d524",
+        "sha256": "14vsi41280cykj8js9d8vp2srqyp1xz78zdhz15g9iqipjvv0ikg",
+        "type": "tarball",
+        "url": "https://github.com/shellRaining/hlchunk.nvim/archive/c2db15d840027dd3fd06ca7b85433e654015d524.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "inc-rename.nvim": {
         "branch": "main",
         "description": "Incremental LSP renaming based on Neovim's command-preview feature.",
@@ -69,6 +81,18 @@
         "sha256": "088l7xkr7sqmfdm786vavg36z9lpapn79zbr2gxrqwisbysmamcb",
         "type": "tarball",
         "url": "https://github.com/smjonas/inc-rename.nvim/archive/ed0f6f2b917cac4eb3259f907da0a481b27a3b7e.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "indent-blankline.nvim": {
+        "branch": "master",
+        "description": "Indent guides  for Neovim",
+        "homepage": "",
+        "owner": "lukas-reineke",
+        "repo": "indent-blankline.nvim",
+        "rev": "9637670896b68805430e2f72cf5d16be5b97a22a",
+        "sha256": "01h49q9j3hh5mi3hxsaipfsc03ypgg14r79fbm6sy63rh8a66jnl",
+        "type": "tarball",
+        "url": "https://github.com/lukas-reineke/indent-blankline.nvim/archive/9637670896b68805430e2f72cf5d16be5b97a22a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "lsp-status.nvim": {

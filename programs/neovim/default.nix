@@ -1,36 +1,39 @@
-{ config, lib, pkgs, ... }:
-
-
-let
-
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   nivPkgs = import ./nix/sources.nix;
   plugins = pkgs.vimPlugins;
 
   # Plugins which need a custom config
-  customPkgs = pkgs.callPackage ./custom-pkgs.nix { };
+  customPkgs = pkgs.callPackage ./custom-pkgs.nix {};
 
-
-  mkVimPlugin = nivPkg:
-    let
-      pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
-        name = nivPkg.repo;
-        src = pkgs.fetchFromGitHub
-          {
-            owner = nivPkg.owner;
-            repo = nivPkg.repo;
-            rev = nivPkg.rev;
-            sha256 = nivPkg.sha256;
-          };
-      };
-    in
+  mkVimPlugin = nivPkg: let
+    pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = nivPkg.repo;
+      src =
+        pkgs.fetchFromGitHub
+        {
+          owner = nivPkg.owner;
+          repo = nivPkg.repo;
+          rev = nivPkg.rev;
+          sha256 = nivPkg.sha256;
+        };
+    };
+  in
     pkg;
 
-  pluginsNames = map (strName: nivPkgs."${strName}")
-  [   #Motion
+  pluginsNames =
+    map (strName: nivPkgs."${strName}")
+    [
+      #Motion
       "nvim-spider"
       #rooter
       "nvim-rooter.lua"
       #
+      "indent-blankline.nvim"
       "nui.nvim"
       "nvim-treesitter"
       "noice.nvim"
@@ -67,41 +70,38 @@ let
       "undotree"
       #rust
       "rust-tools.nvim"
-
     ];
 
   vimPlugins =
     map mkVimPlugin pluginsNames;
 
-
   allPkgs = plugins;
 
   # quotes are necessary for plugins with dots
-  generalPlugins = with allPkgs;
-    [
-      neodark-vim
-      luasnip
-      #cmp-luasnip
-      nvim-notify
-         ##git
-      vim-fugitive
-      vim-gitgutter
-      ##external
-      vim-floaterm
-      #vim-custom-rooter
-      #fzf-vim
-      ##misc
-      vim-subversive #replacement \ + s
-      rainbow_parentheses-vim # parentheses colors
-      indentLine # display vertical lines
-      echodoc-vim # display lsp suggestions (ctrl-space)
-      vim-abolish
-      vim-auto-save
-      #vim-scala3
-      coq_nvim
-      nvim-jqx
-      twilight-nvim
-    ];
+  generalPlugins = with allPkgs; [
+    neodark-vim
+    luasnip
+    #cmp-luasnip
+    nvim-notify
+    ##git
+    vim-fugitive
+    vim-gitgutter
+    ##external
+    vim-floaterm
+    #vim-custom-rooter
+    #fzf-vim
+    ##misc
+    vim-subversive #replacement \ + s
+    rainbow_parentheses-vim # parentheses colors
+    #indentLine # display vertical lines
+    echodoc-vim # display lsp suggestions (ctrl-space)
+    vim-abolish
+    vim-auto-save
+    #vim-scala3
+    coq_nvim
+    nvim-jqx
+    twilight-nvim
+  ];
 
   nixPlugins = with plugins; [
     vim-nix
@@ -112,7 +112,7 @@ let
     ghcid
     vim-hoogle
     vim-ormolu
-   # vim-cabalfmt
+    # vim-cabalfmt
   ];
 
   scalaPlugins = with allPkgs; [
@@ -120,49 +120,50 @@ let
     #nvim-metals
   ];
 
-  sqlPlugins = [ ];
-
+  sqlPlugins = [];
 
   telescopePlugins = map mkVimPlugin (map (strName: nivPkgs."${strName}")
-  [
-    "plenary.nvim"
-    "telescope.nvim"
-    "nvim-neoclip.lua"
-    "telescope-lsp-handlers.nvim"
-    "telescope-media-files.nvim"
-    "telescope-hoogle.nvim"
-    "telescope-ui-select.nvim"
-    "scaladex.nvim"
-    "telescope-undo.nvim"
-  ]);
+    [
+      "plenary.nvim"
+      "telescope.nvim"
+      "nvim-neoclip.lua"
+      "telescope-lsp-handlers.nvim"
+      "telescope-media-files.nvim"
+      "telescope-hoogle.nvim"
+      "telescope-ui-select.nvim"
+      "scaladex.nvim"
+      "telescope-undo.nvim"
+    ]);
 
   neovimPkg = pkgs.neovim-unwrapped; #customPkgs.neovim-pkg;
 
-  allPlugins = generalPlugins ++ nixPlugins ++ haskellPlugins ++ scalaPlugins ++ sqlPlugins ++ telescopePlugins ++
-    vimPlugins;
-
-in
-{
-  programs.neovim =
-    {
-      enable = true;
-      plugins = allPlugins;
-      package = neovimPkg;
-      viAlias = true;
-      vimAlias = true;
-      vimdiffAlias = true;
-      withNodeJs = true; # for coc.nvim
-      withPython3 = true; # for plugins
-      # The snippet below is hardcoded because for some reason even copying the file nix doesn't manage to find
-      # `config.lua` in the store
-      extraConfig = ''
-        luafile /home/edvmorango/.config/nvim/lua/config.lua
-      '';
-    };
+  allPlugins =
+    generalPlugins
+    ++ nixPlugins
+    ++ haskellPlugins
+    ++ scalaPlugins
+    ++ sqlPlugins
+    ++ telescopePlugins
+    ++ vimPlugins;
+in {
+  programs.neovim = {
+    enable = true;
+    plugins = allPlugins;
+    package = neovimPkg;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    withNodeJs = true; # for coc.nvim
+    withPython3 = true; # for plugins
+    # The snippet below is hardcoded because for some reason even copying the file nix doesn't manage to find
+    # `config.lua` in the store
+    extraConfig = ''
+      luafile /home/edvmorango/.config/nvim/lua/config.lua
+    '';
+  };
 
   xdg.configFile.nvim = {
     source = ./.;
     recursive = true;
   };
-
 }
