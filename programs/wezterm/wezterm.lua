@@ -29,4 +29,5 @@ return {
       action = wezterm.action.CompleteSelection 'Clipboard',
     },
   },
+  term = "wezterm"
 }

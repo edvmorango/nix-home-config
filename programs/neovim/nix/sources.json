@@ -35,6 +35,18 @@
         "url": "https://github.com/saadparwaiz1/cmp_luasnip/archive/18095520391186d634a0045dacaa346291096566.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "conform.nvim": {
+        "branch": "master",
+        "description": "Lightweight yet powerful formatter plugin for Neovim",
+        "homepage": "",
+        "owner": "stevearc",
+        "repo": "conform.nvim",
+        "rev": "212e5a8574e65f0c79d0267f5170c4247309e33b",
+        "sha256": "1plnn8p26pk92a562q9g4gq07c7lbrwdqnby45x292pgbnrchl4k",
+        "type": "tarball",
+        "url": "https://github.com/stevearc/conform.nvim/archive/212e5a8574e65f0c79d0267f5170c4247309e33b.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "diaglist.nvim": {
         "branch": "master",
         "description": "Live render workspace diagnostics in quickfix with current buf errors on top, buffer diagnostics in loclist",
@@ -93,6 +105,18 @@
         "sha256": "01h49q9j3hh5mi3hxsaipfsc03ypgg14r79fbm6sy63rh8a66jnl",
         "type": "tarball",
         "url": "https://github.com/lukas-reineke/indent-blankline.nvim/archive/9637670896b68805430e2f72cf5d16be5b97a22a.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "lsp-lens.nvim": {
+        "branch": "main",
+        "description": "Neovim plugin for displaying references and difinition infos upon functions like JB's IDEA.",
+        "homepage": "",
+        "owner": "VidocqH",
+        "repo": "lsp-lens.nvim",
+        "rev": "13d25ad8bd55aa34cc0aa3082e78a4157c401346",
+        "sha256": "10ndc3y9q2fha3h8vhw8521a5advx7w2d7ar35g8nw1d8d2vq429",
+        "type": "tarball",
+        "url": "https://github.com/VidocqH/lsp-lens.nvim/archive/13d25ad8bd55aa34cc0aa3082e78a4157c401346.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "lsp-status.nvim": {
@@ -237,6 +261,18 @@
         "sha256": "11v940v6md7sj1digh7kwckb80zbxxp3shlszi44c43iw9viznxi",
         "type": "tarball",
         "url": "https://github.com/hrsh7th/nvim-cmp/archive/51f1e11a89ec701221877532ee1a23557d291dd5.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nvim-code-action-menu": {
+        "branch": "main",
+        "description": "Pop-up menu for code actions to show meta-information and diff preview",
+        "homepage": "",
+        "owner": "weilbith",
+        "repo": "nvim-code-action-menu",
+        "rev": "e4399dbaf6eabff998d3d5f1cbcd8d9933710027",
+        "sha256": "01pbr8z8fn16vsdlsxrhd83rbx41pah477xr6p01lnmsqzwg3k7f",
+        "type": "tarball",
+        "url": "https://github.com/weilbith/nvim-code-action-menu/archive/e4399dbaf6eabff998d3d5f1cbcd8d9933710027.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-lightline-lsp": {
@@ -513,6 +549,18 @@
         "sha256": "04lhgrbx8qgnd6phrmga4xgcx79cx4fyqng9499lllq0smg5q935",
         "type": "tarball",
         "url": "https://github.com/mcauley-penney/tidy.nvim/archive/86eab24e807ed2957d26ca43b2b76b92d0fbf8f4.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "trouble.nvim": {
+        "branch": "main",
+        "description": "🚦 A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.",
+        "homepage": "",
+        "owner": "folke",
+        "repo": "trouble.nvim",
+        "rev": "3f85d8ed30e97ceeddbbcf80224245d347053711",
+        "sha256": "0l1mf8mpf2q2wk983baj75hy30dm7hwncbfazrnimycqdyarxn6x",
+        "type": "tarball",
+        "url": "https://github.com/folke/trouble.nvim/archive/3f85d8ed30e97ceeddbbcf80224245d347053711.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "undotree": {

@@ -3,6 +3,8 @@ local cmd = vim.cmd
 
 -- cmd 'colorscheme neodark'
 
+local colors = require("onenord.colors").load()
+
 
 require('onenord').setup({
   theme = 'dark', -- "dark" or "light". Alternatively, remove the option and set vim.o.background instead
@@ -15,7 +17,7 @@ require('onenord').setup({
     keywords = "NONE",
     functions = "NONE",
     variables = "NONE",
-    diagnostics = "underline",
+    diagnostics = "undercurl",
   },
   disable = {
     background = false, -- Disable setting the background color

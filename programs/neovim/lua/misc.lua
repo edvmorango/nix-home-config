@@ -2,11 +2,10 @@ require('keys')
 
 local g = vim.g
 local cmd = vim.cmd
-local exec = vim.api.nvim_exec
 
 --autosave
 g.auto_save = true
-
+g.auto_save_silent = true
 -- vim-rooter
 g.rooter_manual_only = true
 
@@ -159,6 +158,22 @@ require('nvim-rooter').setup({
   trigger_patterns = { '*' },
   manual = true,
   fallback_to_parent = false,
+})
+
+---
+require("conform").setup({
+  format_on_save = {
+    -- These options will be passed to conform.format()
+    timeout_ms = 500,
+    lsp_fallback = true,
+  },
+  formatters_by_ft = {
+    scala = { "scalafmt" },
+    rust = { "rustfmt" },
+    json = { "jq" },
+    nix = { "alejandra" },
+    lua = { "stylua" }
+  },
 })
 
 

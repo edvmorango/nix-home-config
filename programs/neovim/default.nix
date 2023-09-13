@@ -8,7 +8,6 @@
   plugins = pkgs.vimPlugins;
 
   # Plugins which need a custom config
-  customPkgs = pkgs.callPackage ./custom-pkgs.nix {};
 
   mkVimPlugin = nivPkg: let
     pkg = pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -28,6 +27,10 @@
   pluginsNames =
     map (strName: nivPkgs."${strName}")
     [
+      #formatter
+      "conform.nvim"
+      #Diagnostics
+      "trouble.nvim"
       #Motion
       "nvim-spider"
       #rooter
