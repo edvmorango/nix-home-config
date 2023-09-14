@@ -27,12 +27,7 @@ require('telescope').load_extension('ui-select')
 require('telescope').load_extension('scaladex')
 require('telescope').load_extension('notify')
 require('telescope').load_extension('lsp_handlers')
-require("telescope").load_extension("undo")
-
-
-
-
-
+require('telescope').load_extension("undo")
 
 local resolve = require("telescope.config.resolve")
 
@@ -71,8 +66,7 @@ require('telescope').setup {
       "--smart-case",
       "--fixed-strings"
     },
-    path_display = { "smart" },
-
+    path_display = { "smart" }
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:
@@ -125,7 +119,7 @@ end
 -- nnoremap <silent> <space>c  :<C-u>lua require("telescope").extensions.metals.commands()<cr>
 
 
-Map('n', '<space>d', '<cmd>Telescope diagnostics<CR>', { silent = true })
+--Map('n', '<space>d', '<cmd>Telescope diagnostics<CR>', { silent = true })
 Map('n', '<space>s', '<cmd>MetalsSuperMethodHierarchy<CR>', { silent = true })
 Map('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', { silent = true })
 -- Map('n', '<space>z', '<cmd>Telescope undo<CR>', { silent = true })
