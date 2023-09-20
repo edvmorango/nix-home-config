@@ -73,6 +73,8 @@
       "undotree"
       #rust
       "rust-tools.nvim"
+      #vale
+      "vale.vim"
     ];
 
   vimPlugins =

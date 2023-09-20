@@ -575,6 +575,18 @@
         "url": "https://github.com/mbbill/undotree/archive/0e11ba7325efbbb3f3bebe06213afa3e7ec75131.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "vale.vim": {
+        "branch": "master",
+        "description": "Vim syntax highlighting for the Vale programming language",
+        "homepage": null,
+        "owner": "jfecher",
+        "repo": "vale.vim",
+        "rev": "e84f70875923e10c78ce181a4b2fe93ffb055288",
+        "sha256": "18rk93w6c3n0cbgwqnwn4083gbdjknnp84zyvm0m5v26cv49r31z",
+        "type": "tarball",
+        "url": "https://github.com/jfecher/vale.vim/archive/e84f70875923e10c78ce181a4b2fe93ffb055288.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "vim-rooter": {
         "branch": "master",
         "description": "Changes Vim working directory to project root.",

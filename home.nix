@@ -1,6 +1,14 @@
 {pkgs, ...}: let
   arionPkg = (import (builtins.fetchTarball "https://github.com/hercules-ci/arion/tarball/master") {}).arion;
 
+  nix-alien-pkgs = import (
+    builtins.fetchTarball "https://github.com/thiagokokada/nix-alien/tarball/master"
+  ) {};
+
+  alien = with nix-alien-pkgs; [
+    nix-alien
+  ];
+
   defaultPkgs = with pkgs; [
     alejandra
     mesa
@@ -112,7 +120,7 @@
   ];
 in {
   home = {
-    packages = defaultPkgs ++ customPkgs ++ haskellPkgs ++ impurePkgs; #;
+    packages = defaultPkgs ++ customPkgs ++ haskellPkgs ++ impurePkgs ++ alien; #;
     username = "edvmorango";
     homeDirectory = "/home/edvmorango";
     stateVersion = "22.05";
