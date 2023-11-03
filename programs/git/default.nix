@@ -1,15 +1,15 @@
-{ config, pkgs, ... }:
-
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   gitConfig = {
-
     core = {
       editor = "nvim";
     };
-
+    init.defaultBranch = "main";
   };
-in
-{
+in {
   programs.git = {
     enable = true;
     difftastic.enable = true;

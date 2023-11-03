@@ -105,7 +105,6 @@
     #vim-scala3
     coq_nvim
     nvim-jqx
-    twilight-nvim
   ];
 
   nixPlugins = with plugins; [

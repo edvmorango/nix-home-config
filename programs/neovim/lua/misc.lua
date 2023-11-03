@@ -26,6 +26,19 @@ require("indent_blankline").setup {
 
 }
 
+Map('n', 't', '<cmd>lua ToggleIndentBlankline()<CR>')
+
+function ToggleIndentBlankline()
+
+  if (g.indent_blankline_enabled) then
+    g.indent_blankline_enabled = false
+  else
+    g.indent_blankline_enabled = true
+  end
+
+end
+
+
 
 
 -- gitgutter
@@ -132,10 +145,7 @@ require("tidy").setup({
   filetype_exclude = {},
 })
 
--- twilight (dims inactive portions of code)
-require("twilight").setup {}
 
-Map('n', 't', '<cmd>Twilight<CR>')
 
 --vim-subversive
 

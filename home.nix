@@ -10,6 +10,9 @@
   ];
 
   defaultPkgs = with pkgs; [
+    redis
+    anki
+    nushell
     alejandra
     mesa
     bookworm
@@ -71,6 +74,7 @@
   ];
 
   impurePkgs = with pkgs; [
+    act
     #audio
     pavucontrol
     paprefs
