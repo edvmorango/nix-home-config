@@ -29,6 +29,20 @@ require('telescope').load_extension('notify')
 require('telescope').load_extension('lsp_handlers')
 require('telescope').load_extension("undo")
 
+require("search").setup({
+  append_tabs = { -- append_tabs will add the provided tabs to the default ones
+    {
+      name = "Commits",
+      tele_func = require('telescope.builtin').git_commits,
+      available = function()
+        return vim.fn.isdirectory(".git") == 1
+      end
+    }
+  }
+})
+
+
+
 local resolve = require("telescope.config.resolve")
 
 
@@ -98,6 +112,8 @@ require('telescope').setup {
 
 --Find files using Telescope command-line sugar.
 Map('n', '<leader>g', '<cmd>Telescope live_grep<CR>', { silent = true })
+--Map('n', '<leader>g', '<cmd>lua require("search").open()<CR>', { silent = true })
+
 Map('n', '<leader>p', '<cmd>Telescope find_files<CR>', { silent = true })
 Map('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { silent = true })
 Map('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { silent = true })
@@ -167,6 +183,15 @@ function RootFiles()
   exec(':Rooter', '<CR>')
   exec(':Telescope find_files', '<CR>')
 end
+
+
+function RootSearch()
+  exec(':Rooter', '<CR>')
+  require('search').open()
+  -- exec(":lua require('search').open()")
+end
+
+
 
 function RootGrep()
   exec(':Rooter', '<CR>')

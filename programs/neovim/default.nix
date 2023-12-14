@@ -27,6 +27,7 @@
   pluginsNames =
     map (strName: nivPkgs."${strName}")
     [
+      "search.nvim"
       #formatter
       "conform.nvim"
       #Diagnostics

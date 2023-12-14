@@ -467,6 +467,18 @@
         "url": "https://github.com/Xuyuanp/scrollbar.nvim/archive/bc97c132e8367efecb2ecb937d385e7dc04eb5a1.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "search.nvim": {
+        "branch": "main",
+        "description": "nvim plugin that adds tabs for telescope search",
+        "homepage": "",
+        "owner": "FabianWirth",
+        "repo": "search.nvim",
+        "rev": "370c03b524062fc303f2ae61233ccfa0990044f2",
+        "sha256": "0cjw973rzikk1zvrbbw509xrdl72wkwr8zx4kj7x3qzq5s0yq0w8",
+        "type": "tarball",
+        "url": "https://github.com/FabianWirth/search.nvim/archive/370c03b524062fc303f2ae61233ccfa0990044f2.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "telescope-hoogle.nvim": {
         "branch": "master",
         "description": "Hoogle search via telescope",

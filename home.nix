@@ -10,6 +10,7 @@
   ];
 
   defaultPkgs = with pkgs; [
+    github-desktop
     redis
     anki
     nushell
