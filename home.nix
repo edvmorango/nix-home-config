@@ -72,6 +72,7 @@
     vscode
     difftastic
     k9s
+    tlaplusToolbox
   ];
 
   impurePkgs = with pkgs; [
