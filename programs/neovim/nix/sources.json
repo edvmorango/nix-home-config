@@ -216,15 +216,15 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
-        "branch": "release-21.05",
-        "description": "Nix Packages collection",
+        "branch": "master",
+        "description": "Nix Packages collection & NixOS",
         "homepage": "",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "022caabb5f2265ad4006c1fa5b1ebe69fb0c3faf",
-        "sha256": "12q00nbd7fb812zchbcnmdg3pw45qhxm74hgpjmshc2dfmgkjh4n",
+        "rev": "3f5fab2290686ab31cb0e2676c06428df7529534",
+        "sha256": "1lf6spfc3a8mbw0z08hliy0klgs5bs5l6acsfd1f9c17zd1rfsab",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/022caabb5f2265ad4006c1fa5b1ebe69fb0c3faf.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs/archive/3f5fab2290686ab31cb0e2676c06428df7529534.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "noice.nvim": {

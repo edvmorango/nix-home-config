@@ -6,11 +6,12 @@ metals_config.settings = {
   showImplicitArguments = true,
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
   showInferredType = true,
-  superMethodLensesEnabled = true
+  superMethodLensesEnabled = true,
+  enableSemanticHighlighting = true
 }
 
-metals_config.init_options.statusBarProvider = "on"
-metals_config.settings.serverVersion = "1.2.0"
+metals_config.init_options.statusBarProvider = "off"
+metals_config.settings.serverVersion = "1.2.1"
 
 -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
 
