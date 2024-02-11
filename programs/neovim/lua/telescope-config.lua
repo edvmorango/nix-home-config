@@ -2,6 +2,8 @@ require('keys')
 
 local exec = vim.api.nvim_exec
 
+local builtin = require('telescope.builtin')
+
 
 require('neoclip').setup()
 require('notify').setup()
@@ -30,15 +32,25 @@ require('telescope').load_extension('lsp_handlers')
 require('telescope').load_extension("undo")
 
 require("search").setup({
-  append_tabs = { -- append_tabs will add the provided tabs to the default ones
-    {
+  --[[append_tabs = { -- append_tabs will add the provided tabs to the default ones
+      {
       name = "Commits",
       tele_func = require('telescope.builtin').git_commits,
       available = function()
         return vim.fn.isdirectory(".git") == 1
       end
+     },
+  } ]]
+  -- default tabs
+  tabs = {
+    { "Files",
+      builtin.find_files
+    },
+    { "Grep",
+      builtin.live_grep
     }
-  }
+ }
+
 })
 
 
@@ -111,10 +123,10 @@ require('telescope').setup {
 
 
 --Find files using Telescope command-line sugar.
-Map('n', '<leader>g', '<cmd>Telescope live_grep<CR>', { silent = true })
---Map('n', '<leader>g', '<cmd>lua require("search").open()<CR>', { silent = true })
+--Map('n', '<leader>g', '<cmd>Telescope live_grep<CR>', { silent = true })
+Map('n', '<leader>g', '<cmd>lua require("search").open()<CR>', { silent = true })
 
-Map('n', '<leader>p', '<cmd>Telescope find_files<CR>', { silent = true })
+--Map('n', '<leader>p', '<cmd>Telescope find_files<CR>', { silent = true })
 Map('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { silent = true })
 Map('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { silent = true })
 Map('n', '<leader>qq', '<cmd>Telescope quickfix<CR>', { silent = true })
@@ -198,5 +210,5 @@ function RootGrep()
   exec(':Telescope live_grep', '<CR>')
 end
 
-Map('n', '<C-p>', '<cmd>lua RootFiles()<CR>', { silent = true })
-Map('n', '<C-g>', '<cmd>lua RootGrep()<CR>', { silent = true })
+-- Map('n', '<C-p>', '<cmd>lua RootFiles()<CR>', { silent = true })
+Map('n', '<C-g>', '<cmd>lua RootSearch()<CR>', { silent = true })
