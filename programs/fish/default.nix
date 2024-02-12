@@ -44,7 +44,7 @@ in {
     '';
     shellAliases = {
       cat = "bat";
-      ls = "eza";
+      ls = "eza -a --grid --icons";
     };
     shellInit = fishConfig;
   };
