@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   nivPkgs = import ./nix/sources.nix;
   plugins = pkgs.vimPlugins;
 
@@ -27,7 +22,6 @@
   pluginsNames =
     map (strName: nivPkgs."${strName}")
     [
-      "search.nvim"
       #formatter
       "conform.nvim"
       #Diagnostics
@@ -138,6 +132,7 @@
       "telescope-ui-select.nvim"
       "scaladex.nvim"
       "telescope-undo.nvim"
+      "search.nvim"
     ]);
 
   neovimPkg = pkgs.neovim-unwrapped; #customPkgs.neovim-pkg;

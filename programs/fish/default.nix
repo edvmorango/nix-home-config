@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }:
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   fzfConfig = ''
     set -x FZF_DEFAULT_OPTS "--preview='bat {} --color=always'" \n
     set -x FZF_DEFAULT_COMMAND "fd --type f"
@@ -15,22 +18,23 @@ let
     set -g theme_newline_cursor yes
   '';
 
-  fishPlugins = pkgs.callPackage ./custom.nix { };
+  fishPlugins = pkgs.callPackage ./custom.nix {};
 
   customAliases = ''
     alias docker-kill="docker kill (docker ps -q)"
   '';
 
-  fishConfig = ''
-    set fish_greeting
-  '' + fzfConfig + themeConfig + customAliases;
-
-
-in
-{
+  fishConfig =
+    ''
+      set fish_greeting
+    ''
+    + fzfConfig
+    + themeConfig
+    + customAliases;
+in {
   programs.fish = {
     enable = true;
-    plugins = [ fishPlugins.theme ];
+    plugins = [fishPlugins.theme];
     interactiveShellInit = ''
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source
@@ -40,6 +44,7 @@ in
     '';
     shellAliases = {
       cat = "bat";
+      ls = "eza";
     };
     shellInit = fishConfig;
   };

@@ -32,7 +32,7 @@
     any-nix-shell
     docker-compose
     dive
-    exa
+    eza
     xclip
     # vscode
     iptables
@@ -103,7 +103,7 @@
     tdesktop
     insomnia
     jetbrains.idea-community
-    postman
+    #postman
     #dev
     kubectl
     kops
