@@ -73,6 +73,7 @@
       #snippet
       "nvim-scissors"
       #  "LuaSnip"
+      #"purescript-vim"
     ];
 
   vimPlugins =
