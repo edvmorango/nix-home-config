@@ -1,0 +1,9 @@
+{
+  "newtype (name, type)": {
+    "body": [
+      "#[derive(Debug, PartialEq)]",
+      "struct $1 ($2);"
+    ],
+    "prefix": "newtype (name, type)"
+  }
+}

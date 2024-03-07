@@ -10,6 +10,7 @@
   ];
 
   defaultPkgs = with pkgs; [
+    libsForQt5.okular
     github-desktop
     redis
     anki

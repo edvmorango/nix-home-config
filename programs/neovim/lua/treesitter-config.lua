@@ -2,9 +2,10 @@ local parsers_path = "/home/edvmorango/.treesitter/parsers"
 
 vim.opt.runtimepath:append(parsers_path)
 
+
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "rust", "scala", "json", "regex", "vim", "bash", "nix", "yaml", "hcl" },
+  ensure_installed = { "rust", "scala", "purescript",  "json", "regex", "vim", "bash", "nix", "yaml", "hcl" },
 
   -- aprsers
   parser_install_dir = parsers_path,

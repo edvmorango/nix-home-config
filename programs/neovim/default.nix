@@ -70,6 +70,9 @@
       "rust-tools.nvim"
       #vale
       "vale.vim"
+      #snippet
+      "nvim-scissors"
+      #  "LuaSnip"
     ];
 
   vimPlugins =

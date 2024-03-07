@@ -25,7 +25,7 @@ lspconfig.rust_analyzer.setup({
         granularity = {
           group = "module",
         },
-        prefix = "self",
+        prefix = "crate",
       },
       cargo = {
         buildScripts = {
