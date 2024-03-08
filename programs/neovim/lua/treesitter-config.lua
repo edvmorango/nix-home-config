@@ -2,7 +2,6 @@ local parsers_path = "/home/edvmorango/.treesitter/parsers"
 
 vim.opt.runtimepath:append(parsers_path)
 
-vim.treesitter.language.register('purescript', 'purs')
 
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"

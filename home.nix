@@ -74,6 +74,7 @@
     difftastic
     k9s
     tlaplusToolbox
+    haskell.compiler.ghc925
   ];
 
   impurePkgs = with pkgs; [
