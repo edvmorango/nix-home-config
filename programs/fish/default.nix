@@ -40,7 +40,7 @@ in {
       any-nix-shell fish --info-right | source
       zoxide init fish --cmd cd | source
       op completion fish | source
-      atuin init fish | source
+      atuin init fish --disable-up-arrow | source
     '';
     shellAliases = {
       cat = "bat";

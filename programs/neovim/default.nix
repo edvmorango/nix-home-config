@@ -67,13 +67,14 @@
       #util
       "undotree"
       #rust
-      "rust-tools.nvim"
+      "rustaceanvim"
       #vale
       "vale.vim"
       #snippet
       "nvim-scissors"
       #  "LuaSnip"
       #"purescript-vim"
+      "lspkind.nvim"
     ];
 
   vimPlugins =
