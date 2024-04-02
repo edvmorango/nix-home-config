@@ -55,6 +55,7 @@
       "tidy.nvim"
       "lsp_lines.nvim"
       #testing
+      "nvim-nio" # for neotest
       "neotest"
       "neotest-plenary"
       "neotest-scala"

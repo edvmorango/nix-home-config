@@ -8,6 +8,8 @@ local builtin = require('telescope.builtin')
 require('neoclip').setup()
 require('notify').setup()
 
+require('trouble').setup()
+
 require('nvim-web-devicons').setup {
   -- your personnal icons can go here (to override)
   -- DevIcon will be appended to `name`
@@ -30,6 +32,10 @@ require('telescope').load_extension('scaladex')
 require('telescope').load_extension('notify')
 require('telescope').load_extension('lsp_handlers')
 require('telescope').load_extension("undo")
+
+
+
+
 
 require("search").setup({
   --[[append_tabs = { -- append_tabs will add the provided tabs to the default ones
@@ -74,9 +80,20 @@ TelescopeLayoutConfigHorizontal = {
   preview_width = resolve.resolve_width(0.65)
 }
 
+local actions = require("telescope.actions")
+local open_with_trouble = require("trouble.sources.telescope").open
 
-require('telescope').setup {
+local add_to_trouble = require("trouble.sources.telescope").add
+
+local telescope = require("telescope")
+
+
+
+telescope.setup {
   defaults = {
+    --mappings = {
+    --  n = { ["<space>d"]  = open_with_truble, ["<c-d>"]  = open_with_truble  }
+    --},
     -- Default configuration for telescope goes here:
     -- config_key = value,
     -- ..
@@ -122,6 +139,7 @@ require('telescope').setup {
 
 
 
+
 --Find files using Telescope command-line sugar.
 --Map('n', '<leader>g', '<cmd>Telescope live_grep<CR>', { silent = true })
 Map('n', '<leader>g', '<cmd>lua require("search").open()<CR>', { silent = true })
@@ -146,8 +164,7 @@ end
 
 -- nnoremap <silent> <space>c  :<C-u>lua require("telescope").extensions.metals.commands()<cr>
 
-
---Map('n', '<space>d', '<cmd>Telescope diagnostics<CR>', { silent = true })
+Map('n', '<space>d', '<cmd>Telescope diagnostics<CR>', { silent = true })
 Map('n', '<space>s', '<cmd>MetalsSuperMethodHierarchy<CR>', { silent = true })
 Map('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', { silent = true })
 -- Map('n', '<space>z', '<cmd>Telescope undo<CR>', { silent = true })
