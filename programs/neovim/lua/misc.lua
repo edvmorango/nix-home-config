@@ -188,7 +188,13 @@ Map('x', '<leader>s', '<plug>(SubversiveSubvertRange)')
 Map('n', '<leader>ss', '<plug>(SubversiveSubvertWordRange)')
 
 
-Map('n', '<space>z', '<cmd>UndotreeToggle<CR>', { silent = true })
+-- undo
+require('yankbank').setup({
+  max_entries = 12,
+  sep = "",
+})
+
+Map('n', 'z', '<cmd>YankBank<CR>', { silent = true })
 
 
 

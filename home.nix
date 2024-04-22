@@ -75,6 +75,7 @@
     k9s
     tlaplusToolbox
     haskell.compiler.ghc925
+    navi
   ];
 
   impurePkgs = with pkgs; [

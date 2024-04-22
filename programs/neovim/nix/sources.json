@@ -71,6 +71,18 @@
         "url": "https://github.com/onsails/diaglist.nvim/archive/afc124a0976d56db43cc840e62757193ccab7856.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "eagle.nvim": {
+        "branch": "main",
+        "description": "Show diagnostics and lsp info inside a custom window, following the mouse position",
+        "homepage": "",
+        "owner": "soulis-1256",
+        "repo": "eagle.nvim",
+        "rev": "dd535a24930e75795569a211d442a49b7d401082",
+        "sha256": "0wg8aa189m1v3mi86avm9j9y3rky3jy5xygzpr5x1cmsjgpihap6",
+        "type": "tarball",
+        "url": "https://github.com/soulis-1256/eagle.nvim/archive/dd535a24930e75795569a211d442a49b7d401082.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "hlargs.nvim": {
         "branch": "main",
         "description": "Highlight arguments' definitions and usages, using Treesitter",
@@ -345,18 +357,6 @@
         "sha256": "0964wgwh6i4nm637vx36bshkpd5i63ipwzqmrdbkz5h9bzyng7nj",
         "type": "tarball",
         "url": "https://github.com/SmiteshP/nvim-navic/archive/8649f694d3e76ee10c19255dece6411c29206a54.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "nvim-neoclip.lua": {
-        "branch": "main",
-        "description": "Clipboard manager neovim plugin with telescope integration",
-        "homepage": null,
-        "owner": "AckslD",
-        "repo": "nvim-neoclip.lua",
-        "rev": "798cd0592a81c185465db3a091a0ff8a21af60fd",
-        "sha256": "16dyzbqpc6427sgcrbd5fb3z0bnhdydhsdsa90i346y3v8lqpnj2",
-        "type": "tarball",
-        "url": "https://github.com/AckslD/nvim-neoclip.lua/archive/798cd0592a81c185465db3a091a0ff8a21af60fd.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-nio": {
@@ -669,6 +669,18 @@
         "sha256": "1y9sjmcyv1ihkb0a3hxz85d0h2k9digczj7ppfrga2mj67lgwj4m",
         "type": "tarball",
         "url": "https://github.com/gvolpe/vim-scala/archive/7379894b48df6b677788a75b8f04632e717102a8.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "yankbank-nvim": {
+        "branch": "main",
+        "description": "Neovim plugin improving access to recent yank history",
+        "homepage": null,
+        "owner": "ptdewey",
+        "repo": "yankbank-nvim",
+        "rev": "5ec28cb3a14c9891a6236fb324f045c4f7165e68",
+        "sha256": "09x5px0rs0yc4x7rqrim69jr272hafmf81dyx6jya9sn5qnwpmfz",
+        "type": "tarball",
+        "url": "https://github.com/ptdewey/yankbank-nvim/archive/5ec28cb3a14c9891a6236fb324f045c4f7165e68.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

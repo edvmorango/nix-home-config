@@ -41,9 +41,7 @@
       "",
       "impl From<UuidString> for $1 {",
       "    fn from(value: UuidString) -> Self {",
-      "        Self::new(",
-      "            Uuid::parse_str(&value.0).expect(\"Expecting a valid UUID String from runtime\"),",
-      "        )",
+      "        Self::new(value.value())  ",
       "    }",
       "}"
     ],

@@ -26,6 +26,7 @@
       "conform.nvim"
       #Diagnostics
       "trouble.nvim"
+      "eagle.nvim"
       #Motion
       "nvim-spider"
       #rooter
@@ -76,6 +77,8 @@
       #  "LuaSnip"
       #"purescript-vim"
       "lspkind.nvim"
+      #yank
+      "yankbank-nvim"
     ];
 
   vimPlugins =
@@ -131,7 +134,6 @@
     [
       "plenary.nvim"
       "telescope.nvim"
-      "nvim-neoclip.lua"
       "telescope-lsp-handlers.nvim"
       "telescope-media-files.nvim"
       "telescope-hoogle.nvim"

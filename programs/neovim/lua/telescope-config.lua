@@ -5,7 +5,6 @@ local exec = vim.api.nvim_exec
 local builtin = require('telescope.builtin')
 
 
-require('neoclip').setup()
 require('notify').setup()
 
 require('trouble').setup()
@@ -200,7 +199,7 @@ Map('n', 'gws', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', { silent = true }
 
 -- nnoremap <silent> <space>h  :<C-u>Telescope hoogle<cr>
 
-Map('n', 'z', '<cmd>Telescope neoclip a extra=star,plus,b<CR>', { silent = true })
+--Map('n', 'z', '<cmd>Telescope neoclip a extra=star,plus,b<CR>', { silent = true })
 
 
 
