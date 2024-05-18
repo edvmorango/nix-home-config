@@ -76,6 +76,10 @@
     tlaplusToolbox
     haskell.compiler.ghc925
     navi
+    lm_sensors
+    putty
+    passmark-performancetest
+    unigine-valley
   ];
 
   impurePkgs = with pkgs; [
