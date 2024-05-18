@@ -141,6 +141,7 @@
       "scaladex.nvim"
       "telescope-undo.nvim"
       "search.nvim"
+      "easypick.nvim"
     ]);
 
   neovimPkg = pkgs.neovim-unwrapped; #customPkgs.neovim-pkg;

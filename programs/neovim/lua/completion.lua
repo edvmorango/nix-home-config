@@ -12,7 +12,7 @@ end
 
 
 
-luasnip = require('luasnip.loaders.from_vscode').lazy_load {
+local luasnip = require('luasnip.loaders.from_vscode').lazy_load {
   paths = '/home/edvmorango/.config/nixpkgs/programs/neovim/snippets'
 }
 
@@ -54,14 +54,13 @@ local kind_icons = {
 
 
 
-vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump(1) end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-E>", function()
-
-if ls.choice_active() then
-  ls.change_choice(1)
-end
-end, {silent = true})
+vim.keymap.set({ "i" }, "<C-K>", function() ls.expand() end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-L>", function() ls.jump(1) end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-E>", function()
+  if ls.choice_active() then
+    ls.change_choice(1)
+  end
+end, { silent = true })
 
 require('cmp').setup {
   snippet = {
@@ -72,12 +71,11 @@ require('cmp').setup {
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
-
       local max_width = 85
 
-      vim_item.kind =  string.format('%s', kind_icons[vim_item.kind])
+      vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
       vim_item.menu = ""
-      vim_item.abbr = string.sub(vim_item.abbr,1, max_width)
+      vim_item.abbr = string.sub(vim_item.abbr, 1, max_width)
       return vim_item
     end,
   },
@@ -96,11 +94,11 @@ require('cmp').setup {
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    }),
+  }),
   sources = cmp.config.sources(
     {
       { name = 'nvim_lsp' },
-      { name = 'luasnip',  option = { show_autosnippets = true } }
+      { name = 'luasnip', option = { show_autosnippets = true } }
     },
     {
       { name = 'buffer' },

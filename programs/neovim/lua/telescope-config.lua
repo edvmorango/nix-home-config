@@ -1,8 +1,11 @@
 require('keys')
 
+
 local exec = vim.api.nvim_exec
 
 local builtin = require('telescope.builtin')
+
+local telescope = require('telescope')
 
 
 require('notify').setup()
@@ -10,7 +13,6 @@ require('notify').setup()
 require('trouble').setup()
 
 require('nvim-web-devicons').setup {
-  -- your personnal icons can go here (to override)
   -- DevIcon will be appended to `name`
   override = {
     zsh = {
@@ -19,34 +21,30 @@ require('nvim-web-devicons').setup {
       name = "Zsh"
     }
   },
-  -- globally enable default icons (default to false)
-  -- will get overriden by `get_icons` option
   default = true,
 }
 
 
 --require('telescope').load_extension('hoogle')
-require('telescope').load_extension('ui-select')
-require('telescope').load_extension('scaladex')
-require('telescope').load_extension('notify')
-require('telescope').load_extension('lsp_handlers')
-require('telescope').load_extension("undo")
-
+telescope.load_extension('ui-select')
+telescope.load_extension('scaladex')
+telescope.load_extension('notify')
+telescope.load_extension('lsp_handlers')
+telescope.load_extension("undo")
 
 
 
 
 require("search").setup({
-  --[[append_tabs = { -- append_tabs will add the provided tabs to the default ones
-      {
-      name = "Commits",
-      tele_func = require('telescope.builtin').git_commits,
+  append_tabs = { -- append_tabs will add the provided tabs to the default ones
+    {
+      name = "Changed Files",
+      tele_func = builtin.git_files,
       available = function()
         return vim.fn.isdirectory(".git") == 1
       end
-     },
-  } ]]
-  -- default tabs
+    },
+  },
   tabs = {
     { "Files",
       builtin.find_files
@@ -54,7 +52,7 @@ require("search").setup({
     { "Grep",
       builtin.live_grep
     }
- }
+  }
 
 })
 
@@ -81,10 +79,8 @@ TelescopeLayoutConfigHorizontal = {
 
 local actions = require("telescope.actions")
 local open_with_trouble = require("trouble.sources.telescope").open
-
 local add_to_trouble = require("trouble.sources.telescope").add
 
-local telescope = require("telescope")
 
 
 
@@ -111,6 +107,9 @@ telescope.setup {
     path_display = { "smart" }
   },
   pickers = {
+    git_files = {
+      git_command = { "git", "ls-files", "--m" }
+    }
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
@@ -212,14 +211,11 @@ function RootFiles()
   exec(':Telescope find_files', '<CR>')
 end
 
-
 function RootSearch()
   exec(':Rooter', '<CR>')
   require('search').open()
   -- exec(":lua require('search').open()")
 end
-
-
 
 function RootGrep()
   exec(':Rooter', '<CR>')

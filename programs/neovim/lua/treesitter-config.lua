@@ -5,7 +5,7 @@ vim.opt.runtimepath:append(parsers_path)
 
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "rust", "scala", "purescript",  "json", "regex", "vim", "bash", "nix", "yaml", "hcl" },
+  ensure_installed = { "rust", "scala", "lua", "purescript", "json", "regex", "vim", "bash", "nix", "yaml", "hcl" },
 
   -- aprsers
   parser_install_dir = parsers_path,
@@ -17,7 +17,7 @@ require 'nvim-treesitter.configs'.setup {
   auto_install = false,
 
   -- List of parsers to ignore installing (for "all")
-  ignore_install = { "lua", "javascript", "cc", "markdown" },
+  ignore_install = { "javascript", "cc", "markdown" },
 
   highlight = {
     -- `false` will disable the whole extension
