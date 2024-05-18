@@ -1,9 +1,8 @@
-local g = vim.g
-
 -- Disabled until further fix
-g.coq_settings = { xdg = true, auto_start = false }
+--g.coq_settings = { xdg = true, auto_start = false }
 
 
+---@diagnostic disable-next-line: unused-function, unused-local
 local has_words_before = function()
   unpack = unpack or table.unpack
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -12,14 +11,13 @@ end
 
 
 
-local luasnip = require('luasnip.loaders.from_vscode').lazy_load {
+require('luasnip.loaders.from_vscode').lazy_load {
   paths = '/home/edvmorango/.config/nixpkgs/programs/neovim/snippets'
 }
 
 
 local cmp = require('cmp')
 local ls = require('luasnip')
-local lspkind = require('lspkind')
 
 
 
@@ -70,7 +68,7 @@ require('cmp').setup {
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
-    format = function(entry, vim_item)
+    format = function(_, vim_item)
       local max_width = 85
 
       vim_item.kind = string.format('%s', kind_icons[vim_item.kind])

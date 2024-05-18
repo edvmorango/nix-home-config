@@ -1,5 +1,8 @@
+---@diagnostic disable: inject-field
 require('keys')
+
 local g = vim.g -- a table to access global variables
+
 local o = vim.o
 
 g.filetype = true
@@ -36,11 +39,11 @@ o.whichwrap = o.whichwrap .. '<,>,h,l,[,]'
 vim.wo.linebreak = true
 o.textwidth = 120
 o.tabstop = 2
-o.clipboard = o.clipboard .. 'unnamedplus' --copy paste
+o.clipboard = o.clipboard .. 'unnamedplus'        --copy paste
 o.laststatus = 2
 o.viewoptions = 'folds,options,cursor,unix,slash' --UNIX better support
 o.encoding = 'utf-8'
-o.cmdheight = 2 -- "for echodoc
+o.cmdheight = 2                                   -- "for echodoc
 
 Map('i', '<C-d>', '<Esc>')
 Map('n', '<C-d>', '<Esc>')
