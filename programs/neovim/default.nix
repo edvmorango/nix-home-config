@@ -27,11 +27,14 @@
       #Diagnostics
       "trouble.nvim"
       "eagle.nvim"
+      "diagflow.nvim"
       #Motion
       "nvim-spider"
       #rooter
       "nvim-rooter.lua"
       #
+      "fidget.nvim"
+      "nvim-lsp-notify"
       "indent-blankline.nvim"
       "nui.nvim"
       "nvim-treesitter"
@@ -54,7 +57,6 @@
       "hlargs.nvim"
       "scrollbar.nvim"
       "tidy.nvim"
-      "lsp_lines.nvim"
       #testing
       "nvim-nio" # for neotest
       "neotest"
@@ -63,8 +65,6 @@
       #theme
       "onenord.nvim"
       #extra
-      "nvim-whichkey-setup.lua"
-      #topbar
       "nvim-navic"
       #util
       "undotree"

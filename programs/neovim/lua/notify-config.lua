@@ -57,7 +57,7 @@ local function format_message(message, percentage)
   return (percentage and percentage .. "%\t" or "") .. (message or "")
 end
 
-vim.lsp.handlers["$/progress"] = function(_, result, ctx)
+vim.lsp.handlers["$/progress"] = function(result, ctx, _)
   local client_id = ctx.client_id
 
   local val = result.value

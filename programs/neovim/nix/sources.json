@@ -59,6 +59,18 @@
         "url": "https://github.com/stevearc/conform.nvim/archive/00f9d91391b04b1935e2f15948bd96cc111e7d3a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "diagflow.nvim": {
+        "branch": "main",
+        "description": "LSP diagnostics in virtual text at the top right of your screen",
+        "homepage": "",
+        "owner": "dgagn",
+        "repo": "diagflow.nvim",
+        "rev": "6d2ad945ddbc46f42a0a2e7618975a5f3d2e7dbe",
+        "sha256": "0jlfkmv3fna5wpga3yj1w6zr10lkfl53s99bywk4iqkvjmn84dz9",
+        "type": "tarball",
+        "url": "https://github.com/dgagn/diagflow.nvim/archive/6d2ad945ddbc46f42a0a2e7618975a5f3d2e7dbe.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "diaglist.nvim": {
         "branch": "master",
         "description": "Live render workspace diagnostics in quickfix with current buf errors on top, buffer diagnostics in loclist",
@@ -93,6 +105,18 @@
         "sha256": "0ybjp3cvfizhz3pn7j0vjiv87m6fnqxzj0if7jdb8zkrgbmq8r8a",
         "type": "tarball",
         "url": "https://github.com/axkirillov/easypick.nvim/archive/3ce209d05d402ba40e29e6b69b759eb8421b145a.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "fidget.nvim": {
+        "branch": "main",
+        "description": "💫  Extensible UI for Neovim notifications and LSP progress messages.",
+        "homepage": "",
+        "owner": "j-hui",
+        "repo": "fidget.nvim",
+        "rev": "ef99df04a1c53a453602421bc0f756997edc8289",
+        "sha256": "1j0s31k8dszb0sq46c492hj27w0ag2zmxy75y8204f3j80dkz68s",
+        "type": "tarball",
+        "url": "https://github.com/j-hui/fidget.nvim/archive/ef99df04a1c53a453602421bc0f756997edc8289.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "hlargs.nvim": {
@@ -333,6 +357,18 @@
         "sha256": "08qxyr998d7zwnk0czfq4hif0q801fm2ijpbwql32kd6a62bnhjf",
         "type": "tarball",
         "url": "https://github.com/josa42/nvim-lightline-lsp/archive/0fe34eed830b223770111c6333fe48d9fca158d5.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nvim-lsp-notify": {
+        "branch": "main",
+        "description": "NVIM plugin to notify about LSP processes",
+        "homepage": "",
+        "owner": "mrded",
+        "repo": "nvim-lsp-notify",
+        "rev": "9541bdde0b84b7a33a24dbc2eccc3df33d4a0cdb",
+        "sha256": "1i4mg82x7x676xf63l1lzxmzd9h8hs3c8yra4l7aq6yw2vywdpdp",
+        "type": "tarball",
+        "url": "https://github.com/mrded/nvim-lsp-notify/archive/9541bdde0b84b7a33a24dbc2eccc3df33d4a0cdb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-lspconfig": {

@@ -15,15 +15,15 @@ g.echodoc = { enable_at_startup = true, type = 'virtual' }
 -- highlight link EchoDocPopup Pmenu
 
 local highlight = {
-    "RainbowRed",
-    "RainbowYellow",
-    "RainbowBlue",
-    "RainbowOrange",
-    "RainbowGreen",
-    "RainbowViolet",
-    "RainbowCyan",
-    "CursorColumn",
-    "Whitespace"
+  "RainbowRed",
+  "RainbowYellow",
+  "RainbowBlue",
+  "RainbowOrange",
+  "RainbowGreen",
+  "RainbowViolet",
+  "RainbowCyan",
+  "CursorColumn",
+  "Whitespace"
 }
 
 
@@ -31,13 +31,13 @@ local hooks = require "ibl.hooks"
 -- create the highlight groups in the highlight setup hook, so they are reset
 -- every time the colorscheme changes
 hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-    vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
-    vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
-    vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
-    vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
-    vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
-    vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
-    vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+  vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+  vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+  vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+  vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+  vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+  vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+  vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
 end)
 
 -- identline (make a function to enable/disable)
@@ -47,8 +47,8 @@ require("ibl").setup {
     char = '╎'
   },
   whitespace = {
-        highlight = highlight,
-        remove_blankline_trail = false,
+    highlight = highlight,
+    remove_blankline_trail = false,
   },
   scope = { enabled = false },
   -- for example, context is off by default, use this to turn it on
@@ -62,17 +62,12 @@ require("ibl").setup {
 Map('n', 't', '<cmd>IBLToggle<CR>')
 
 function ToggleIndentBlankline()
-
   if (g.indent_blankline_enabled) then
     g.indent_blankline_enabled = false
   else
     g.indent_blankline_enabled = true
   end
-
 end
-
-
-
 
 -- gitgutter
 vim.o.updatetime = 100
@@ -153,24 +148,15 @@ Map('n', 'n', '<cmd>lua CenterCursorOnNext(true)<CR>', { silent = true })
 Map('n', 'N', '<cmd>lua CenterCursorOnNext(false)<CR>', { silent = true })
 
 
---vim-which-key
-require("whichkey_setup").config {
-  hide_statusline = false,
-  default_keymap_settings = {
-    silent = true,
-    noremap = true,
-  },
-  default_mode = 'n',
-}
 
 g.timeoutlen = 500
-g.which_key_vertical = 1
 
 
 -- lsp
 require("inc_rename").setup()
 
 Map("n", "<leader>r", ':IncRename ') -- the space is relevant
+
 
 
 -- tidy (remove trailing spaces)
@@ -195,6 +181,9 @@ require('yankbank').setup({
 })
 
 Map('n', 'z', '<cmd>YankBank<CR>', { silent = true })
+
+-- fidget
+require("fidget").setup()
 
 
 
