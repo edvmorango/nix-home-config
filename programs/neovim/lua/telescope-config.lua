@@ -35,26 +35,6 @@ telescope.load_extension("undo")
 
 
 
-require("search").setup({
-  append_tabs = { -- append_tabs will add the provided tabs to the default ones
-    {
-      name = "Changed Files",
-      tele_func = builtin.git_files,
-      available = function()
-        return vim.fn.isdirectory(".git") == 1
-      end
-    },
-  },
-  tabs = {
-    { "Files",
-      builtin.find_files
-    },
-    { "Grep",
-      builtin.live_grep
-    }
-  }
-
-})
 
 
 
@@ -135,6 +115,27 @@ telescope.setup {
 }
 
 
+require("search").setup({
+  append_tabs = { -- append_tabs will add the provided tabs to the default ones
+    {
+      name = "Changed Files",
+      tele_func = builtin.git_files
+      ,
+      available = function()
+        return vim.fn.isdirectory(".git") == 1
+      end
+    },
+  },
+  tabs = {
+    { "Files",
+      builtin.find_files
+    },
+    { "Grep",
+      builtin.live_grep
+    }
+  }
+
+})
 
 
 
