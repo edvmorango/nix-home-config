@@ -79,6 +79,7 @@
       "lspkind.nvim"
       #yank
       "yankbank-nvim"
+      "lean.nvim"
     ];
 
   vimPlugins =

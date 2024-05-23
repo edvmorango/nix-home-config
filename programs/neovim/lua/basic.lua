@@ -56,3 +56,9 @@ Map('l', '<C-d>', '<Esc>')
 Map('c', '<C-d>', '<Esc>')
 Map('t', '<C-d>', '<Esc>')
 Map('', '<C-d>', '<Esc>')
+
+vim.opt.scrolloff = 10
+vim.opt.inccommand = "split"
+vim.opt.undofile = true
+
+vim.opt.jumpoptions = "stack,view"

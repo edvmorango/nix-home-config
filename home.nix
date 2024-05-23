@@ -80,6 +80,7 @@
     putty
     passmark-performancetest
     unigine-valley
+    lean4
   ];
 
   impurePkgs = with pkgs; [

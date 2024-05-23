@@ -167,6 +167,18 @@
         "url": "https://github.com/lukas-reineke/indent-blankline.nvim/archive/ece00d5fb44d196680a81fd2761062d2fa44663b.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "lean.nvim": {
+        "branch": "main",
+        "description": "neovim support for the Lean theorem prover",
+        "homepage": "",
+        "owner": "Julian",
+        "repo": "lean.nvim",
+        "rev": "59de4adaee51271ab74adad4e2c1f31368e6e1bc",
+        "sha256": "19ngg8lhisxiyzg6xmxhbdmi3wvkxaxfp02x1xlgpxzj7c7nz41i",
+        "type": "tarball",
+        "url": "https://github.com/Julian/lean.nvim/archive/59de4adaee51271ab74adad4e2c1f31368e6e1bc.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "lsp-lens.nvim": {
         "branch": "main",
         "description": "Neovim plugin for displaying references and difinition infos upon functions like JB's IDEA.",
