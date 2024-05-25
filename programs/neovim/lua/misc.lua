@@ -186,7 +186,11 @@ Map('n', 'z', '<cmd>YankBank<CR>', { silent = true })
 require("fidget").setup()
 
 
+-- ctx
+require('nvim_context_vt').setup()
+Map('n', '<C-t>', ':NvimContextVtToggle<CR>', { silent = true })
 
+-- subversive
 g.subversivePromptWithActualCommand = 0
 
 --rooter

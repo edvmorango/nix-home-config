@@ -33,6 +33,7 @@
       #rooter
       "nvim-rooter.lua"
       #
+      "nvim_context_vt"
       "fidget.nvim"
       "nvim-lsp-notify"
       "indent-blankline.nvim"
@@ -79,7 +80,7 @@
       "lspkind.nvim"
       #yank
       "yankbank-nvim"
-      "lean.nvim"
+      #"lean.nvim"
     ];
 
   vimPlugins =

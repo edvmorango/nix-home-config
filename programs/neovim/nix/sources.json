@@ -515,6 +515,18 @@
         "url": "https://github.com/AckslD/nvim-whichkey-setup.lua/archive/b2df0761b8ba3fca31b7ae1b0afcad2f8a4e89f4.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "nvim_context_vt": {
+        "branch": "master",
+        "description": "Virtual text context for neovim treesitter",
+        "homepage": "",
+        "owner": "andersevenrud",
+        "repo": "nvim_context_vt",
+        "rev": "4b89241c19909f18d2f6b58777c413c027600fcc",
+        "sha256": "116j5k4nznsldiv752rhxlsjzr2cha1zclxrffiqlnbldiyr5i8i",
+        "type": "tarball",
+        "url": "https://github.com/andersevenrud/nvim_context_vt/archive/4b89241c19909f18d2f6b58777c413c027600fcc.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "onenord.nvim": {
         "branch": "main",
         "description": "🏔️ A Neovim theme that combines the Nord and Atom One Dark color palettes for a more vibrant programming experience.",
