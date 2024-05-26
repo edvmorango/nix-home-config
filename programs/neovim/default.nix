@@ -81,6 +81,7 @@
       #yank
       "yankbank-nvim"
       #"lean.nvim"
+      "unicode.vim"
     ];
 
   vimPlugins =
@@ -144,6 +145,8 @@
       "telescope-undo.nvim"
       "search.nvim"
       "easypick.nvim"
+      "telescope-glyph.nvim"
+      "telescope-symbols.nvim"
     ]);
 
   neovimPkg = pkgs.neovim-unwrapped; #customPkgs.neovim-pkg;

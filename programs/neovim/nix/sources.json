@@ -599,6 +599,18 @@
         "url": "https://github.com/FabianWirth/search.nvim/archive/cfde7b91c713d17e590aad2f0d22a68ddeba3043.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "telescope-glyph.nvim": {
+        "branch": "master",
+        "description": "An extension for telescope.nvim that allows you to search font glyphs",
+        "homepage": "",
+        "owner": "ghassan0",
+        "repo": "telescope-glyph.nvim",
+        "rev": "f63f01e129e71cc25b79637610674bbf0be5ce9d",
+        "sha256": "0n1mdiwkkciqpxjad1nngrc7px5yziyan0daxgs9jsgdqmy1lzp8",
+        "type": "tarball",
+        "url": "https://github.com/ghassan0/telescope-glyph.nvim/archive/f63f01e129e71cc25b79637610674bbf0be5ce9d.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "telescope-hoogle.nvim": {
         "branch": "master",
         "description": "Hoogle search via telescope",
@@ -633,6 +645,18 @@
         "sha256": "0bvvnflzz1x511fk891mimsfahw843kk4v90l6h4yy1bi9a10qps",
         "type": "tarball",
         "url": "https://github.com/nvim-telescope/telescope-media-files.nvim/archive/0826c7a730bc4d36068f7c85cf4c5b3fd9fb570a.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "telescope-symbols.nvim": {
+        "branch": "master",
+        "description": null,
+        "homepage": null,
+        "owner": "nvim-telescope",
+        "repo": "telescope-symbols.nvim",
+        "rev": "a6d0127a53d39b9fc2af75bd169d288166118aec",
+        "sha256": "07y1qhiv1qc5ip91l7w1dg59pkzchhz2qxcxm7ghhby47pvqv0yd",
+        "type": "tarball",
+        "url": "https://github.com/nvim-telescope/telescope-symbols.nvim/archive/a6d0127a53d39b9fc2af75bd169d288166118aec.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "telescope-ui-select.nvim": {
@@ -705,6 +729,18 @@
         "sha256": "1yy7y344b906z04rrnvy2hkrgsrxjm6ij399qmfw8b20rxdyi2jh",
         "type": "tarball",
         "url": "https://github.com/mbbill/undotree/archive/56c684a805fe948936cda0d1b19505b84ad7e065.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "unicode.vim": {
+        "branch": "master",
+        "description": "A Vim plugin that provides a completion function for Unicode glyphs",
+        "homepage": "http://www.vim.org/scripts/script.php?script_id=2822",
+        "owner": "chrisbra",
+        "repo": "unicode.vim",
+        "rev": "bc20d0fb3331a7b41708388c56bb8221c2104da7",
+        "sha256": "1nrx791gj66sky9bb039n7hwkvcic7wr1nrrb1vrx1sgqmwfpy6f",
+        "type": "tarball",
+        "url": "https://github.com/chrisbra/unicode.vim/archive/bc20d0fb3331a7b41708388c56bb8221c2104da7.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vale.vim": {
