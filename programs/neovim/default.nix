@@ -82,6 +82,8 @@
       "yankbank-nvim"
       #"lean.nvim"
       "unicode.vim"
+      "vim-illuminate"
+      "highlight-undo.nvim"
     ];
 
   vimPlugins =

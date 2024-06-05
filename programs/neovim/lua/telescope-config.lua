@@ -174,7 +174,7 @@ end
 
 Map('n', '<space>d', '<cmd>Telescope diagnostics<CR>', { silent = true })
 Map('n', '<space>s', '<cmd>MetalsSuperMethodHierarchy<CR>', { silent = true })
-Map('n', '<space>a', '<cmd>lua require("telescope.builtin").symbols{ sources = {"math"} }<CR>', { silent = true })
+Map('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', { silent = true })
 -- Map('n', '<space>z', '<cmd>Telescope undo<CR>', { silent = true })
 
 
@@ -194,7 +194,7 @@ Map('n', 'gy', '<cmd>Telescope lsp_type_definitions<CR>', { silent = true })
 Map('n', 'gi', '<cmd>Telescope lsp_implementations<CR>', { silent = true })
 Map('n', 'gr', '<cmd>Telescope lsp_references<CR>', { silent = true })
 Map('n', '<C-l>', '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>', { silent = true })
-Map('n', '<C-b>', '<cmd>lua require("telescope.builtin").symbols{ sources = {"math"} }<CR>', { silent = true })
+Map('n', '<C-s>', '<cmd>lua require("telescope.builtin").symbols{ sources = {"math"} }<CR>', { silent = true })
 
 
 
