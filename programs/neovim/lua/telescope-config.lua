@@ -23,6 +23,23 @@ require('nvim-web-devicons').setup {
   },
   default = true,
 }
+local actions_preview = require("actions-preview")
+
+actions_preview.setup {
+  telescope = {
+    sorting_strategy = "ascending",
+    layout_strategy = "vertical",
+    layout_config = {
+      width = 0.8,
+      height = 0.9,
+      prompt_position = "top",
+      preview_cutoff = 20,
+      preview_height = function(_, _, max_lines)
+        return max_lines - 15
+      end,
+    },
+  },
+}
 
 
 --require('telescope').load_extension('hoogle')
@@ -53,8 +70,10 @@ TelescopeLayoutConfigHorizontal = {
   vertical = { width = 0.9 },
   width = resolve.resolve_width(0.9),
   height = resolve.resolve_height(0.99),
-  preview_width = resolve.resolve_width(0.65)
+  preview_width = resolve.resolve_width(0.65),
 }
+
+
 
 local actions = require("telescope.actions")
 local open_with_trouble = require("trouble.sources.telescope").open
@@ -122,6 +141,8 @@ telescope.setup {
   }
 }
 
+
+
 telescope.load_extension("glyph")
 
 require("search").setup({
@@ -172,10 +193,17 @@ end
 
 -- nnoremap <silent> <space>c  :<C-u>lua require("telescope").extensions.metals.commands()<cr>
 
+function CodeAction()
+  actions_preview.code_actions()
+end
+
 Map('n', '<space>d', '<cmd>Telescope diagnostics<CR>', { silent = true })
 Map('n', '<space>s', '<cmd>MetalsSuperMethodHierarchy<CR>', { silent = true })
-Map('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', { silent = true })
+--Map('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', { silent = true })
+Map('n', '<space>a', '<cmd>lua CodeAction()<CR>', { silent = true })
 -- Map('n', '<space>z', '<cmd>Telescope undo<CR>', { silent = true })
+
+
 
 
 

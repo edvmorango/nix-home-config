@@ -1,7 +1,3 @@
-
-
-
-
 require("scissors").setup {
   snippetDir = "/home/edvmorango/.config/nixpkgs/programs/neovim/snippets",
   editSnippetPopup = {
@@ -15,8 +11,7 @@ require("scissors").setup {
       deleteSnippet = "<C-BS>",
       duplicateSnippet = "<C-d>",
       openInFile = "<C-o>",
-      insertNextToken = "<C-t>", -- insert & normal mode
-      jumpBetweenBodyAndPrefix = "<C-Tab>", -- insert & normal mode
+      insertNextPlaceholder = "<C-t>", -- insert & normal mode
     },
   },
   telescope = {

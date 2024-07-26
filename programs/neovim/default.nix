@@ -28,6 +28,8 @@
       "trouble.nvim"
       "eagle.nvim"
       "diagflow.nvim"
+      #action
+      "actions-preview.nvim"
       #Motion
       "nvim-spider"
       #rooter
