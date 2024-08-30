@@ -6,6 +6,12 @@
           "rust"
         ],
         "path": "./rust.json"
+      },
+      {
+        "language": [
+          "scala"
+        ],
+        "path": "./scala.json-1"
       }
     ]
   },

@@ -151,6 +151,7 @@
       "easypick.nvim"
       "telescope-glyph.nvim"
       "telescope-symbols.nvim"
+      "telescope-rooter.nvim"
     ]);
 
   neovimPkg = pkgs.neovim-unwrapped; #customPkgs.neovim-pkg;

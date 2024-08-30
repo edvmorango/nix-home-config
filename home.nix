@@ -10,6 +10,10 @@
   ];
 
   defaultPkgs = with pkgs; [
+    libimobiledevice
+    usbmuxd2
+    gparted
+    cloud-utils
     libsForQt5.okular
     github-desktop
     redis

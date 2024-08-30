@@ -29,16 +29,7 @@ actions_preview.setup {
   telescope = {
     sorting_strategy = "ascending",
     layout_strategy = "vertical",
-    layout_config = {
-      width = 0.8,
-      height = 0.9,
-      prompt_position = "top",
-      preview_cutoff = 20,
-      preview_height = function(_, _, max_lines)
-        return max_lines - 15
-      end,
-    },
-  },
+    layout_config = TelescopeLayoutConfigVertical },
 }
 
 
@@ -61,7 +52,7 @@ TelescopeLayoutConfigVertical = {
   horizontal = { width = 0.9 },
   width = resolve.resolve_width(0.9),
   height = resolve.resolve_height(0.99),
-  preview_height = resolve.resolve_height(0.75),
+  -- preview_height = resolve.resolve_height(0.75),
   prompt_position = "bottom"
 }
 
@@ -70,7 +61,7 @@ TelescopeLayoutConfigHorizontal = {
   vertical = { width = 0.9 },
   width = resolve.resolve_width(0.9),
   height = resolve.resolve_height(0.99),
-  preview_width = resolve.resolve_width(0.65),
+  -- preview_width = resolve.resolve_width(0.65),
 }
 
 
@@ -79,6 +70,13 @@ local actions = require("telescope.actions")
 local open_with_trouble = require("trouble.sources.telescope").open
 local add_to_trouble = require("trouble.sources.telescope").add
 
+
+require("telescope").extensions = {
+  rooter = {
+    enable = true,
+    patterns = { ".git" }
+  }
+}
 
 
 
@@ -171,7 +169,7 @@ require("search").setup({
 
 --Find files using Telescope command-line sugar.
 --Map('n', '<leader>g', '<cmd>Telescope live_grep<CR>', { silent = true })
-Map('n', '<leader>g', '<cmd>lua require("search").open()<CR>', { silent = true })
+Map('n', '<leader>g', '<cmd>lua require("search").open({tab_id = 3})<CR>', { silent = true })
 
 --Map('n', '<leader>p', '<cmd>Telescope find_files<CR>', { silent = true })
 Map('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { silent = true })

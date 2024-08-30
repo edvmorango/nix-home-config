@@ -7,7 +7,7 @@ vim.notify = notify
 
 
 function DismissNotification()
-  notify.dismiss({})
+  notify.dismiss({ pending = true, silent = true })
 end
 
 Map("n", "<leader>d", '<cmd>lua DismissNotification()<CR>')
