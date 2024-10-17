@@ -131,6 +131,18 @@
         "url": "https://github.com/j-hui/fidget.nvim/archive/d855eed8a06531a7e8fd0684889b2943f373c469.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "haskell-tools.nvim": {
+        "branch": "master",
+        "description": " 🦥 Supercharge your Haskell experience in neovim!",
+        "homepage": "",
+        "owner": "mrcjkb",
+        "repo": "haskell-tools.nvim",
+        "rev": "bf7eb0b866eb83a59917680708038f83ece94267",
+        "sha256": "0drl0ndi1d5f6mj1mwai24vwblmmmqssvm2wky617nl1ab385mbv",
+        "type": "tarball",
+        "url": "https://github.com/mrcjkb/haskell-tools.nvim/archive/bf7eb0b866eb83a59917680708038f83ece94267.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "highlight-undo.nvim": {
         "branch": "main",
         "description": "Highlight changed text after Undo / Redo operations",
@@ -801,6 +813,18 @@
         "sha256": "18rk93w6c3n0cbgwqnwn4083gbdjknnp84zyvm0m5v26cv49r31z",
         "type": "tarball",
         "url": "https://github.com/jfecher/vale.vim/archive/e84f70875923e10c78ce181a4b2fe93ffb055288.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "vim-cabalfmt": {
+        "branch": "master",
+        "description": "Cabal-fmt vim plugin for formatting Cabal package files",
+        "homepage": null,
+        "owner": "sdiehl",
+        "repo": "vim-cabalfmt",
+        "rev": "90f544ee637ee16f5acad01f4d7952734c7baed0",
+        "sha256": "0hrxiv92qm7kxqbscnz1vk8m3gy2sh925faygzcbc94gjvriba1y",
+        "type": "tarball",
+        "url": "https://github.com/sdiehl/vim-cabalfmt/archive/90f544ee637ee16f5acad01f4d7952734c7baed0.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-illuminate": {

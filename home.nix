@@ -10,7 +10,9 @@
   ];
 
   defaultPkgs = with pkgs; [
+    jujutsu
     libimobiledevice
+    tor
     usbmuxd2
     gparted
     cloud-utils
@@ -78,7 +80,7 @@
     difftastic
     k9s
     tlaplusToolbox
-    haskell.compiler.ghc925
+    #haskell.compiler.ghc925
     navi
     lm_sensors
     putty
@@ -131,6 +133,9 @@
 
   haskellPkgs = with pkgs.haskellPackages; [
     nix-tree
+    cabal-fmt
+    hoogle
+    fourmolu
   ];
 
   customPkgs = [

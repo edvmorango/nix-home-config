@@ -86,6 +86,9 @@
       "unicode.vim"
       "vim-illuminate"
       "highlight-undo.nvim"
+      # "hhaskel"
+      "vim-cabalfmt"
+      #"haskell-tools.nvim"
     ];
 
   vimPlugins =
@@ -127,7 +130,6 @@
     ghcid
     vim-hoogle
     vim-ormolu
-    # vim-cabalfmt
   ];
 
   scalaPlugins = with allPkgs; [

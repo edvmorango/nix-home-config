@@ -214,7 +214,14 @@ require("conform").setup({
     rust = { "rustfmt" },
     json = { "jq" },
     nix = { "alejandra" },
-    lua = { "stylua" }
+    lua = { "stylua" },
+    haskell = {
+
+      command = "fourmolu",
+      append_args = { "--mode inplace (git ls-files '*.hs')" }
+
+
+    }
   },
 })
 

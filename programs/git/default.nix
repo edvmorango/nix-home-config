@@ -25,6 +25,7 @@ in {
       ".vimdir"
       ".vimsubdir"
       ".vimrootdir"
+      ".jj"
     ];
     userEmail = "edvmorango@gmail.com";
     userName = "J. Eduardo V. Morango";
