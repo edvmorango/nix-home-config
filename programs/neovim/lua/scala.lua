@@ -11,7 +11,7 @@ metals_config.settings = {
 }
 
 metals_config.init_options.statusBarProvider = "off"
-metals_config.settings.serverVersion = "1.3.5+84-92e0d5fa-SNAPSHOT"
+metals_config.settings.serverVersion = "1.4.0+21-824d9b8e-SNAPSHOT"
 
 -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
 
