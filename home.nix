@@ -28,13 +28,11 @@
     ngrok
     nailgun
     atuin
-    _1password
-    _1password-gui
     tree-sitter
     git
     git-lfs
     niv
-    dbeaver
+    #dbeaver
     nil
     any-nix-shell
     docker-compose

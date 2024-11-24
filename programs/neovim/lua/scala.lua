@@ -7,12 +7,12 @@ metals_config.settings = {
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
   showInferredType = true,
   superMethodLensesEnabled = true,
-  enableSemanticHighlighting = true
+  enableSemanticHighlighting = true,
+  serverProperties = { "-Dmetals.enable-best-effort=true" }
 }
 
 metals_config.init_options.statusBarProvider = "off"
-metals_config.settings.serverVersion = "1.4.0+21-824d9b8e-SNAPSHOT"
-
+metals_config.settings.serverVersion = "1.4.1"
 -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
 
 -- local capabilities = require('coq').lsp_ensure_capabilities(vim.lsp.protocol.make_client_capabilities())

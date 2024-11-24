@@ -2,6 +2,8 @@ local wezterm = require('wezterm')
 local act = wezterm.action
 
 return {
+
+  front_end = 'WebGpu',
   font_dirs = { '$HOME/.local/share/fonts' },
   font = wezterm.font {
     family = 'FiraCode Nerd Font',
