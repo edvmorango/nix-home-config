@@ -32,7 +32,7 @@
     git
     git-lfs
     niv
-    #dbeaver
+    dbeaver-bin
     nil
     any-nix-shell
     docker-compose

@@ -12,7 +12,7 @@ metals_config.settings = {
 }
 
 metals_config.init_options.statusBarProvider = "off"
-metals_config.settings.serverVersion = "1.4.1"
+metals_config.settings.serverVersion = "1.4.2"
 -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
 
 -- local capabilities = require('coq').lsp_ensure_capabilities(vim.lsp.protocol.make_client_capabilities())
