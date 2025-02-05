@@ -10,6 +10,7 @@
   ];
 
   defaultPkgs = with pkgs; [
+    writedisk
     jujutsu
     libimobiledevice
     tor
@@ -82,8 +83,6 @@
     navi
     lm_sensors
     putty
-    passmark-performancetest
-    unigine-valley
     postman
   ];
 
@@ -107,7 +106,6 @@
     mupdf
     #programs
     discord
-    zoom-us
     slack
     google-chrome
     mongodb-compass
@@ -172,7 +170,6 @@ in {
 
   imports = [
     ./programs/fish/default.nix
-    ./programs/neovim/default.nix
     ./programs/tmux/default.nix
     ./programs/git/default.nix
   ];

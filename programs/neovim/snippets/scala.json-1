@@ -1,9 +1,0 @@
-{
-  "neotype (name, type)": {
-    "body": [
-      "object $1 extends Newtype[$2]",
-      "type $1 = $1.Type"
-    ],
-    "prefix": "neotype (name, type)"
-  }
-}
