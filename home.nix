@@ -10,6 +10,13 @@
   ];
 
   defaultPkgs = with pkgs; [
+    gitify
+    moreutils
+    goose-cli
+    postgres-lsp
+    bruno
+    whatsapp-for-linux
+    ladybird
     writedisk
     jujutsu
     libimobiledevice
@@ -84,6 +91,8 @@
     lm_sensors
     putty
     postman
+    docker-compose-language-service
+    dockerfile-language-server-nodejs
   ];
 
   impurePkgs = with pkgs; [
