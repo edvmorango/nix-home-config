@@ -10,6 +10,8 @@
   ];
 
   defaultPkgs = with pkgs; [
+    jnv
+    aider-chat
     gitify
     moreutils
     goose-cli
