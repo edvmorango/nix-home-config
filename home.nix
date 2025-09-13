@@ -1,15 +1,21 @@
-{pkgs, ...}: let
-  arionPkg = (import (builtins.fetchTarball "https://github.com/hercules-ci/arion/tarball/master") {}).arion;
+{ pkgs, ... }:
+let
+  arionPkg =
+    (import (builtins.fetchTarball "https://github.com/hercules-ci/arion/tarball/master") { }).arion;
 
-  nix-alien-pkgs = import (
-    builtins.fetchTarball "https://github.com/thiagokokada/nix-alien/tarball/master"
-  ) {};
+  nix-alien-pkgs =
+    import (builtins.fetchTarball "https://github.com/thiagokokada/nix-alien/tarball/master")
+      { };
 
   alien = with nix-alien-pkgs; [
     nix-alien
   ];
 
   defaultPkgs = with pkgs; [
+    inotify-tools
+    _1password-cli
+    amp-cli
+    zed-editor
     jnv
     aider-chat
     gitify
@@ -21,12 +27,12 @@
     ladybird
     writedisk
     jujutsu
-    libimobiledevice
+
     tor
     usbmuxd2
     gparted
     cloud-utils
-    libsForQt5.okular
+    kdePackages.okular
     github-desktop
     redis
     anki
@@ -59,7 +65,6 @@
     ripgrep
     #skype
     highlight
-    glib
     mcfly
     tldr
     procs
@@ -74,7 +79,6 @@
     gnupg
     pinentry
     glxinfo
-    mesa.drivers
     kitty
     jq
     yq
@@ -98,6 +102,7 @@
   ];
 
   impurePkgs = with pkgs; [
+    helix
     act
     #audio
     pavucontrol
@@ -135,7 +140,6 @@
     openssl
     chrpath
     patchelf
-    zlib
   ];
 
   haskellPkgs = with pkgs.haskellPackages; [
@@ -148,9 +152,10 @@
   customPkgs = [
     arionPkg
   ];
-in {
+in
+{
   home = {
-    packages = defaultPkgs ++ customPkgs ++ haskellPkgs ++ impurePkgs ++ alien; #;
+    packages = defaultPkgs ++ customPkgs ++ haskellPkgs ++ impurePkgs ++ alien; # ;
     username = "edvmorango";
     homeDirectory = "/home/edvmorango";
     stateVersion = "22.05";
