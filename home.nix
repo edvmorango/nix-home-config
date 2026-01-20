@@ -12,6 +12,12 @@ let
   ];
 
   defaultPkgs = with pkgs; [
+    opencode
+    ollama-cuda
+    kdePackages.k3b
+    ghostty
+    unetbootin
+    galaxy-buds-client
     inotify-tools
     _1password-cli
     amp-cli
@@ -23,7 +29,6 @@ let
     goose-cli
     postgres-lsp
     bruno
-    whatsapp-for-linux
     ladybird
     writedisk
     jujutsu
@@ -39,7 +44,6 @@ let
     nushell
     alejandra
     mesa
-    bookworm
     rust-analyzer
     ngrok
     nailgun
@@ -71,18 +75,17 @@ let
     zoxide
     openvpn
     sqlite
-    whatsapp-for-linux
     libreoffice
     keybase
     keybase-gui
     kbfs
     gnupg
-    pinentry
-    glxinfo
+    pinentry-curses
+    mesa-demos
     kitty
     jq
     yq
-    sumneko-lua-language-server
+    lua-language-server
     nodePackages.yaml-language-server
     wezterm
     gcc
@@ -126,7 +129,7 @@ let
     google-chrome
     mongodb-compass
     obs-studio
-    tdesktop
+    telegram-desktop
     insomnia
     jetbrains.idea-community
     #postman
