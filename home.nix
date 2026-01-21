@@ -1,15 +1,5 @@
 { pkgs, ... }:
 let
-  arionPkg =
-    (import (builtins.fetchTarball "https://github.com/hercules-ci/arion/tarball/master") { }).arion;
-
-  nix-alien-pkgs =
-    import (builtins.fetchTarball "https://github.com/thiagokokada/nix-alien/tarball/master")
-      { };
-
-  alien = with nix-alien-pkgs; [
-    nix-alien
-  ];
 
   defaultPkgs = with pkgs; [
     opencode
@@ -20,6 +10,7 @@ let
     galaxy-buds-client
     inotify-tools
     _1password-cli
+    _1password-gui
     amp-cli
     zed-editor
     jnv
@@ -153,12 +144,11 @@ let
   ];
 
   customPkgs = [
-    arionPkg
   ];
 in
 {
   home = {
-    packages = defaultPkgs ++ customPkgs ++ haskellPkgs ++ impurePkgs ++ alien; # ;
+    packages = defaultPkgs ++ customPkgs ++ haskellPkgs ++ impurePkgs; # ;
     username = "edvmorango";
     homeDirectory = "/home/edvmorango";
     stateVersion = "22.05";
