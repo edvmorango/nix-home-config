@@ -2,8 +2,20 @@
 let
 
   defaultPkgs = with pkgs; [
+    librepods
+    usbutils
+    evtest
+    bluez
+    bluez-tools
+    dualsensectl
+    kdePackages.okular
+    amp-cli
+    cheese
+    mission-center
+    wev
+    ydotool
     opencode
-    ollama-cuda
+    #ollama-cuda
     kdePackages.k3b
     ghostty
     unetbootin
@@ -11,8 +23,7 @@ let
     inotify-tools
     _1password-cli
     _1password-gui
-    amp-cli
-    zed-editor
+    #zed-editor
     jnv
     aider-chat
     gitify
@@ -122,7 +133,6 @@ let
     obs-studio
     telegram-desktop
     insomnia
-    jetbrains.idea-community
     #postman
     #dev
     kubectl
@@ -156,6 +166,9 @@ in
 
   programs = {
     home-manager.enable = true;
+
+    waybar.enable = true;
+
     direnv = {
       enable = true;
       #    enableFishIntegration = true;
@@ -176,6 +189,7 @@ in
   xdg.enable = true;
 
   xdg.configFile."wezterm/wezterm.lua".text = builtins.readFile programs/wezterm/wezterm.lua;
+  xdg.configFile."waybar/config.jsonc".text = builtins.readFile programs/waybar/waybar-config.jsonc;
 
   imports = [
     ./programs/fish/default.nix
