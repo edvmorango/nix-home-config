@@ -2,6 +2,10 @@
 let
 
   defaultPkgs = with pkgs; [
+    tlafmt
+    neohtop
+    calibre
+    csvkit
     librepods
     usbutils
     evtest
@@ -162,6 +166,12 @@ in
     username = "edvmorango";
     homeDirectory = "/home/edvmorango";
     stateVersion = "22.05";
+
+  };
+  dconf.settings = {
+    "org/gnome/mutter" = {
+      experimental-features = [ "scale-monitor-framebuffer" ];
+    };
   };
 
   programs = {
