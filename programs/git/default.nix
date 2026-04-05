@@ -2,18 +2,19 @@
   config,
   pkgs,
   ...
-}: let
+}:
+let
   gitConfig = {
     core = {
       editor = "nvim";
     };
     init.defaultBranch = "main";
   };
-in {
+in
+{
+
   programs.git = {
     enable = true;
-    difftastic.enable = true;
-    extraConfig = gitConfig;
     ignores = [
       "*.bloop"
       "*.metals"
@@ -27,7 +28,14 @@ in {
       ".vimrootdir"
       ".jj"
     ];
-    userEmail = "edvmorango@gmail.com";
-    userName = "J. Eduardo V. Morango";
+    signing.format = "openpgp";
+    settings = {
+      extraConfig = gitConfig;
+      user = {
+        email = "edvmorango@gmail.com";
+        name = "J. Eduardo V. Morango";
+      };
+
+    };
   };
 }

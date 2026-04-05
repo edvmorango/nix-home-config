@@ -33,7 +33,8 @@ let
     gitify
     moreutils
     #goose-cli
-    postgres-lsp
+    postgres-language-server
+
     bruno
     ladybird
     writedisk
@@ -106,7 +107,7 @@ let
     putty
     postman
     docker-compose-language-service
-    dockerfile-language-server-nodejs
+    dockerfile-language-server
   ];
 
   impurePkgs = with pkgs; [
@@ -177,6 +178,11 @@ in
     home-manager.enable = true;
 
     waybar.enable = true;
+
+    difftastic = {
+      enable = true;
+      git.enable = true;
+    };
 
     direnv = {
       enable = true;
