@@ -30,10 +30,9 @@ let
     _1password-gui
     #zed-editor
     jnv
-    aider-chat
     gitify
     moreutils
-    goose-cli
+    #goose-cli
     postgres-lsp
     bruno
     ladybird
@@ -93,7 +92,6 @@ let
     jq
     yq
     lua-language-server
-    nodePackages.yaml-language-server
     wezterm
     gcc
     zoxide
