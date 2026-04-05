@@ -2,6 +2,7 @@
 let
 
   defaultPkgs = with pkgs; [
+    rio
     tlafmt
     neohtop
     calibre
@@ -200,6 +201,7 @@ in
 
   xdg.configFile."wezterm/wezterm.lua".text = builtins.readFile programs/wezterm/wezterm.lua;
   xdg.configFile."waybar/config.jsonc".text = builtins.readFile programs/waybar/waybar-config.jsonc;
+  xdg.configFile."ghostty/config".text = builtins.readFile programs/ghostty/config;
 
   imports = [
     ./programs/fish/default.nix

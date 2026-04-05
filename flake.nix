@@ -30,7 +30,20 @@
 
         modules = [
           ./home.nix
+
+          {
+            home.file.".local/share/applications/org.wezfurlong.wezterm.desktop".text = ''
+              [Desktop Entry]
+              Name=WezTerm
+              Icon=wezterm
+              Exec=env WAYLAND_DISPLAY= wezterm start --always-new-process
+              Type=Application
+              Categories=System;TerminalEmulator;
+            '';
+          }
+
         ];
+
         #homeDirectory = "/home/${ username}";
         # Update the state version as needed.
         # See the changelog here:
