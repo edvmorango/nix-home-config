@@ -7,7 +7,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.url = "github:youwen5/zen-browser-flake";
-    treesitter = {
+    treesitter-src = {
       url = "github:tree-sitter/tree-sitter";
       flake = false;
     };
@@ -17,7 +17,7 @@
     {
       nixpkgs,
       home-manager,
-      treesitter,
+      treesitter-src,
       ...
     }:
     let
@@ -26,10 +26,10 @@
 
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [
-          (import ./overlays/treesitter-overlay.nix { inherit treesitter; })
-        ];
+        config.allowUnfree = true;
       };
+
+      treesitter-custom = import ./derivations/treesitter-custom.nix { inherit pkgs; };
     in
     {
 
@@ -38,6 +38,10 @@
 
         # Specify the path to your home configuration here
         #configuration = import./home.nix;
+
+        extraSpecialArgs = {
+          inherit treesitter-custom;
+        };
 
         modules = [
           ./home.nix

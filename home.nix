@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, treesitter-custom, ... }:
 let
 
   defaultPkgs = with pkgs; [
@@ -160,6 +160,7 @@ let
   ];
 
   customPkgs = [
+    treesitter-custom
   ];
 in
 {
