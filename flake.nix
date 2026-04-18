@@ -7,18 +7,29 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.url = "github:youwen5/zen-browser-flake";
-  };
+    treesitter = {
+      url = "github:tree-sitter/tree-sitter";
+      flake = false;
+    };
 
+  };
   outputs =
     {
       nixpkgs,
       home-manager,
+      treesitter,
       ...
     }:
     let
       system = "x86_64-linux";
       username = "edvmorango";
-      pkgs = import nixpkgs { inherit system; };
+
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          (import ./overlays/treesitter-overlay.nix { inherit treesitter; })
+        ];
+      };
     in
     {
 

@@ -2,6 +2,8 @@
 let
 
   defaultPkgs = with pkgs; [
+    simplescreenrecorder
+    kazam
     rio
     tlafmt
     neohtop
@@ -55,7 +57,7 @@ let
     ngrok
     nailgun
     atuin
-    tree-sitter
+    #    tree-sitter
     git
     git-lfs
     niv
