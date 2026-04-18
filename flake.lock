@@ -56,24 +56,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "treesitter-src": "treesitter-src",
         "zen-browser": "zen-browser"
-      }
-    },
-    "treesitter-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1776406805,
-        "narHash": "sha256-W9TIxxnfnlk+3SK5338Jqdj/H0VTGwWkspG4H1Rbxug=",
-        "owner": "tree-sitter",
-        "repo": "tree-sitter",
-        "rev": "aff9b9d92e628bdb159189b7066baa00e8f7535e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "tree-sitter",
-        "repo": "tree-sitter",
-        "type": "github"
       }
     },
     "zen-browser": {

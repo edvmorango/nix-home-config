@@ -1,4 +1,4 @@
-{ pkgs, treesitter-custom, ... }:
+{ pkgs, ... }:
 let
 
   defaultPkgs = with pkgs; [
@@ -57,7 +57,7 @@ let
     ngrok
     nailgun
     atuin
-    #    tree-sitter
+    tree-sitter
     git
     git-lfs
     niv
@@ -160,7 +160,6 @@ let
   ];
 
   customPkgs = [
-    treesitter-custom
   ];
 in
 {
