@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
 
   defaultPkgs = with pkgs; [
@@ -176,6 +176,10 @@ in
     homeDirectory = "/home/edvmorango";
     stateVersion = "22.05";
 
+    file.".claude/agents".source = ./programs/claude/agents;
+    file.".claude/hooks".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/programs/claude/hooks";
+    file.".claude/skills".source = ./programs/claude/skills;
+    file.".claude/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/programs/claude/settings.json";
   };
   dconf.settings = {
     "org/gnome/mutter" = {
