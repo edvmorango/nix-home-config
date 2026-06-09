@@ -35,6 +35,7 @@ in
         email = "edvmorango@gmail.com";
         name = "J. Eduardo V. Morango";
       };
+      init.defaultBranch = "main";
 
     };
   };

@@ -2,6 +2,13 @@
 let
 
   defaultPkgs = with pkgs; [
+    markdown-oxide
+    obsidian
+    rtk
+    noisetorch
+    vivaldi
+    ffmpeg
+    claude-code
     simplescreenrecorder
     kazam
     rio
