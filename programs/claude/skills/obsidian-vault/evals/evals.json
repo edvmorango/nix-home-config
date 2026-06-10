@@ -1,0 +1,52 @@
+{
+  "skill_name": "obsidian-vault",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "sync the vault",
+      "expected_output": "Creates/updates ~/edvmorango/home-manager/ with README.md, tasks.md, practices.md based on git log and project files. README follows rich sikil-style template. Tasks use numbered T-XX increments with Done-when criteria.",
+      "files": [],
+      "assertions": [
+        { "id": "readme_exists", "description": "README.md is created in the project vault dir" },
+        { "id": "tasks_exists", "description": "tasks.md is created in the project vault dir" },
+        { "id": "practices_exists", "description": "practices.md is created in the project vault dir" },
+        { "id": "readme_has_architecture", "description": "README.md contains an Architecture or Tech Stack section" },
+        { "id": "readme_has_project_name", "description": "README.md mentions 'home-manager' as the project name" },
+        { "id": "tasks_numbered_format", "description": "tasks.md uses numbered T-XX format or has structured task sections" },
+        { "id": "readme_has_commands", "description": "README.md contains a commands or setup section" }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "save this session, we worked on fixing the nix flake rebuild so direnv integration works properly with the new home-manager module",
+      "expected_output": "Creates ~/edvmorango/home-manager/context/2026-06-10-nix-flake-rebuild.md with all 7 sections: What Was Done, Key Decisions, Current State, Next Steps, Open Questions, Key Files, Context Notes. Quality: a fresh Claude session could resume cold from this file.",
+      "files": [],
+      "assertions": [
+        { "id": "context_file_exists", "description": "A context .md file is created in home-manager/context/ with date-topic filename" },
+        { "id": "has_what_was_done", "description": "File contains '## What Was Done' section" },
+        { "id": "has_key_decisions", "description": "File contains '## Key Decisions' section" },
+        { "id": "has_current_state", "description": "File contains '## Current State' section" },
+        { "id": "has_next_steps", "description": "File contains '## Next Steps' section" },
+        { "id": "has_open_questions", "description": "File contains '## Open Questions' section" },
+        { "id": "has_key_files", "description": "File contains '## Key Files' section" },
+        { "id": "has_context_notes", "description": "File contains '## Context Notes' section" },
+        { "id": "mentions_direnv", "description": "File content references 'direnv' or 'nix flake' — shows topic relevance" },
+        { "id": "mentions_home_nix", "description": "File references home.nix as a key file" }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "load my last context",
+      "expected_output": "Lists up to 5 context files from ~/edvmorango/home-manager/context/ sorted by date descending, prompts user to pick one, reads selected file and summarizes key points (does not just dump raw content).",
+      "files": [],
+      "assertions": [
+        { "id": "output_exists", "description": "Output file is created" },
+        { "id": "lists_sessions", "description": "Output shows a numbered/bullet list of available sessions" },
+        { "id": "shows_dates", "description": "Listed sessions include YYYY-MM-DD dates" },
+        { "id": "shows_topics", "description": "Listed sessions include topic/name (not just filenames)" },
+        { "id": "provides_summary", "description": "Output summarizes the selected session content rather than dumping raw file" },
+        { "id": "mentions_project", "description": "Output mentions 'home-manager' as the project context" }
+      ]
+    }
+  ]
+}
