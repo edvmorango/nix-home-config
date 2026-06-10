@@ -1,14 +1,34 @@
 { pkgs, config, ... }:
 let
 
+  obsidianWithPython = pkgs.symlinkJoin {
+    name = "obsidian";
+    paths = [ pkgs.obsidian ];
+    buildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/obsidian \
+        --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.python3 ]}
+    '';
+  };
+
+  claudeCodeWithNode = pkgs.symlinkJoin {
+    name = "claude-code";
+    paths = [ pkgs.claude-code ];
+    buildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/claude \
+        --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.nodejs ]}
+    '';
+  };
+
   defaultPkgs = with pkgs; [
     markdown-oxide
-    obsidian
+    obsidianWithPython
     rtk
     noisetorch
     vivaldi
     ffmpeg
-    claude-code
+    claudeCodeWithNode
     simplescreenrecorder
     kazam
     rio
@@ -177,9 +197,13 @@ in
     stateVersion = "22.05";
 
     file.".claude/agents".source = ./programs/claude/agents;
-    file.".claude/hooks".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/programs/claude/hooks";
+    file.".claude/hooks".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/programs/claude/hooks";
     file.".claude/skills".source = ./programs/claude/skills;
-    file.".claude/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/programs/claude/settings.json";
+    file.".claude/settings.json".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/programs/claude/settings.json";
+    file.".claude/statusline-command.sh".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/programs/claude/statusline-command.sh";
   };
   dconf.settings = {
     "org/gnome/mutter" = {
