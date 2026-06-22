@@ -22,6 +22,7 @@ let
   };
 
   defaultPkgs = with pkgs; [
+    usbimager
     markdown-oxide
     obsidianWithPython
     rtk

@@ -30,6 +30,11 @@
       }
     }
   },
+  "permissions": {
+    "allow": [
+      "Bash(rtk *)"
+    ]
+  },
   "effortLevel": "xhigh",
   "statusLine": {
     "type": "command",
