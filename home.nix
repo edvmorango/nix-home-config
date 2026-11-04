@@ -22,6 +22,14 @@ let
   };
 
   defaultPkgs = with pkgs; [
+    zoom-us
+    redisinsight
+    filezilla
+    tiny-rdm
+    v4l-utils
+    linuxPackages_latest.system76
+    linuxPackages_latest.v4l2loopback
+    nvidia-container-toolkit
     usbimager
     markdown-oxide
     obsidianWithPython
@@ -163,7 +171,6 @@ let
     discord
     slack
     google-chrome
-    mongodb-compass
     obs-studio
     telegram-desktop
     insomnia
