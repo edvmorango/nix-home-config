@@ -37,7 +37,6 @@ in
     enable = true;
     plugins = [ fishPlugins.theme ];
     interactiveShellInit = ''
-      eval (direnv hook fish)
       any-nix-shell fish --info-right | source
       zoxide init fish --cmd cd | source
       atuin init fish --disable-up-arrow | source

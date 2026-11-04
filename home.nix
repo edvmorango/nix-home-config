@@ -3,7 +3,7 @@ let
 
   obsidianWithPython = pkgs.symlinkJoin {
     name = "obsidian";
-    paths = [ pkgs.obsidian ];
+    paths = [ (pkgs.obsidian.override { electron = pkgs.electron_45; }) ];
     buildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/obsidian \
@@ -23,7 +23,7 @@ let
 
   defaultPkgs = with pkgs; [
     zoom-us
-    redisinsight
+    #redisinsight
     filezilla
     tiny-rdm
     v4l-utils
@@ -91,7 +91,7 @@ let
     mesa
     rust-analyzer
     ngrok
-    nailgun
+    # nailgun
     atuin
     tree-sitter
     git

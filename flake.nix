@@ -6,7 +6,6 @@
     home-manager.url = "github:nix-community/home-manager";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    zen-browser.url = "github:youwen5/zen-browser-flake";
 
   };
   outputs =
@@ -21,7 +20,12 @@
 
       pkgs = import nixpkgs {
         inherit system;
-        config.allowUnfree = true;
+        config = {
+          allowUnfree = true;
+          permittedInsecurePackages = [
+            "electron-41.10.7"
+          ];
+        };
       };
 
     in
